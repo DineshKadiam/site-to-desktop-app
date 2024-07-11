@@ -1,0 +1,305 @@
+#
+# Konstantin Tutsch <mail@konstantintutsch.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-26 21:00+0530\n"
+"PO-Revision-Date: 2024-07-11 15:32+0200\n"
+"Last-Translator: Konstantin Tutsch <mail@konstantintutsch.com>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#: src/create_web_app_dialog.py:36 src/url_dialog.py:41 src/window.py:60
+msgid "Add Web App"
+msgstr "Web App hinzufügen"
+
+#: src/create_web_app_dialog.py:47
+msgid "Install"
+msgstr "Installieren"
+
+#: src/create_web_app_dialog.py:48
+msgid "Create a new web app"
+msgstr "Neue Web App erstellen"
+
+#: src/edit_web_app_dialog.py:38
+msgid "Edit Web App"
+msgstr "Web App bearbeiten"
+
+#: src/edit_web_app_dialog.py:49
+msgid "Save"
+msgstr "Speichern"
+
+#: src/edit_web_app_dialog.py:50
+msgid "Save changes to the web app"
+msgstr "Speichert Änderungen und wendet diese auf die Web App an"
+
+#: src/main.py:127 src/window.py:53
+#: data/net.codelogistics.webapps.appdata.xml.in:5
+#: data/net.codelogistics.webapps.desktop.in:3
+msgid "Web Apps"
+msgstr "Web Apps"
+
+#: src/main.py:128 data/net.codelogistics.webapps.appdata.xml.in:6
+msgid "Install websites as apps"
+msgstr "Installieren Sie Websites als Apps"
+
+#. Translators: add your name here
+#: src/main.py:138
+msgid "Satvik Patwardhan"
+msgstr "Konstantin Tutsch"
+
+#: src/parse_webpage.py:46
+msgid "Error accessing URL:"
+msgstr "Fehler beim Zugriff auf das URL:"
+
+#. SECRET google api. Do not trust.
+#: src/parse_webpage.py:69
+msgid ""
+"Google API for favicons being used... if correct favicon is not visible "
+"please file a bug report!"
+msgstr ""
+"Die Google API wird zur Beschaffung von Favicons verwendent… Bitte melden "
+"Sie Fehler bei nicht sichtbaren Icons!"
+
+#: src/url_dialog.py:55 src/url_dialog.py:62 src/window.py:250
+msgid "Enter URL"
+msgstr "URL eingeben"
+
+#: src/url_dialog.py:70 src/url_dialog.py:72
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: src/url_dialog.py:86
+msgid "Loading..."
+msgstr "Lade…"
+
+#. title not found by html parser
+#: src/url_dialog.py:126
+msgid "New Web App"
+msgstr "Neue Web App"
+
+#: src/web_app_properties.py:46
+msgid "Browse Icon"
+msgstr "Übersichstsicon"
+
+#: src/web_app_properties.py:60
+msgid "Name"
+msgstr "Name"
+
+#: src/web_app_properties.py:69
+msgid "URL"
+msgstr "URL"
+
+#: src/web_app_properties.py:75
+msgid "Show Navigation Options"
+msgstr "Zeige Navigationsmenu"
+
+#: src/web_app_properties.py:76
+msgid "Show the buttons for back, forward and reload."
+msgstr "Zeigt die Knöpfe für Zurück, Weiter und Aktualisieren."
+
+#: src/web_app_properties.py:82
+msgid "Domain Matching"
+msgstr "Domain Abgleich"
+
+#: src/web_app_properties.py:83
+msgid "Set which websites will be allowed to load in the web app."
+msgstr "Definiert, welche Websites in der Web App geladen werden dürfen."
+
+#: src/web_app_properties.py:85
+msgid "Domain and subdomains"
+msgstr "Domain und Subdomains"
+
+#: src/web_app_properties.py:86
+msgid "Domain only"
+msgstr "Nur Domain"
+
+#: src/web_app_properties.py:87
+msgid "Allow all"
+msgstr "Alle"
+
+#: src/web_app_properties.py:94
+msgid "Show Loading Bars"
+msgstr "Zeige Ladebalken"
+
+#: src/web_app_properties.py:95
+msgid ""
+"A loading bar will be visible at the top of the web page when it is being "
+"loaded."
+msgstr "Ein Ladebalken wird über der Website bei Ladevorgängen angezeigt"
+
+#: src/web_app_properties.py:102
+msgid "Enable JavaScript"
+msgstr "Javascript"
+
+#: src/web_app_properties.py:103
+msgid "Enable web scripting."
+msgstr "Erlaube Web Scripts."
+
+#: src/web_app_properties.py:110
+msgid "Incognito Browsing"
+msgstr "Inkognito Browser"
+
+#: src/web_app_properties.py:111
+msgid "Cookies and other data will not be stored."
+msgstr "Cookies und andere Daten werden nicht gespeichert."
+
+#: src/web_app_properties.py:117
+msgid "User Agent"
+msgstr "User Agent"
+
+#. Translators: this is for going back in the browser
+#: src/web_app_window.py:96
+msgid "Back"
+msgstr "Zurück"
+
+#. Translators: this is for going back in the browser
+#: src/web_app_window.py:104
+msgid "Forward"
+msgstr "Weiter"
+
+#: src/web_app_window.py:111 src/web_app_window.py:144
+#: src/web_app_window.py:167
+msgid "Reload"
+msgstr "Aktualisieren"
+
+#: src/web_app_window.py:149 src/web_app_window.py:163
+msgid "Stop"
+msgstr "Stop"
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:249
+msgid "Allow {} access to your location?"
+msgstr "Erlaube {} Zugriff auf Ihren Standort?"
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:252
+msgid "Allow {} to send notifications?"
+msgstr "Erlaube {} Ihnen Benachrichtigungen zu senden?"
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:255
+msgid "Allow {} to install and use DRM?"
+msgstr "Erlaube {} DRM zu installieren und zu verwenden?"
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:258
+msgid "Allow {} to access your clipboard?"
+msgstr "Erlaube {} Zugriff auf Ihre Zwischenablage?"
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:261
+msgid "Allow {} to access your microphone and/or camera?"
+msgstr "Erlaube {} Zugriff auf Ihr Mikrofon und/oder Ihre Kamera?"
+
+#: src/web_app_window.py:262
+msgid "Yes"
+msgstr "Ja"
+
+#: src/web_app_window.py:262
+msgid "No"
+msgstr "Nein"
+
+#: src/web_app_window.py:289
+msgid "Save File"
+msgstr "Datei speichern"
+
+#: src/window.py:54
+msgid "Install websites as desktop applications"
+msgstr "Installieren Sie Websites als Desktop Anwendungen"
+
+#: src/window.py:67
+msgid "About"
+msgstr "Über"
+
+#: src/window.py:70 src/window.py:231
+msgid "Report Broken Website"
+msgstr "Kaputte Website melden"
+
+#: src/window.py:72
+msgid "Quit"
+msgstr "Verlassen"
+
+#: src/window.py:85
+msgid "Your Web Apps"
+msgstr "Ihre Web Apps"
+
+#: src/window.py:101
+msgid "No Web Apps installed"
+msgstr "Keine Web Apps installiert"
+
+#: src/window.py:102
+msgid "Press the Add Web App button to create one"
+msgstr ""
+"Drücken Sie den Web App hinzufügen Knopf um eine Web App zu installieren"
+
+#. Translators: Keep the {} as it is
+#: src/window.py:138
+msgid "File {} broken! Maybe it was modified locally?"
+msgstr "Datei {} kaputt! Vielleicht wurde sie lokal bearbeitet?"
+
+#: src/window.py:144
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/window.py:149
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: src/window.py:212
+msgid "Incomplete report"
+msgstr "Bericht unvollständig"
+
+#: src/window.py:213
+msgid ""
+"Please enter the URL and a detailed description (atleast 200 characters) of "
+"the issue in English to help resolve it faster. Please make sure to mention "
+"your desktop environment and distro."
+msgstr ""
+"Bitte geben Sie das URL und eine detaillierte Beschreibung (mindestens 200 "
+"Zeichen, in Englisch) des Problems ein um die Lösung zu beschleunigen. Bitte "
+"versichern Sie sich, dass Sie Ihre Desktop Umgebung und Distribution mit "
+"angeben."
+
+#: src/window.py:243
+msgid "Website broken?"
+msgstr "Website funktioniert nicht?"
+
+#: src/window.py:256
+msgid "I can't install the website"
+msgstr "Ich kann die Website nicht installieren"
+
+#: src/window.py:261
+msgid "The website is not opening/ working"
+msgstr "Die Website öffnet nicht/funktioniert nicht"
+
+#: src/window.py:267
+msgid "Enter details"
+msgstr "Details eintragen"
+
+#: src/window.py:273 src/window.py:275
+msgid "Submit"
+msgstr "Einreichen"
+
+#: data/net.codelogistics.webapps.appdata.xml.in:21
+msgid ""
+"Install websites as desktop apps, so that they appear in their own windows "
+"separate from any browsers installed. This is similar to the \"Install as "
+"App\" feature found in popular web browsers. It uses an internal browser "
+"isolated from the system browser, which can optionally be used in incognito "
+"mode. Links to websites other than the one installed open in a new browser "
+"window."
+msgstr ""
+"Installieren Sie Websites als Desktop Anwendungen, damit sie in von "
+"jeglichen Browsern getrennten, seperaten Fenstern angezeigt werden. "
+"Vergleichbar mit der “Als App installieren” Funktion aus bekannten Browsern. "
+"Web Apps nutzt einen internen Browser, isoliert von Browsern des Systems, "
+"der optional auch im Inkognito Modus genutzt werden kann. Links zu anderen "
+"Websites werden im Systembrowser geöffnet."
