@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-26 21:00+0530\n"
-"PO-Revision-Date: 2024-07-11 15:32+0200\n"
+"PO-Revision-Date: 2024-07-11 15:40+0200\n"
 "Last-Translator: Konstantin Tutsch <mail@konstantintutsch.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -53,7 +53,7 @@ msgstr "Installieren Sie Websites als Apps"
 #. Translators: add your name here
 #: src/main.py:138
 msgid "Satvik Patwardhan"
-msgstr "Konstantin Tutsch"
+msgstr "Konstantin Tutsch <mail@konstantintutsch.com>"
 
 #: src/parse_webpage.py:46
 msgid "Error accessing URL:"
