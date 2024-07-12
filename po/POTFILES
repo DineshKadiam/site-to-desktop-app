@@ -4,5 +4,8 @@ data/net.codelogistics.webapps.gschema.xml
 src/main.py
 src/window.py
 src/create_desktop_file.py
-src/edit_webapp_window.py
+src/edit_web_app_dialog.py
+src/create_web_app_dialog.py
 src/web_app_window.py
+src/url_dialog.py
+src/web_app_properties.py

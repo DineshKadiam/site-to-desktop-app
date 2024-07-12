@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-26 21:00+0530\n"
+"POT-Creation-Date: 2024-07-12 21:44+0530\n"
 "PO-Revision-Date: 2024-06-26 21:36+0530\n"
 "Last-Translator: Satvik Patwardhan <eyekay@codelogistics.net>\n"
 "Language-Team: English\n"
@@ -16,7 +16,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 46.1\n"
 
-#: src/create_web_app_dialog.py:36 src/url_dialog.py:41 src/window.py:60
+#. Translators: Do not translate portal
+#: src/create_desktop_file.py:64
+#, fuzzy
+msgid "Portal error:"
+msgstr "Errore Portal: "
+
+#: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
 msgstr "Aggiungi Web app"
 
@@ -40,35 +46,35 @@ msgstr "Salva"
 msgid "Save changes to the web app"
 msgstr "Salva le modifiche nella web app"
 
-#: src/main.py:127 src/window.py:53
+#: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
 msgstr ""
 
-#: src/main.py:128 data/net.codelogistics.webapps.appdata.xml.in:6
+#: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
 msgstr "Installa siti Web come app"
 
 #. Translators: add your name here
-#: src/main.py:138
+#: src/main.py:161
 msgid "Satvik Patwardhan"
 msgstr "Albano Battistella <albanobattistella@gmail.com>"
 
-#: src/parse_webpage.py:46
+#: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
 msgstr "Errore durante l'accesso all'URL:"
 
 #. SECRET google api. Do not trust.
-#: src/parse_webpage.py:69
+#: src/parse_webpage.py:92
 msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
-"Le API di Google per le icone preferite in uso... se l'icona preferita corretta non è visibile "
-"per favore, invia una segnalazione di bug!"
+"Le API di Google per le icone preferite in uso... se l'icona preferita "
+"corretta non è visibile per favore, invia una segnalazione di bug!"
 
-#: src/url_dialog.py:55 src/url_dialog.py:62 src/window.py:250
+#: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
 msgstr "Inserire URL"
 
@@ -76,60 +82,56 @@ msgstr "Inserire URL"
 msgid "Add"
 msgstr "Aggiungi"
 
-#: src/url_dialog.py:86
-msgid "Loading..."
-msgstr "Caricamento in corso..."
-
 #. title not found by html parser
-#: src/url_dialog.py:126
+#: src/url_dialog.py:140
 msgid "New Web App"
 msgstr "Nuova Web app"
 
-#: src/web_app_properties.py:46
+#: src/web_app_properties.py:47
 msgid "Browse Icon"
 msgstr "Sfoglia icona"
 
-#: src/web_app_properties.py:60
+#: src/web_app_properties.py:61
 msgid "Name"
 msgstr "Nome"
 
-#: src/web_app_properties.py:69
+#: src/web_app_properties.py:70
 msgid "URL"
 msgstr "URL"
 
-#: src/web_app_properties.py:75
+#: src/web_app_properties.py:76
 msgid "Show Navigation Options"
 msgstr "Mostra opzioni di navigazione"
 
-#: src/web_app_properties.py:76
+#: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
 msgstr "Mostra i pulsanti per indietro, avanti e ricarica."
 
-#: src/web_app_properties.py:82
+#: src/web_app_properties.py:83
 msgid "Domain Matching"
 msgstr "Corrispondenza del dominio"
 
-#: src/web_app_properties.py:83
+#: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
 msgstr "Imposta quali siti Web potranno essere caricati nell'app Web."
 
-#: src/web_app_properties.py:85
+#: src/web_app_properties.py:86
 msgid "Domain and subdomains"
 msgstr "Dominio e sottodomini"
 
-#: src/web_app_properties.py:86
+#: src/web_app_properties.py:87
 msgid "Domain only"
 msgstr "Solo dominio"
 
-#: src/web_app_properties.py:87
+#: src/web_app_properties.py:88
 msgid "Allow all"
 msgstr "Consenti tutto"
 
-#: src/web_app_properties.py:94
+#: src/web_app_properties.py:95
 msgid "Show Loading Bars"
 msgstr "Mostra barre di caricamento"
 
-#: src/web_app_properties.py:95
+#: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
@@ -137,128 +139,135 @@ msgstr ""
 "Una barra di caricamento sarà visibile nella parte superiore della pagina "
 "Web quando viene caricata."
 
-#: src/web_app_properties.py:102
+#: src/web_app_properties.py:103
 msgid "Enable JavaScript"
 msgstr "Abilitare JavaScript"
 
-#: src/web_app_properties.py:103
+#: src/web_app_properties.py:104
 msgid "Enable web scripting."
 msgstr "Abilita script web."
 
-#: src/web_app_properties.py:110
+#: src/web_app_properties.py:111
 msgid "Incognito Browsing"
 msgstr "Navigazione in incognito"
 
-#: src/web_app_properties.py:111
+#: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
 msgstr "I cookie e altri dati non verranno memorizzati."
 
-#: src/web_app_properties.py:117
+#: src/web_app_properties.py:118
 msgid "User Agent"
 msgstr ""
 
 #. Translators: this is for going back in the browser
-#: src/web_app_window.py:96
+#: src/web_app_window.py:98
 msgid "Back"
 msgstr "Indietro"
 
 #. Translators: this is for going back in the browser
-#: src/web_app_window.py:104
+#: src/web_app_window.py:107
 msgid "Forward"
 msgstr "Avanti"
 
-#: src/web_app_window.py:111 src/web_app_window.py:144
-#: src/web_app_window.py:167
+#: src/web_app_window.py:115 src/web_app_window.py:157
+#: src/web_app_window.py:180
 msgid "Reload"
 msgstr "Ricarica"
 
-#: src/web_app_window.py:149 src/web_app_window.py:163
+#: src/web_app_window.py:149
+#, fuzzy
+msgid "Install launcher"
+msgstr "Installa"
+
+#: src/web_app_window.py:149
+msgid ""
+"Due to a change in the way web apps are installed, you will be asked to re-"
+"install this web app's launcher."
+msgstr ""
+
+#: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
 msgstr "Ferma"
 
 #. Translators: {} is the url of the website and it is necessary!
-#: src/web_app_window.py:249
+#: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
 msgstr "Consentire a {} l'accesso alla tua posizione?"
 
 #. Translators: {} is the url of the website and it is necessary!
-#: src/web_app_window.py:252
+#: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
 msgstr "Consentire a {} di inviare notifiche?"
 
 #. Translators: {} is the url of the website and it is necessary!
-#: src/web_app_window.py:255
+#: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
 msgstr "Consentire a {} di installare e utilizzare DRM?"
 
 #. Translators: {} is the url of the website and it is necessary!
-#: src/web_app_window.py:258
+#: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
 msgstr "Consentire a {} di accedere agli appunti?"
 
 #. Translators: {} is the url of the website and it is necessary!
-#: src/web_app_window.py:261
+#: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
 msgstr "Consentire a {} di accedere al microfono e/o alla fotocamera?"
 
-#: src/web_app_window.py:262
+#: src/web_app_window.py:275
 msgid "Yes"
 msgstr "Si"
 
-#: src/web_app_window.py:262
+#: src/web_app_window.py:275
 msgid "No"
 msgstr "No"
 
-#: src/web_app_window.py:289
+#: src/web_app_window.py:302
 msgid "Save File"
 msgstr "Salva file"
 
-#: src/window.py:54
-msgid "Install websites as desktop applications"
-msgstr "Installa siti Web come applicazioni desktop"
-
 #: src/window.py:67
+msgid "Main Menu"
+msgstr ""
+
+#: src/window.py:71
 msgid "About"
 msgstr "Informazioni"
 
-#: src/window.py:70 src/window.py:231
+#: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
 msgstr "Segnala un sito web non funzionante"
 
-#: src/window.py:72
-msgid "Quit"
-msgstr "Esci"
-
-#: src/window.py:85
+#: src/window.py:97
 msgid "Your Web Apps"
 msgstr "Le tue Web app"
 
-#: src/window.py:101
+#: src/window.py:114
 msgid "No Web Apps installed"
 msgstr "Nessuna Web app installata"
 
-#: src/window.py:102
+#: src/window.py:115
 msgid "Press the Add Web App button to create one"
 msgstr "Premi il pulsante Aggiungi Web App per crearne una"
 
 #. Translators: Keep the {} as it is
-#: src/window.py:138
+#: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
 msgstr "File {} corrotto! Forse è stato modificato localmente?"
 
-#: src/window.py:144
+#: src/window.py:160
 msgid "Delete"
 msgstr "Elimina"
 
-#: src/window.py:149
+#: src/window.py:165
 msgid "Edit"
 msgstr "Modifica"
 
-#: src/window.py:212
+#: src/window.py:228
 msgid "Incomplete report"
 msgstr "Rapporto incompleto"
 
-#: src/window.py:213
+#: src/window.py:229
 msgid ""
 "Please enter the URL and a detailed description (atleast 200 characters) of "
 "the issue in English to help resolve it faster. Please make sure to mention "
@@ -268,34 +277,32 @@ msgstr ""
 "problema in inglese per aiutarti a risolverlo più velocemente. Assicurati di "
 "menzionare il tuo ambiente desktop e la tua distribuzione."
 
-#: src/window.py:243
+#: src/window.py:259
 msgid "Website broken?"
 msgstr "Sito we non funzionante?"
 
-#: src/window.py:256
+#: src/window.py:272
 msgid "I can't install the website"
 msgstr "Non riesco a installare il sito web"
 
-#: src/window.py:261
+#: src/window.py:277
 msgid "The website is not opening/ working"
 msgstr "Il sito web non si apre/non funziona"
 
-#: src/window.py:267
+#: src/window.py:283
 msgid "Enter details"
 msgstr "Inserisci i dettagli"
 
-#: src/window.py:273 src/window.py:275
+#: src/window.py:289 src/window.py:291
 msgid "Submit"
 msgstr "Invia"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
+#, fuzzy
 msgid ""
 "Install websites as desktop apps, so that they appear in their own windows "
 "separate from any browsers installed. This is similar to the \"Install as "
-"App\" feature found in popular web browsers. It uses an internal browser "
-"isolated from the system browser, which can optionally be used in incognito "
-"mode. Links to websites other than the one installed open in a new browser "
-"window."
+"App\" feature found in popular web browsers."
 msgstr ""
 "Installa i siti web come app desktop, in modo che vengano visualizzati nelle "
 "rispettive finestre separato da qualsiasi browser installato. È simile a "
@@ -303,6 +310,29 @@ msgstr ""
 "browser interno isolato dal browser di sistema, che può essere utilizzato "
 "facoltativamente in modalità incognito. Collegamenti a siti web diversi da "
 "quello installato si aprono in un nuova finestra del browser."
+
+#: data/net.codelogistics.webapps.appdata.xml.in:25
+#, fuzzy
+msgid ""
+"It uses an internal browser isolated from the system browser, which can "
+"optionally be used in incognito mode. Links to websites other than the one "
+"installed open in a new browser window."
+msgstr ""
+"Installa i siti web come app desktop, in modo che vengano visualizzati nelle "
+"rispettive finestre separato da qualsiasi browser installato. È simile a "
+"\"Installa come App\" presente nei browser Web più diffusi. Utilizza un "
+"browser interno isolato dal browser di sistema, che può essere utilizzato "
+"facoltativamente in modalità incognito. Collegamenti a siti web diversi da "
+"quello installato si aprono in un nuova finestra del browser."
+
+#~ msgid "Loading..."
+#~ msgstr "Caricamento in corso..."
+
+#~ msgid "Install websites as desktop applications"
+#~ msgstr "Installa siti Web come applicazioni desktop"
+
+#~ msgid "Quit"
+#~ msgstr "Esci"
 
 #~ msgid "Default Favicon"
 #~ msgstr "Icona preferita predefinita"
@@ -319,9 +349,6 @@ msgstr ""
 #~ msgid "Set the icon for the web app (must be a PNG less than 512x512)"
 #~ msgstr ""
 #~ "Imposta l'icona per la web app (deve essere un PNG inferiore a 512x512)"
-
-#~ msgid "Portal error: "
-#~ msgstr "Errore Portal: "
 
 #~ msgid "Add manually (if above doesn't work)"
 #~ msgstr "Aggiungi manualmente (se sopra non funziona)"
