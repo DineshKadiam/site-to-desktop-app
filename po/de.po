@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-11 15:40+0200\n"
+"PO-Revision-Date: 2024-07-12 18:41+0200\n"
 "Last-Translator: Konstantin Tutsch <mail@konstantintutsch.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr ""
+msgstr "Portal Error:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
@@ -88,7 +88,7 @@ msgstr "Neue Web App"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr "Übersichstsicon"
+msgstr "Icon auswählen"
 
 #: src/web_app_properties.py:61
 msgid "Name"
@@ -124,7 +124,7 @@ msgstr "Nur Domain"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr "Alle"
+msgstr "Alle erlauben"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
@@ -172,15 +172,17 @@ msgid "Reload"
 msgstr "Aktualisieren"
 
 #: src/web_app_window.py:149
-#, fuzzy
 msgid "Install launcher"
-msgstr "Installieren"
+msgstr "Launcher installieren"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"Auf Grund von Änderungen in der Installation von Web Apps ist eine "
+"Reinstallation dieser Web App nötig. Bitte reinstallieren Sie diese Web App "
+"bei Gelegenheit."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
@@ -225,7 +227,7 @@ msgstr "Datei speichern"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Hauptmenü"
 
 #: src/window.py:71
 msgid "About"
@@ -233,7 +235,7 @@ msgstr "Über"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
-msgstr "Kaputte Website melden"
+msgstr "Defekte Website melden"
 
 #: src/window.py:97
 msgid "Your Web Apps"
@@ -297,29 +299,21 @@ msgid "Submit"
 msgstr "Einreichen"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
-#, fuzzy
 msgid ""
 "Install websites as desktop apps, so that they appear in their own windows "
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
-"Installieren Sie Websites als Desktop Anwendungen, damit sie in von "
-"jeglichen Browsern getrennten, seperaten Fenstern angezeigt werden. "
-"Vergleichbar mit der “Als App installieren” Funktion aus bekannten Browsern. "
-"Web Apps nutzt einen internen Browser, isoliert von Browsern des Systems, "
-"der optional auch im Inkognito Modus genutzt werden kann. Links zu anderen "
-"Websites werden im Systembrowser geöffnet."
+"Installieren Sie Websites als Desktop Anwendungen: getrennt von bereits "
+"installierten Browsern, in seperaten Fenstern angezeigt. Vergleichbar mit "
+"der Funktion “Als App installieren” aus prominenten Browsern."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
-#, fuzzy
 msgid ""
 "It uses an internal browser isolated from the system browser, which can "
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
-"Installieren Sie Websites als Desktop Anwendungen, damit sie in von "
-"jeglichen Browsern getrennten, seperaten Fenstern angezeigt werden. "
-"Vergleichbar mit der “Als App installieren” Funktion aus bekannten Browsern. "
 "Web Apps nutzt einen internen Browser, isoliert von Browsern des Systems, "
 "der optional auch im Inkognito Modus genutzt werden kann. Links zu anderen "
 "Websites werden im Systembrowser geöffnet."
