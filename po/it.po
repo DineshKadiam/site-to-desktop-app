@@ -6,9 +6,9 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-06-26 21:36+0530\n"
-"Last-Translator: Satvik Patwardhan <eyekay@codelogistics.net>\n"
-"Language-Team: English\n"
+"PO-Revision-Date: 2024-07-13 09:36+0200\n"
+"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
+"Language-Team: Italian\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,9 +18,8 @@ msgstr ""
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
-#, fuzzy
 msgid "Portal error:"
-msgstr "Errore Portal: "
+msgstr "Errore del portale:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
@@ -175,15 +174,16 @@ msgid "Reload"
 msgstr "Ricarica"
 
 #: src/web_app_window.py:149
-#, fuzzy
 msgid "Install launcher"
-msgstr "Installa"
+msgstr "Installa lanciatore"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"A causa di un cambiamento nel modo in cui vengono installate le app Web, ti verrà chiesto di ri-"
+"installa il launcher di questa web app."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
@@ -228,7 +228,7 @@ msgstr "Salva file"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Menù principale"
 
 #: src/window.py:71
 msgid "About"
@@ -298,32 +298,24 @@ msgid "Submit"
 msgstr "Invia"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
-#, fuzzy
 msgid ""
 "Install websites as desktop apps, so that they appear in their own windows "
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
-"Installa i siti web come app desktop, in modo che vengano visualizzati nelle "
-"rispettive finestre separato da qualsiasi browser installato. È simile a "
-"\"Installa come App\" presente nei browser Web più diffusi. Utilizza un "
-"browser interno isolato dal browser di sistema, che può essere utilizzato "
-"facoltativamente in modalità incognito. Collegamenti a siti web diversi da "
-"quello installato si aprono in un nuova finestra del browser."
+"Installa i siti web come app desktop, in modo che vengano visualizzati nelle rispettive finestre "
+"separate da qualsiasi browser installato. È simile a \"Installa come "
+"funzionalità "App\" presente nei browser Web più diffusi."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
-#, fuzzy
 msgid ""
 "It uses an internal browser isolated from the system browser, which can "
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
-"Installa i siti web come app desktop, in modo che vengano visualizzati nelle "
-"rispettive finestre separato da qualsiasi browser installato. È simile a "
-"\"Installa come App\" presente nei browser Web più diffusi. Utilizza un "
-"browser interno isolato dal browser di sistema, che può essere utilizzato "
-"facoltativamente in modalità incognito. Collegamenti a siti web diversi da "
-"quello installato si aprono in un nuova finestra del browser."
+"Utilizza un browser interno isolato dal browser di sistema, che può "
+"utilizzato facoltativamente in modalità di navigazione in incognito. Collegamenti a siti web diversi da quello "
+"installato aperto in una nuova finestra del browser."
 
 #~ msgid "Loading..."
 #~ msgstr "Caricamento in corso..."
