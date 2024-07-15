@@ -59,7 +59,7 @@ msgstr "Semicov"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "Ошибка доступа к URL:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -67,6 +67,8 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"Используется Google API для фавиконов... если правильный фавикон не отображается, "
+"пожалуйста, напишите сообщение об ошибке!"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
@@ -89,7 +91,7 @@ msgstr "Обзор"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 #: src/web_app_properties.py:70
 msgid "URL"
@@ -109,7 +111,7 @@ msgstr "Сопоставление доменов"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr "Определить домены, разрешённые для загрузки в веб-приложении."
+msgstr "Определить домены для загрузки в веб-приложении."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
@@ -153,7 +155,7 @@ msgstr "Файлы cookie и другие данные не будут сохр�
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
-msgstr ""
+msgstr "User Agent"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
@@ -180,6 +182,8 @@ msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"Из-за изменения в способе установки веб-приложений, вам будет предложено "
+"переустановить ярлык этого веб-приложения."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
@@ -224,7 +228,7 @@ msgstr "Сохранить файл"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Главное меню"
 
 #: src/window.py:71
 msgid "About"
@@ -249,7 +253,7 @@ msgstr "Нажмите кнопку «Добавить веб-приложени
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "Файл {} повреждён! Может быть, он был изменён локально?"
 
 #: src/window.py:160
 msgid "Delete"
