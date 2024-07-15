@@ -67,8 +67,8 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
-"Используется Google API для фавиконов... если правильный фавикон не отображается, "
-"пожалуйста, напишите сообщение об ошибке!"
+"Используется Google API для значков ... если правильный значок не отображается, "
+"пожалуйста, отправьте сообщение об ошибке!"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
