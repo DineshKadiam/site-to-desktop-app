@@ -59,7 +59,7 @@ msgstr "Semicov"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "Помилка доступу до URL:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -67,6 +67,8 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"Використовується API Google для іконок... якщо правильна іконка не відображається, "
+"будь ласка, повідомте про помилку!"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
@@ -153,7 +155,7 @@ msgstr "Файли cookie та інші дані не будуть зберіг�
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
-msgstr ""
+msgstr "User Agent"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
@@ -180,6 +182,8 @@ msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"Через зміну в способі встановлення веб-додатків, вам буде запропоновано "
+"перевстановити ярлик цього веб-додатка."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
@@ -224,7 +228,7 @@ msgstr "Зберегти файл"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Головне меню"
 
 #: src/window.py:71
 msgid "About"
@@ -249,7 +253,7 @@ msgstr "Натисніть кнопку «Додати веб-додаток», 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "Файл {} пошкоджено! Можливо, він був змінений локально?"
 
 #: src/window.py:160
 msgid "Delete"
