@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-15 12:07+0000\n"
+"PO-Revision-Date: 2024-07-16 14:16+0000\n"
 "Last-Translator: eyekay <eyekay@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Hindi <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/hi/>\n"
@@ -24,7 +24,7 @@ msgstr "पोर्टल समस्या:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr "नया वेब ऐप"
+msgstr "वेब ऐप जोड़ें"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
