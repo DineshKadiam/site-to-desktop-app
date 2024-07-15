@@ -305,7 +305,7 @@ msgid ""
 msgstr ""
 "Installa i siti web come app desktop, in modo che vengano visualizzati nelle rispettive finestre "
 "separate da qualsiasi browser installato. È simile a \"Installa come "
-"funzionalità "App\" presente nei browser Web più diffusi."
+"funzionalità \"App\" presente nei browser Web più diffusi."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
