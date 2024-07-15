@@ -6,21 +6,21 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-06-26 21:19+0530\n"
-"Last-Translator: Satvik Patwardhan <eyekay@codelogistics.net>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2024-07-15 12:07+0000\n"
+"Last-Translator: eyekay <eyekay@users.noreply.translate.codeberg.org>\n"
+"Language-Team: Hindi <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/hi/>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
-#, fuzzy
 msgid "Portal error:"
-msgstr "पोर्टल समस्या: "
+msgstr "पोर्टल समस्या:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
@@ -59,7 +59,7 @@ msgstr "वेबसाइटों को ऐप के रूप में स
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr "सात्विक पटवर्धन "
+msgstr "सात्विक पटवर्धन"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
@@ -93,7 +93,7 @@ msgstr "आईकन का चयन करें"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr "नाम "
+msgstr "नाम"
 
 #: src/web_app_properties.py:70
 msgid "URL"
@@ -173,15 +173,16 @@ msgid "Reload"
 msgstr "पुनः लोड"
 
 #: src/web_app_window.py:149
-#, fuzzy
 msgid "Install launcher"
-msgstr "स्थापित करें"
+msgstr "लांचर स्थापित करें"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"वेब ऐप स्थापित करने के प्रक्रिया में बदलाव के कारण आपसे वेब ऐप को पुनः स्थापि"
+"त किये जाने की अनुमति मांगी जाएगी।"
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
@@ -226,7 +227,7 @@ msgstr "फ़ाइल सहेजें"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "मुख्य मेनू"
 
 #: src/window.py:71
 msgid "About"
@@ -295,30 +296,24 @@ msgid "Submit"
 msgstr "सबमिट करें"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
-#, fuzzy
 msgid ""
 "Install websites as desktop apps, so that they appear in their own windows "
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
-"वेबसाइटों को डेस्कटॉप ऐप के रूप में इंस्टॉल करें, ताकि वे किसी भी इंस्टॉल किए गए ब्राउज़र से "
-"अलग अपनी विंडो में दिखाई दें। यह कुछ वेब ब्राउज़रों में पाए जाने वाले ऐप के रूप में इंस्टॉल करने "
-"के सुविधा के समान है। यह सिस्टम ब्राउज़र से अलग एक आंतरिक ब्राउज़र का उपयोग करता है, जिसे "
-"गुप्त मोड में भी उपयोग किया जा सकता है। इंस्टॉल की गई वेबसाइट के अलावा अन्य वेबसाइटों के "
-"लिंक एक नए ब्राउज़र विंडो में खुलते हैं।"
+"वेबसाइटों को डेस्कटॉप ऐप के रूप में इंस्टॉल करें, ताकि वे किसी भी इंस्टॉल कि"
+"ए गए ब्राउज़र से अलग अपनी विंडो में दिखाई दें। यह कुछ वेब ब्राउज़रों में पाए "
+"जाने वाले ऐप के रूप में इंस्टॉल करने के सुविधा के समान है।"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
-#, fuzzy
 msgid ""
 "It uses an internal browser isolated from the system browser, which can "
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
-"वेबसाइटों को डेस्कटॉप ऐप के रूप में इंस्टॉल करें, ताकि वे किसी भी इंस्टॉल किए गए ब्राउज़र से "
-"अलग अपनी विंडो में दिखाई दें। यह कुछ वेब ब्राउज़रों में पाए जाने वाले ऐप के रूप में इंस्टॉल करने "
-"के सुविधा के समान है। यह सिस्टम ब्राउज़र से अलग एक आंतरिक ब्राउज़र का उपयोग करता है, जिसे "
-"गुप्त मोड में भी उपयोग किया जा सकता है। इंस्टॉल की गई वेबसाइट के अलावा अन्य वेबसाइटों के "
-"लिंक एक नए ब्राउज़र विंडो में खुलते हैं।"
+"यह सिस्टम ब्राउज़र से अलग एक आंतरिक ब्राउज़र का उपयोग करता है, जिसे गुप्त मो"
+"ड में भी उपयोग किया जा सकता है। इंस्टॉल की गई वेबसाइट के अलावा अन्य वेबसाइटों"
+" के लिंक एक नए ब्राउज़र विंडो में खुलते हैं।"
 
 #~ msgid "Loading..."
 #~ msgstr "लोड हो रहा है..."
