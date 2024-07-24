@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-07-24 20:00+0000\n"
+"Last-Translator: Napoleoon <Napoleoon@users.noreply.translate.codeberg.org>\n"
+"Language-Team: French <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
@@ -77,28 +80,28 @@ msgstr ""
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr ""
+msgstr "Nouvelle Web App"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr ""
+msgstr "Chercher une icône"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
-msgstr ""
+msgstr "Montrer les options de navigation"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
@@ -109,12 +112,13 @@ msgid "Domain Matching"
 msgstr ""
 
 #: src/web_app_properties.py:84
+#, fuzzy
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "Définir quels sites web seront autorisés à charger l'application web."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr ""
+msgstr "Domaine et sous-domaine"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
@@ -122,21 +126,23 @@ msgstr ""
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "Tout autoriser"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
-msgstr ""
+msgstr "Montrer les barres de chargement"
 
 #: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
 msgstr ""
+"Une barre de chargement sera visible en haut de la page web quand elle sera "
+"chargée."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "Activer JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
@@ -144,34 +150,38 @@ msgstr ""
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr ""
+msgstr "Recherche Incognito"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "Les cookies et autres données ne seront pas enregistrées."
 
 #: src/web_app_properties.py:118
+#, fuzzy
 msgid "User Agent"
-msgstr ""
+msgstr "Utilisateur"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
 msgid "Back"
-msgstr ""
+msgstr "Retour"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
+#, fuzzy
 msgid "Forward"
-msgstr ""
+msgstr "Suivant"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
+#, fuzzy
 msgid "Reload"
-msgstr ""
+msgstr "Actualiser"
 
 #: src/web_app_window.py:149
+#, fuzzy
 msgid "Install launcher"
-msgstr ""
+msgstr "Installer le lanceur"
 
 #: src/web_app_window.py:149
 msgid ""
