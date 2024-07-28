@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-24 20:00+0000\n"
+"PO-Revision-Date: 2024-07-27 12:18+0000\n"
 "Last-Translator: Napoleoon <Napoleoon@users.noreply.translate.codeberg.org>\n"
 "Language-Team: French <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/fr/>\n"
@@ -22,50 +22,50 @@ msgstr ""
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr ""
+msgstr "Portal error :"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "Ajouter une application Web"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "Installer"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "Créer une nouvelle application Web"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "Modifier l'application Web"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "Enregistrer les modifications apportées à l'application Web"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "Applications Web"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "Installer des sites web en tant qu'application"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "Michée Besson"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "Impossible d'accéder à l'URL :"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -73,10 +73,12 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"L'API Google pour les favicons est utilisée... si le favicon correct n'est "
+"pas visible, veuillez soumettre un rapport de bug !"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "Entrer URL"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
@@ -105,16 +107,17 @@ msgstr "Montrer les options de navigation"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr ""
+msgstr "Afficher les boutons pour revenir en arrière, avancer et recharger."
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr ""
+msgstr "Correspondance des domaines"
 
 #: src/web_app_properties.py:84
-#, fuzzy
 msgid "Set which websites will be allowed to load in the web app."
-msgstr "Définir quels sites web seront autorisés à charger l'application web."
+msgstr ""
+"Définir les sites web qui seront autorisés à être chargés dans l'application "
+"web."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
@@ -122,7 +125,7 @@ msgstr "Domaine et sous-domaine"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "Domaine seulement"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
@@ -146,7 +149,7 @@ msgstr "Activer JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "Activer les scripts web."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
@@ -157,9 +160,8 @@ msgid "Cookies and other data will not be stored."
 msgstr "Les cookies et autres données ne seront pas enregistrées."
 
 #: src/web_app_properties.py:118
-#, fuzzy
 msgid "User Agent"
-msgstr "Utilisateur"
+msgstr "Agent utilisateur"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
@@ -168,18 +170,15 @@ msgstr "Retour"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
-#, fuzzy
 msgid "Forward"
 msgstr "Suivant"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
-#, fuzzy
 msgid "Reload"
-msgstr "Actualiser"
+msgstr "Rafraîchir"
 
 #: src/web_app_window.py:149
-#, fuzzy
 msgid "Install launcher"
 msgstr "Installer le lanceur"
 
@@ -188,88 +187,91 @@ msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"En raison d'un changement dans la manière dont les applications web sont "
+"installées, il vous sera demandé de réinstaller le lanceur de cette "
+"application web."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
-msgstr ""
+msgstr "Arrêter"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "Autoriser {} à accéder à votre emplacement ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "Autoriser {} à envoyer des notifications ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "Autoriser {} à installer et à utiliser des DRM ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "Autoriser {} à accéder à votre presse-papiers ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "Autoriser {} à accéder à votre microphone et/ou à votre caméra ?"
 
 #: src/web_app_window.py:275
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: src/web_app_window.py:275
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: src/web_app_window.py:302
 msgid "Save File"
-msgstr ""
+msgstr "Enregistrer le fichier"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Menu principal"
 
 #: src/window.py:71
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
-msgstr ""
+msgstr "Signaler un site web dysfonctionnel"
 
 #: src/window.py:97
 msgid "Your Web Apps"
-msgstr ""
+msgstr "Vos applications Web"
 
 #: src/window.py:114
 msgid "No Web Apps installed"
-msgstr ""
+msgstr "Aucune application Web installée"
 
 #: src/window.py:115
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "Cliquez sur le bouton Ajouter une application Web pour en créer une"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "Fichier {} corrompu ! Peut-être a-t-il été modifié en local ?"
 
 #: src/window.py:160
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: src/window.py:165
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: src/window.py:228
 msgid "Incomplete report"
-msgstr ""
+msgstr "Signalement incomplet"
 
 #: src/window.py:229
 msgid ""
@@ -277,26 +279,29 @@ msgid ""
 "the issue in English to help resolve it faster. Please make sure to mention "
 "your desktop environment and distro."
 msgstr ""
+"Veuillez saisir l'URL et une description détaillée (au moins 200 caractères) "
+"du problème en anglais afin d'aider à le résoudre plus rapidement. Veillez à "
+"mentionner votre environnement de bureau et votre distro."
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr ""
+msgstr "Le site web ne fonctionne pas ?"
 
 #: src/window.py:272
 msgid "I can't install the website"
-msgstr ""
+msgstr "Je n'arrive pas à installer le site web"
 
 #: src/window.py:277
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "Le site web ne s'ouvre pas/ne fonctionne pas"
 
 #: src/window.py:283
 msgid "Enter details"
-msgstr ""
+msgstr "Saisir les détails"
 
 #: src/window.py:289 src/window.py:291
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
@@ -304,6 +309,11 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
+"Installer les sites web en tant qu'applications de bureau, de sorte qu'ils "
+"apparaissent dans leur propre fenêtre, indépendamment des navigateurs "
+"installés. Cette fonction est similaire à la fonction « Installer en tant "
+"qu'application » que l'on trouve dans les navigateurs web les plus "
+"populaires."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -311,3 +321,7 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
+"Cette application utilise un navigateur interne isolé du navigateur du "
+"système, et peut être utilisé en mode incognito (optionnel). Les liens vers "
+"des sites web autres que celui installé s'ouvrent dans une nouvelle fenêtre "
+"du navigateur principal installé sur le système."
