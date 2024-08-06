@@ -21,7 +21,8 @@ import os
 import gi
 import shutil
 
-from gi.repository import Gtk, Gdk, Gio, Adw
+gi.require_version('WebKit', '6.0')
+from gi.repository import Gtk, Gdk, Gio, Adw, WebKit
 
 class WebAppProperties(Adw.Bin):
     def __init__(self, edit = False, state = False, parent_window = None):
@@ -114,9 +115,12 @@ class WebAppProperties(Adw.Bin):
             self.incognito_row.set_active(state['incognito'])
         prefs_list.append(self.incognito_row)
 
+        webkit_settings = WebKit.Settings()
+        user_agent = webkit_settings.get_user_agent()
+        del(webkit_settings)
         self.user_agent_row = Adw.EntryRow()
         self.user_agent_row.set_title(_("User Agent"))
-        self.user_agent_row.set_text("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15")
+        self.user_agent_row.set_text(user_agent)
         if state and 'user_agent' in state:
             self.user_agent_row.set_text(state['user_agent'])
         prefs_list.append(self.user_agent_row)
