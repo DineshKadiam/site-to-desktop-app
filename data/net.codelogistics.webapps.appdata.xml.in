@@ -47,6 +47,17 @@
   </screenshots>
 
   <releases>
+    <release version="0.5.4" date="2024-08-19">
+      <description translate="no">
+        <ul>
+          <li>Added a "Send to Background" feature.</li>
+          <li>User agent is no longer hardcoded.</li>
+          <li>Favicons are now less likely to error out.</li>
+          <li>Updated UI.</li>
+          <li>Added Dutch, Turkish, Bengali and French translations.</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.3" date="2024-07-11">
       <description translate="no">
         <ul>
