@@ -115,13 +115,20 @@ class WebAppWindow(Adw.ApplicationWindow):
         self.reload_button.set_tooltip_text(_("Reload"))
         self.reload_button.set_icon_name("view-refresh-symbolic")
         self.reload_button.add_css_class("flat")
-        self.reload_button.connect("clicked", self.on_reload_clicked)
+        self.reload_button.connect("clicked", self.on_reload_clicked)\
+
+        self.hide_button = Gtk.Button()
+        self.hide_button.set_icon_name('background-app-symbolic')
+        self.hide_button.add_css_class('flat')
+        self.hide_button.set_tooltip_text(_("Send to Background"))
+        self.hide_button.connect("clicked", self.on_hide)
         
         toolbar.add_top_bar(headerbar)
         if state['show_navigation']:
             headerbar.pack_start(self.back_button)
             headerbar.pack_start(self.forward_button)
             headerbar.pack_start(self.reload_button)
+            headerbar.pack_end(self.hide_button)
 
         if 'user_agent' in state and state['user_agent']:
             settings.set_user_agent(state['user_agent'])
@@ -303,3 +310,6 @@ class WebAppWindow(Adw.ApplicationWindow):
         save_dialog.set_initial_name(filename)
         save_dialog.save(self, None, on_save)
         return True
+
+    def on_hide(self, button):
+        self.set_visible(False)

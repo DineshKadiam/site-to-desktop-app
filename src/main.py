@@ -61,6 +61,11 @@ class WebappsApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
+        windows = self.get_windows()
+        if len(windows) and windows[0].get_visible() == False:
+            windows[0].set_visible(True)
+            return
+        
         self.update_desktop_files()
 
         if len(os.listdir('.var/app/net.codelogistics.webapps/webapps/')) and not os.path.exists('.var/app/net.codelogistics.webapps/webapps/' + 'uuid_verified'):
