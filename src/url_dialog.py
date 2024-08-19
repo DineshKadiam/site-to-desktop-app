@@ -55,13 +55,13 @@ class URLDialog(Adw.Dialog):
         label.set_markup(_("Enter URL"))
         label.add_css_class("title-1")
         box.append(label)
-        box.append(Gtk.Label())
+        label.set_margin_bottom(8)
         
         self.url_entry = Gtk.Entry()
         self.url_entry.set_placeholder_text(_("Enter URL"))
         self.url_entry.connect("changed", self.enable_add_button)
         box.append(self.url_entry)
-        box.append(Gtk.Label())
+        self.url_entry.set_margin_bottom(8)
 
         self.add_button = Gtk.Button()
         self.add_button.set_sensitive(False)
@@ -75,7 +75,6 @@ class URLDialog(Adw.Dialog):
         app.create_action('add_webapp', self.add_webapp, ['Return'])
         box.append(self.add_button)
 
-        box.append(Gtk.Label())
         clamp.set_child(box)
 
         self.stack.add_named(clamp, "clamp")
@@ -83,8 +82,6 @@ class URLDialog(Adw.Dialog):
         loading_box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
         loading_box.set_vexpand(True)
         loading_box.set_valign(Gtk.Align.CENTER)
-
-        loading_box.append(Gtk.Label(label = " "))
 
         spinner = Gtk.Spinner()
         spinner.set_vexpand(True)

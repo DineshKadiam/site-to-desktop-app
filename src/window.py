@@ -81,8 +81,6 @@ class WebAppsWindow(Adw.ApplicationWindow):
         self.box.set_hexpand(True)
         self.box.set_halign(Gtk.Align.FILL)
 
-        self.box.append(Gtk.Label(label = "     "))
-
         self.scrolled = Gtk.ScrolledWindow()
         self.scrolled.set_vexpand(True)
         self.scrolled.set_valign(Gtk.Align.FILL)
@@ -90,16 +88,18 @@ class WebAppsWindow(Adw.ApplicationWindow):
         self.scrolled.set_hexpand(True)
 
         self.clamp = Adw.Clamp()
+        self.clamp.set_margin_top(8)
+        self.clamp.set_margin_bottom(8)
+        self.clamp.set_margin_start(8)
+        self.clamp.set_margin_end(8)
 
         rowbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        rowbox.append(Gtk.Label())
-
+        rowbox.set_margin_bottom(8)
         heading = Gtk.Label(label = _("Your Web Apps"))
         heading.add_css_class("heading")
         heading.set_halign(Gtk.Align.START)
         rowbox.append(heading)
-
-        rowbox.append(Gtk.Label())
+        heading.set_margin_bottom(8)
 
         self.apps_list = Gtk.ListBox()
         self.apps_list.add_css_class("boxed-list")
@@ -120,8 +120,6 @@ class WebAppsWindow(Adw.ApplicationWindow):
 
         else:
             self.box.append(self.no_webapps_page)
-
-        self.box.append(Gtk.Label(label = "     "))
 
         toolbar.set_content(self.box)
 
@@ -164,21 +162,18 @@ class WebAppsWindow(Adw.ApplicationWindow):
                 rows[i][2].set_icon_name('document-edit-symbolic')
                 rows[i][2].set_tooltip_text(_("Edit"))
                 rows[i][2].connect("clicked", self.edit_row, i[:-5])
+                rows[i][2].set_margin_end(8)
                 
                 box1 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-                box1.append(Gtk.Label()) # We add the box instead of the button directly to give padding as otherwise the button looks stretched.
                 box1.append(rows[i][1])
-                box1.append(Gtk.Label())
 
                 box2 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-                box2.append(Gtk.Label())
                 box2.append(rows[i][2])
-                box2.append(Gtk.Label())
 
                 box = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL)
                 box.append(box2)
-                box.append(Gtk.Label(label = '   '))
                 box.append(box1)
+                box.set_margin_top(8)
 
                 rows[i][0].add_suffix(box)
                 apps_list.append(rows[i][0])
@@ -258,14 +253,14 @@ class WebAppsWindow(Adw.ApplicationWindow):
         label = Gtk.Label()
         label.set_markup(_("Website broken?"))
         label.add_css_class("title-1")
+        label.set_margin_bottom(8)
         box.append(label)
-        box.append(Gtk.Label())
 
         url_entry = Gtk.Entry()
         url_entry.set_hexpand(True)
         url_entry.set_placeholder_text(_("Enter URL"))
+        url_entry.set_margin_bottom(8)
         box.append(url_entry)
-        box.append(Gtk.Label())
 
         app_creation_radio = Gtk.CheckButton()
         app_creation_radio.set_active(True)
@@ -275,14 +270,14 @@ class WebAppsWindow(Adw.ApplicationWindow):
         website_broken_radio = Gtk.CheckButton()
         website_broken_radio.set_group(app_creation_radio)
         website_broken_radio.set_label(_("The website is not opening/ working"))
+        website_broken_radio.set_margin_bottom(8)
         box.append(website_broken_radio)
 
-        box.append(Gtk.Label())
         details_text = Gtk.Entry()
         details_text.set_hexpand(True)
         details_text.set_placeholder_text(_("Enter details"))
+        details_text.set_margin_bottom(8)
         box.append(details_text)
-        box.append(Gtk.Label())
 
         submit_button = Gtk.Button()
         submit_button.set_vexpand(False)
@@ -292,7 +287,6 @@ class WebAppsWindow(Adw.ApplicationWindow):
         submit_button.add_css_class("suggested-action")
         submit_button.add_css_class("pill")
         box.append(submit_button)
-        box.append(Gtk.Label())
 
         clamp.set_child(box)
 

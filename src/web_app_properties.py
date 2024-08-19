@@ -38,8 +38,6 @@ class WebAppProperties(Adw.Bin):
         self.avatar.set_text(state['name'])
         box.append(self.avatar)
 
-        box.append(Gtk.Label(label = " "))
-
         select_icon_button = Gtk.Button()
         select_icon_button.set_hexpand(False)
         select_icon_button.set_halign(Gtk.Align.CENTER)
@@ -49,9 +47,8 @@ class WebAppProperties(Adw.Bin):
         button_content.set_icon_name("folder-open-symbolic")
         select_icon_button.set_child(button_content)
         select_icon_button.connect("clicked", self.choose_icon)
+        select_icon_button.set_margin_bottom(8)
         box.append(select_icon_button)
-
-        box.append(Gtk.Label(label = " "))
 
         prefs_clamp = Adw.Clamp()
         prefs_list = Gtk.ListBox()
@@ -127,8 +124,7 @@ class WebAppProperties(Adw.Bin):
 
         prefs_clamp.set_child(prefs_list)
         box.append(prefs_clamp)
-
-        box.append(Gtk.Label(label = " "))
+        prefs_clamp.set_margin_bottom(8)
         self.set_child(box)
 
         if not state['icon'] == '/tmp/tmp_webapps_icon.png':
