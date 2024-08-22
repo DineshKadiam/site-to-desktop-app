@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-27 12:18+0000\n"
-"Last-Translator: Napoleoon <Napoleoon@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2024-08-21 09:18+0000\n"
+"Last-Translator: rene-coty <rene-coty@users.noreply.translate.codeberg.org>\n"
 "Language-Team: French <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/fr/>\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr "Portal error :"
+msgstr "Erreur du portail :"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
@@ -38,7 +38,7 @@ msgstr "Créer une nouvelle application Web"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr "Modifier l'application Web"
+msgstr "Modifier l’application Web"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
@@ -46,7 +46,7 @@ msgstr "Enregistrer"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr "Enregistrer les modifications apportées à l'application Web"
+msgstr "Enregistrer les modifications apportées à l’application Web"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
@@ -56,7 +56,7 @@ msgstr "Applications Web"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr "Installer des sites web en tant qu'application"
+msgstr "Installer des sites web en tant qu’application"
 
 #. Translators: add your name here
 #: src/main.py:161
@@ -65,7 +65,7 @@ msgstr "Michée Besson"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr "Impossible d'accéder à l'URL :"
+msgstr "Impossible d’accéder à l’URL :"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -73,12 +73,12 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
-"L'API Google pour les favicons est utilisée... si le favicon correct n'est "
-"pas visible, veuillez soumettre un rapport de bug !"
+"L’API Google pour les favicônes est utilisée… si la favicône n’est pas "
+"visible, veuillez soumettre un rapport de bug !"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr "Entrer URL"
+msgstr "Entrer l’URL"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
@@ -87,7 +87,7 @@ msgstr "Ajouter"
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr "Nouvelle Web App"
+msgstr "Nouvelle application Web"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
@@ -116,7 +116,7 @@ msgstr "Correspondance des domaines"
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
 msgstr ""
-"Définir les sites web qui seront autorisés à être chargés dans l'application "
+"Définir les sites web qui seront autorisés à être chargés dans l’application "
 "web."
 
 #: src/web_app_properties.py:86
@@ -153,7 +153,7 @@ msgstr "Activer les scripts web."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr "Recherche Incognito"
+msgstr "Recherche incognito"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
@@ -187,7 +187,7 @@ msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
-"En raison d'un changement dans la manière dont les applications web sont "
+"En raison d’un changement dans la manière dont les applications web sont "
 "installées, il vous sera demandé de réinstaller le lanceur de cette "
 "application web."
 
@@ -198,27 +198,27 @@ msgstr "Arrêter"
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr "Autoriser {} à accéder à votre emplacement ?"
+msgstr "Autoriser {} à accéder à votre emplacement ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
-msgstr "Autoriser {} à envoyer des notifications ?"
+msgstr "Autoriser {} à envoyer des notifications ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
-msgstr "Autoriser {} à installer et à utiliser des DRM ?"
+msgstr "Autoriser {} à installer et à utiliser des DRM ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
-msgstr "Autoriser {} à accéder à votre presse-papiers ?"
+msgstr "Autoriser {} à accéder à votre presse-papiers ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr "Autoriser {} à accéder à votre microphone et/ou à votre caméra ?"
+msgstr "Autoriser {} à accéder à votre microphone et/ou à votre caméra ?"
 
 #: src/web_app_window.py:275
 msgid "Yes"
@@ -254,12 +254,12 @@ msgstr "Aucune application Web installée"
 
 #: src/window.py:115
 msgid "Press the Add Web App button to create one"
-msgstr "Cliquez sur le bouton Ajouter une application Web pour en créer une"
+msgstr "Cliquez sur le bouton « Ajouter une application Web » pour en créer une"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr "Fichier {} corrompu ! Peut-être a-t-il été modifié en local ?"
+msgstr "Fichier {} corrompu ! Peut-être a-t-il été modifié localement ?"
 
 #: src/window.py:160
 msgid "Delete"
@@ -279,21 +279,21 @@ msgid ""
 "the issue in English to help resolve it faster. Please make sure to mention "
 "your desktop environment and distro."
 msgstr ""
-"Veuillez saisir l'URL et une description détaillée (au moins 200 caractères) "
-"du problème en anglais afin d'aider à le résoudre plus rapidement. Veillez à "
-"mentionner votre environnement de bureau et votre distro."
+"Veuillez saisir l’URL et une description détaillée (au moins 200 caractères) "
+"du problème en anglais afin d’aider à le résoudre plus rapidement. Veillez à "
+"mentionner votre environnement de bureau et votre distribution."
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr "Le site web ne fonctionne pas ?"
+msgstr "Le site web ne fonctionne pas ?"
 
 #: src/window.py:272
 msgid "I can't install the website"
-msgstr "Je n'arrive pas à installer le site web"
+msgstr "Je n’arrive pas à installer le site web"
 
 #: src/window.py:277
 msgid "The website is not opening/ working"
-msgstr "Le site web ne s'ouvre pas/ne fonctionne pas"
+msgstr "Le site web ne s’ouvre pas/ne fonctionne pas"
 
 #: src/window.py:283
 msgid "Enter details"
@@ -309,11 +309,10 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
-"Installer les sites web en tant qu'applications de bureau, de sorte qu'ils "
+"Installer des sites web en tant qu’applications de bureau, de sorte qu’ils "
 "apparaissent dans leur propre fenêtre, indépendamment des navigateurs "
-"installés. Cette fonction est similaire à la fonction « Installer en tant "
-"qu'application » que l'on trouve dans les navigateurs web les plus "
-"populaires."
+"installés. Cette fonction est similaire à la fonction « Installer en tant qu’"
+"application » que l’on trouve dans les navigateurs web les plus populaires."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -323,5 +322,5 @@ msgid ""
 msgstr ""
 "Cette application utilise un navigateur interne isolé du navigateur du "
 "système, et peut être utilisé en mode incognito (optionnel). Les liens vers "
-"des sites web autres que celui installé s'ouvrent dans une nouvelle fenêtre "
+"des sites web autres que celui installé s’ouvrent dans une nouvelle fenêtre "
 "du navigateur principal installé sur le système."
