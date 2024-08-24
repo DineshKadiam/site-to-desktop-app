@@ -8,296 +8,303 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-08-24 16:15+0000\n"
+"Last-Translator: Outbreak2096 <Outbreak2096@users.noreply.translate.codeberg."
+"org>\n"
+"Language-Team: Chinese (Simplified) <https://translate.codeberg.org/projects/"
+"web-apps/web-apps/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr ""
+msgstr "门户错误："
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "添加 Web 应用"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "安装"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "创建新的 Web 应用"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "编辑 Web 应用"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "将更改保存到 Web 应用"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "Web 应用"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "将网站安装为应用"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "Outbreak2096"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "访问 URL 时出错："
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
 msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
-msgstr ""
+msgstr "正在使用 Google API 生成图标…如果无法看到正确的图标，请提交错误报告！"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "输入 URL"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "添加"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr ""
+msgstr "新 Web 应用"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr ""
+msgstr "浏览图标"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
-msgstr ""
+msgstr "显示导航选项"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr ""
+msgstr "显示后退、前进和重新加载按钮。"
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr ""
+msgstr "域名匹配"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "设置允许在 Web 应用中加载哪些网站。"
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr ""
+msgstr "域和子域"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "仅限域名"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "允许全部"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
-msgstr ""
+msgstr "显示加载栏"
 
 #: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "加载时，加载栏将显示在网页顶部。"
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "启用 JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "启用 Web 脚本。"
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr ""
+msgstr "隐身浏览"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "Cookie 和其他数据将不会存储。"
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
-msgstr ""
+msgstr "User Agent"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
 msgid "Back"
-msgstr ""
+msgstr "后退"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
 msgid "Forward"
-msgstr ""
+msgstr "前进"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
 msgid "Reload"
-msgstr ""
+msgstr "重新加载"
 
 #: src/web_app_window.py:149
 msgid "Install launcher"
-msgstr ""
+msgstr "安装启动程序"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
-msgstr ""
+msgstr "由于 Web 应用安装方式的更改，您将被要求重新安装此 Web 应用的启动程序。"
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "是否允许 {} 访问您的位置？"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "是否允许 {} 发送通知？"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "是否允许 {} 安装和使用 DRM？"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "是否允许 {} 访问您的剪贴板？"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "是否允许 {} 访问您的麦克风和/或相机？"
 
 #: src/web_app_window.py:275
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: src/web_app_window.py:275
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: src/web_app_window.py:302
 msgid "Save File"
-msgstr ""
+msgstr "保存文件"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: src/window.py:71
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
-msgstr ""
+msgstr "报告网站损坏"
 
 #: src/window.py:97
 msgid "Your Web Apps"
-msgstr ""
+msgstr "您的 Web 应用"
 
 #: src/window.py:114
 msgid "No Web Apps installed"
-msgstr ""
+msgstr "未安装 Web 应用"
 
 #: src/window.py:115
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "按“添加 Web 应用”按钮创建一个"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "文件 {} 已损坏！也许它是在本地修改的？"
 
 #: src/window.py:160
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: src/window.py:165
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: src/window.py:228
 msgid "Incomplete report"
-msgstr ""
+msgstr "报告不完整"
 
 #: src/window.py:229
 msgid ""
 "Please enter the URL and a detailed description (atleast 200 characters) of "
 "the issue in English to help resolve it faster. Please make sure to mention "
 "your desktop environment and distro."
-msgstr ""
+msgstr "请输入 URL 和问题的详细英文描述（至少 200 "
+"个字符），以帮助更快地解决问题。请务必提及您的桌面环境和发行版。"
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr ""
+msgstr "网站损坏了？"
 
 #: src/window.py:272
 msgid "I can't install the website"
-msgstr ""
+msgstr "我无法安装网站"
 
 #: src/window.py:277
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "网站无法打开/运行"
 
 #: src/window.py:283
 msgid "Enter details"
-msgstr ""
+msgstr "输入详细信息"
 
 #: src/window.py:289 src/window.py:291
 msgid "Submit"
-msgstr ""
+msgstr "提交"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
 "Install websites as desktop apps, so that they appear in their own windows "
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
-msgstr ""
+msgstr "将网站作为桌面应用安装，使其显示在独立的窗口中，与安装的任何浏览器分开。这与"
+"流行浏览器中“作为应用安装”的功能类似。"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
 "It uses an internal browser isolated from the system browser, which can "
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
-msgstr ""
+msgstr "它使用与系统浏览器隔离的内部浏览器，可选择在隐身模式下使用。指向已安装网站以"
+"外的网站链接将在新浏览器窗口中打开。"
