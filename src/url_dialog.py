@@ -101,10 +101,13 @@ class URLDialog(Adw.Dialog):
         self.connect("closed", self.cancelled)
 
     def enable_add_button(self, entry):
-        if entry.get_text().strip() != "" and entry.get_text().find(" ") == -1 and entry.get_text().find(".") != -1 and len(entry.get_text().rpartition(".")[-1]) >= 2:
-            self.add_button.set_sensitive(True)
-        else:
-            self.add_button.set_sensitive(False)
+        test_url = entry.get_text()
+        if test_url.strip() != "" and test_url.find(" ") == -1:
+            if (test_url.find(".") != -1 and len(test_url.rpartition(".")[-1]) >= 2) or ((test_url.startswith("http://") or test_url.startswith("https://")) and len(test_url[test_url.find("://")+3:]) >= 1):
+                self.add_button.set_sensitive(True)
+                return
+
+        self.add_button.set_sensitive(False)
 
     def add_webapp(self, button, data = None):
         if not self.add_button.get_sensitive(): # for the shortcut
