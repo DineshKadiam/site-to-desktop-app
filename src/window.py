@@ -153,12 +153,12 @@ class WebAppsWindow(Adw.ApplicationWindow):
                         continue
 
                 rows[i][0].set_title(tmpstate['name'])
-                rows[i][1].add_css_class('destructive-action')
+                rows[i][1].add_css_class('flat')
                 rows[i][1].set_icon_name('user-trash-symbolic')
                 rows[i][1].set_tooltip_text(_("Delete"))
                 rows[i][1].connect("clicked", self.delete_row, i[:-5])
 
-                rows[i][2].add_css_class('suggested-action')
+                rows[i][2].add_css_class('flat')
                 rows[i][2].set_icon_name('document-edit-symbolic')
                 rows[i][2].set_tooltip_text(_("Edit"))
                 rows[i][2].connect("clicked", self.edit_row, i[:-5])
