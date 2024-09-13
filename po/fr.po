@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-08-21 09:18+0000\n"
-"Last-Translator: rene-coty <rene-coty@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2024-09-14 22:18+0000\n"
+"Last-Translator: Napoleoon <Napoleoon@users.noreply.translate.codeberg.org>\n"
 "Language-Team: French <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.7.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
@@ -107,7 +107,8 @@ msgstr "Montrer les options de navigation"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr "Afficher les boutons pour revenir en arrière, avancer et recharger."
+msgstr ""
+"Afficher les boutons pour revenir en arrière, revenir et charger à nouveau."
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
@@ -198,7 +199,7 @@ msgstr "Arrêter"
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr "Autoriser {} à accéder à votre emplacement ?"
+msgstr "Autoriser {} à accéder à votre localisation ?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
@@ -259,7 +260,7 @@ msgstr "Cliquez sur le bouton « Ajouter une application Web » pour en créer
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr "Fichier {} corrompu ! Peut-être a-t-il été modifié localement ?"
+msgstr "Fichier {} corrompu ! Peut-être a-t-il été modifié en local ?"
 
 #: src/window.py:160
 msgid "Delete"
