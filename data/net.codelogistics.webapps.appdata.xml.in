@@ -48,6 +48,18 @@
   </screenshots>
 
   <releases>
+    <release version="0.5.5" date="2024-09-16">
+      <description translate="no">
+        <ul>
+          <li>Allow URLs like localhost as URLs for the web app.</li>
+          <li>Edit and delete icons are now monochrome as per GNOME HIG.</li>
+          <li>Minor UI fixes.</li>
+          <li>The link to Codeberg Weblate for translation is now visible in the appdata. (rene-coty)</li>
+          <li>Added Simplified Chinese translation. (Outbreak2096)</li>
+          <li>Updated French translations. (Napoleoon, rene-coty)</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.4" date="2024-08-19">
       <description translate="no">
         <ul>
