@@ -36,6 +36,8 @@ class WebAppProperties(Adw.Bin):
         self.avatar.set_size(128)
         self.avatar.set_show_initials(True)
         self.avatar.set_text(state['name'])
+        self.avatar.set_margin_top(8)
+        self.avatar.set_margin_bottom(8)
         box.append(self.avatar)
 
         select_icon_button = Gtk.Button()
