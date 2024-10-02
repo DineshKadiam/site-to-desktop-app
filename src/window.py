@@ -218,25 +218,17 @@ class WebAppsWindow(Adw.ApplicationWindow):
 
     def on_report_broken(self, app):
         def submit(button):
-            if url_entry.get_text() == '' or len(details_text.get_text()) < 200:
-                message = Adw.AlertDialog()
-                message.set_heading(_("Incomplete report"))
-                message.set_body(_("Please enter the URL and a detailed description (atleast 200 characters) of the issue in English to help resolve it faster. Please make sure to mention your desktop environment and distro."))
-                message.add_response('ok', 'OK')
-                message.present(broken_dialog)
-            
-            else:
-                title = '[Bug][Auto-generated]+' +  url_entry.get_text() + '+broken'
-                body = ''
-                if app_creation_radio.get_active():
-                    body += 'Cannot install the website ' + url_entry.get_text()
-                elif website_broken_radio.get_active():
-                    body += 'Website+' + url_entry.get_text() + '+broken'
+            title = '[Bug][Auto-generated]+' +  url_entry.get_text() + '+broken'
+            body = ''
+            if app_creation_radio.get_active():
+                body += 'Cannot install the website ' + url_entry.get_text()
+            elif website_broken_radio.get_active():
+                body += 'Website+' + url_entry.get_text() + '+broken'
 
-                body += '%0A%0A**Details:**%0A%0A' + details_text.get_text().replace(' ', '+').replace('"','\'')
-                os.system("xdg-open \"https://codeberg.org/eyekay/webapps/issues/new?title=" + title + "&body=" + body + "\"")
+            body += '%0A%0A**Distro:**%0A**Version:**%0A**Desktop environment:**%0A**Version:**%0A%0A**Details (in English):**%0A%0A'
+            os.system("xdg-open \"https://codeberg.org/eyekay/webapps/issues/new?title=" + title + "&body=" + body + "\"")
 
-                broken_dialog.close()
+            broken_dialog.close()
 
         broken_dialog = Adw.Dialog()
         broken_dialog.set_title(_("Report Broken Website"))
@@ -272,12 +264,6 @@ class WebAppsWindow(Adw.ApplicationWindow):
         website_broken_radio.set_label(_("The website is not opening/ working"))
         website_broken_radio.set_margin_bottom(8)
         box.append(website_broken_radio)
-
-        details_text = Gtk.Entry()
-        details_text.set_hexpand(True)
-        details_text.set_placeholder_text(_("Enter details"))
-        details_text.set_margin_bottom(8)
-        box.append(details_text)
 
         submit_button = Gtk.Button()
         submit_button.set_vexpand(False)
