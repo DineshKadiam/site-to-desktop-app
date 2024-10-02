@@ -6,15 +6,17 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-13 09:36+0200\n"
-"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
-"Language-Team: Italian\n"
-"Language: en\n"
+"PO-Revision-Date: 2024-10-03 18:31+0000\n"
+"Last-Translator: albanobattistella <albanobattistella@users.noreply.translate"
+".codeberg.org>\n"
+"Language-Team: Italian <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/it/>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
@@ -49,7 +51,7 @@ msgstr "Salva le modifiche nella web app"
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "Web Apps"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
