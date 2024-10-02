@@ -69,7 +69,7 @@ class CreateWebAppDialog(Adw.Dialog):
 
     def install_webapp(self, button, widgets):
 
-        app_id = str(uuid.uuid4())
+        app_id = 'webapp-' + str(uuid.uuid4())
 
         icon_path = '.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps.' + app_id + '.png'
         paintable = widgets[2].draw_to_texture(1)

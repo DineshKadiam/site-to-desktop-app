@@ -39,7 +39,11 @@ class WebappsApplication(Adw.Application):
 
     def __init__(self, args):
         if len(args) > 1 and args[1] + '.json' in os.listdir('.var/app/net.codelogistics.webapps/webapps/'):
-            super().__init__(application_id='net.codelogistics.webapps.' + args[1],
+            if args[1] + '.json' in os.listdir('.var/app/net.codelogistics.webapps/webapps/') and not args[1].startswith('webapp-'):
+            # not converted to new format yet, we accommodate it till it is updated
+                self.update_old_webapp(args[1])
+                args[1] = 'webapp-' + args[1]
+            super().__init__(application_id='net.codelogistics.webapps.webapp-' + args[1],
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         else:
             super().__init__(application_id='net.codelogistics.webapps.Webapps',
@@ -65,11 +69,6 @@ class WebappsApplication(Adw.Application):
         if len(windows) and windows[0].get_visible() == False:
             windows[0].set_visible(True)
             return
-        
-        self.update_desktop_files()
-
-        if len(os.listdir('.var/app/net.codelogistics.webapps/webapps/')) and not os.path.exists('.var/app/net.codelogistics.webapps/webapps/' + 'uuid_verified'):
-            self.update_old_webapps()
 
         with open('.var/app/net.codelogistics.webapps/webapps/' + 'uuid_verified', 'w') as f:
                 f.write('')
@@ -84,70 +83,46 @@ class WebappsApplication(Adw.Application):
             win = WebAppsWindow(application=self)
             win.present()
 
-    def update_old_webapps(self):
-        # update files in old format (name.json) to new format (uuid.json)
-        for i in os.listdir(os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/')):
-            if not i.endswith('json') or i.endswith('.permissions.json'):
-                continue
-            print('Updating {} to new format...', i)
-            app_id = str(uuid.uuid4())
-            i = i[:-5]
-            pre = os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/')
-            shutil.move(pre + i + '.json', pre + app_id + '.json')
-            with open(pre + app_id + '.json', 'r') as f:
-                config = json.load(f)
-            
-            config['app_id']  = app_id
+    def update_old_webapp(self, app_id):
+        # update files in old format (uuid.json) to new format (webapp-uuid.json)
+        # fix for when uuid begins with number, it is not a valid gnome application id for some reason.
+        print('Updating {} to newer format...', app_id)
+        with open('.var/app/net.codelogistics.webapps/webapps/' + app_id + '.json', 'r') as f:
+                state = json.load(f)
+        name = state['name']
+        with open('.var/app/net.codelogistics.webapps/webapps/' + app_id + '.json', 'w') as f:
+                state['icon'] = 'webapp-' + state['icon']
+                state['app_id'] = 'webapp-' + state['app_id']
+                json.dump(state, f)
+        i = app_id
+        new_i = 'webapp-' + app_id
+        pre = os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/')
+        shutil.move(pre + i + '.json', pre + new_i + '.json')
 
-            with open(pre + app_id + '.json', 'w') as f:
-                json.dump(config, f)
+        try:
+            shutil.move(pre + i + '.window', pre + new_i + '.window')
+        except Exception as e:
+            pass
+        try:
+            shutil.move(pre + i + '.cookies.txt', pre + new_i + '.cookies.txt')
+        except Exception as e:
+            pass
+        try:
+            shutil.move(pre + i + '.permissions.json', pre + new_i + '.permissions.json')
+        except Exception as e:
+            pass
+        try:
+            shutil.move(os.path.expanduser('~/.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps.') + i + '.png', os.path.expanduser('~/.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps.') + new_i + '.png')
+        except Exception as e:
+            pass
 
-            try:
-                shutil.move(pre + i + '.window', pre + app_id + '.window')
-            except Exception as e:
-                print(e)
-            try:
-                shutil.move(pre + i + '.cookies.txt', pre + app_id + '.cookies.txt')
-            except Exception as e:
-                print(e)
-            try:
-                shutil.move(pre + i + '.permissions.json', pre + app_id + '.permissions.json')
-            except Exception as e:
-                print(e)
-            try:
-                shutil.move(os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/icons/192x192/net.codelogistics.webapps.') + i + '.png', os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/icons/192x192/net.codelogistics.webapps.') + app_id + '.png')
-            except Exception as e:
-                print(e)
+        portal = Xdp.Portal()
+        try:
+            portal.dynamic_launcher_uninstall("net.codelogistics.webapps." + i + ".desktop")
+        except Exception as e:
+            print(e)
 
-            portal = Xdp.Portal()
-            try:
-                portal.dynamic_launcher_uninstall("net.codelogistics.webapps." + i + ".desktop")
-            except Exception as e:
-                print(e)
-
-            desktop_filer(self, app_id, i)
-
-    def update_desktop_files(self):
-        for i in os.listdir(os.path.expanduser("~/.local/share/applications")):
-            if i.startswith("net.codelogistics.webapps."):
-                if i[26:-8] + ".json" not in os.listdir(os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/')):
-                    try:
-                        os.remove(os.path.expanduser("~/.local/share/applications/") + i)
-                    except:
-                        pass
-
-                with open(os.path.expanduser("~/.local/share/applications/") + i, "r") as f:
-                    file = f.read()
-
-                if file.find("TryExec=") != -1:
-                    lines = file.split("\n")
-
-                    with open(os.path.expanduser("~/.local/share/applications/") + i, "w") as fo:
-                        for i in range(0, len(lines)):
-                            if lines[i].find("TryExec=") != -1:
-                                pass
-                            else:
-                                fo.write(lines[i] + "\n")
+        desktop_filer(self, new_i, name)
 
     def on_about_action(self, widget, data):
         """Callback for the app.about action."""
@@ -191,5 +166,6 @@ def main(version):
 
     app = WebappsApplication(args = sys.argv)
     return app.run()
+
 
 

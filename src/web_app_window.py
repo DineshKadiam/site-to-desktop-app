@@ -148,15 +148,6 @@ class WebAppWindow(Adw.ApplicationWindow):
         with open('/'.join(__file__.split('/')[:-1]) + '/exceptions.txt', 'r') as f:
             self.exceptions = f.read().split('\n')
 
-        # Update to dynamic launcher
-        portal = Xdp.Portal()
-        try:
-            dynamic_desktop_file = portal.dynamic_launcher_get_desktop_entry("net.codelogistics.webapps." + state["app_id"] + ".desktop")
-        except:
-            reinstall_dialog = Adw.MessageDialog.new(self, _("Install launcher"), _("Due to a change in the way web apps are installed, you will be asked to re-install this web app's launcher."))
-            reinstall_dialog.add_response("ok", "Ok")
-            reinstall_dialog.choose(None, lambda dialog, result: desktop_filer(self, state['app_id'], state['name']))
-
     def on_reload_clicked(self, button):
         if button.get_icon_name() == "process-stop-symbolic":
             self.webview.stop_loading()

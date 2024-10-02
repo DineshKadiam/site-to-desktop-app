@@ -34,13 +34,6 @@ def desktop_filer(parent, app_id, name):
     write_desktop_file(parent, app_id, name, icon_path)
 
 def write_desktop_file(parent, app_id, name, icon_path):
-    ''' desktop_file = '[Desktop Entry]\nName={}\nIcon={}\nExec = flatpak run net.codelogistics.webapps {}\nTerminal=false\nType=Application\nCategories=Network;\nTryExec=/var/lib/flatpak/exports/bin/net.codelogistics.webapps'.format(name, icon_path, app_id)
-
-    with open(os.path.expanduser('~/.local/share/applications/net.codelogistics.webapps.{}.desktop'.format(app_id)), 'w') as f:
-        f.write(desktop_file)
-
-    os.chmod(os.path.expanduser('~/.local/share/applications/net.codelogistics.webapps.{}.desktop'.format(app_id)), mode=0o755)'''
-
     def get_result(portal, result):
         try:
             variant = portal.dynamic_launcher_prepare_install_finish(result)
