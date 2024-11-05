@@ -43,7 +43,8 @@ class WebappsApplication(Adw.Application):
             # not converted to new format yet, we accommodate it till it is updated
                 self.update_old_webapp(args[1])
                 args[1] = 'webapp-' + args[1]
-            super().__init__(application_id='net.codelogistics.webapps.webapp-' + args[1],
+
+            super().__init__(application_id='net.codelogistics.webapps.' + args[1],
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         else:
             super().__init__(application_id='net.codelogistics.webapps.Webapps',
@@ -131,7 +132,7 @@ class WebappsApplication(Adw.Application):
         about.set_comments(_("Install websites as apps"))
         about.set_developer_name("Satvik Patwardhan")
         about.set_application_icon('net.codelogistics.webapps')
-        about.set_version('0.5.6')
+        about.set_version('0.5.7')
         about.set_license_type(Gtk.License.GPL_3_0)
         about.set_developers(['Satvik Patwardhan'])
         about.set_copyright('© 2024 Satvik Patwardhan')
