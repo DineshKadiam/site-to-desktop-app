@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-07-23 14:41+0000\n"
+"PO-Revision-Date: 2024-11-09 14:07+0000\n"
 "Last-Translator: astro-ray <astro-ray@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Bengali <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/bn/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.8.1\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
@@ -30,7 +30,7 @@ msgstr "ওয়েব অ্যাপ যোগ করুন"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "ইন্সটল করুন"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
@@ -42,30 +42,30 @@ msgstr ""
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "সংরক্ষণ"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "পরিবর্তনগুলি ওয়েব অ্যাপে সংরক্ষণ করুন"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "ওয়েব অ্যাপস"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "ওয়েবসাইটগুলিকে অ্যাপ হিসাবে ইনস্টল করুন"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "সাত্ত্বিক প্রধান"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "URL অ্যাক্সেস করতে ত্রুটি হয়েছে:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -76,11 +76,11 @@ msgstr ""
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "URL এন্টার করুন"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "যোগ করুন"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
@@ -93,7 +93,7 @@ msgstr ""
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "নাম"
 
 #: src/web_app_properties.py:70
 msgid "URL"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "সব অনুমতি দিন"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
