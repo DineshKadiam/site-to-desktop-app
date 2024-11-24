@@ -34,18 +34,6 @@ class WebAppWindow(Adw.ApplicationWindow):
         super().__init__(application = application)
         self.set_title(state['name'])
         self.set_default_size(800,600)
-        if os.path.exists('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '.window'):
-            restore_window = open('.var/app/net.codelogistics.webapps/webapps/' + state['app_id']+ '.window', 'r').read().split('\n')
-            if restore_window[0] == "True":
-                self.maximize()
-            if len(restore_window) > 1:
-                if len(restore_window[1].split('x')) == 2:
-                    self.set_default_size(int(restore_window[1].split('x')[0]), int(restore_window[1].split('x')[1]))
-        else:
-            with open('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '.window', 'w') as restore_file:
-                restore_file.write(str(self.is_maximized()))
-                restore_file.write('\n')
-                restore_file.write(str(self.get_width()) + 'x' + str(self.get_height()))
 
         self.set_default_icon_name("net.codelogistics.webapps")
         self.connect("close-request", self.on_close, state)
@@ -109,7 +97,7 @@ class WebAppWindow(Adw.ApplicationWindow):
         self.forward_button.add_css_class("flat")
         self.forward_button.set_sensitive(False)
         self.forward_button.connect("clicked", lambda button: self.webview.go_forward())
-        application.create_action('forwatd', lambda *_: self.webview.go_forward(), ['<alt>Right', 'Forward'])
+        application.create_action('forward', lambda *_: self.webview.go_forward(), ['<alt>Right', 'Forward'])
 
         self.reload_button = Gtk.Button()
         self.reload_button.set_tooltip_text(_("Reload"))
@@ -143,10 +131,31 @@ class WebAppWindow(Adw.ApplicationWindow):
         session = self.webview.get_network_session()
         session.connect("download-started", self.on_download)
 
+        application.create_action('zoom-in', lambda *_: self.webview.set_zoom_level(self.webview.get_zoom_level() + 0.1), ['<ctrl>plus'])
+        application.create_action('zoom-out', lambda *_: self.webview.set_zoom_level(self.webview.get_zoom_level() - 0.1), ['<ctrl>minus'])
+        application.create_action('zoom-restore', lambda *_: self.webview.set_zoom_level(1), ['<ctrl>0'])
         application.create_action('reload', lambda *_: self.webview.reload(), ['<Control>r'])
 
         with open('/'.join(__file__.split('/')[:-1]) + '/exceptions.txt', 'r') as f:
             self.exceptions = f.read().split('\n')
+
+        if os.path.exists('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '.window'):
+            restore_window = open('.var/app/net.codelogistics.webapps/webapps/' + state['app_id']+ '.window', 'r').read().split('\n')
+            if restore_window[0] == "True":
+                self.maximize()
+            if len(restore_window) > 1:
+                if len(restore_window[1].split('x')) == 2:
+                    self.set_default_size(int(restore_window[1].split('x')[0]), int(restore_window[1].split('x')[1]))
+                if len(restore_window) > 2 and restore_window[2]:
+                    self.webview.set_zoom_level(float(restore_window[2]))
+
+        else:
+            with open('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '.window', 'w') as restore_file:
+                restore_file.write(str(self.is_maximized()))
+                restore_file.write('\n')
+                restore_file.write(str(self.get_width()) + 'x' + str(self.get_height()))
+                restore_file.write('\n')
+                restore_file.write('1.0')
 
     def on_reload_clicked(self, button):
         if button.get_icon_name() == "process-stop-symbolic":
@@ -199,6 +208,8 @@ class WebAppWindow(Adw.ApplicationWindow):
             restore_file.write(str(self.is_maximized()))
             restore_file.write('\n')
             restore_file.write(str(self.get_width()) + 'x' + str(self.get_height()))
+            restore_file.write('\n')
+            restore_file.write(str(self.webview.get_zoom_level()))
         self.webview.terminate_web_process()
 
     def domain_allowed(self, new_uri, uri, strict) -> bool:
