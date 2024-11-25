@@ -26,6 +26,18 @@ You can install it from GNOME Software, Discover or by using the following comma
 
 This is application is made for Flatpak only.
 
+## Common Issues
+
+**Cannot create web apps on Ubuntu-based distros**
+
+This is due to a bug in Ubuntu (see [#72](https://codeberg.org/eyekay/webapps/issues/72) for further details). A workaround for this issue is available [here](https://etbe.coker.com.au/2024/04/24/ubuntu-24-04-bubblewrap/).
+
+**Does not work on KDE/ XFCE/ any DE other than GNOME**
+
+Web Apps uses the Dynamic Launcher portal from xdg-desktop-portal to install wthe .desktop file for web apps. However, support for this portal varies depending on the xdg-desktop-portal backend used by your DE.
+
+On KDE, a workaround is to make the desktop files at ~/.local/share/applications/net.codelogistics.webapps.\* and ~/.local/share/xdg-desktop-portal/applications/net.codelogistics.webapps.\* executable.
+
 ## Building
 
 You can build Web Apps by cloning this repository into GNOME Builder (either the Flatpak or the version shipped with your distro), which will handle all dependencies and build the Flatpak.
