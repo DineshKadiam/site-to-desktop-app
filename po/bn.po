@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-11-25 14:07+0000\n"
-"Last-Translator: astro-ray <astro-ray@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2024-11-26 15:07+0000\n"
+"Last-Translator: eyekay <eyekay@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Bengali <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/bn/>\n"
 "Language: bn\n"
@@ -61,7 +61,7 @@ msgstr "ওয়েবসাইটগুলিকে অ্যাপ হিসা�
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr "সাত্ত্বিক প্রধান"
+msgstr "astro-ray"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
