@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2024-11-24 02:07+0000\n"
+"PO-Revision-Date: 2024-11-25 14:07+0000\n"
 "Last-Translator: Pompilos <Pompilos@users.noreply.translate.codeberg.org>\n"
 "Language-Team: Spanish <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/es/>\n"
@@ -61,7 +61,7 @@ msgstr "Instalar sitios web como aplicaciones"
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr "Satvik Patwardhan"
+msgstr "José M. Ciordia"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
