@@ -123,7 +123,7 @@ class WebAppWindow(Adw.ApplicationWindow):
 
         self.webview.connect("load-changed", self.on_load_changed)
         self.webview.connect('notify::estimated-load-progress', self.on_load_progress)
-        self.webview.connect("create", lambda webview, nav_action: os.system("xdg-open \"" + nav_action.get_request().get_uri() + "\""))
+        self.webview.connect("create", lambda webview, nav_action: self.on_create(nav_action.get_request().get_uri(), state))
         self.webview.connect("context-menu", self.on_context_menu)
         self.webview.connect("decide-policy", self.on_decide_policy, state)
         self.webview.connect("permission-request", self.on_permission_request, state)
@@ -202,6 +202,10 @@ class WebAppWindow(Adw.ApplicationWindow):
             if (not self.domain_allowed(uri, state['url'], state['domain_matching'])) or (not self.webview.can_show_mime_type(content_type[0])):
                 os.system("xdg-open {}".format(uri))
                 decision.ignore()
+
+    def on_create(self, uri, state):
+        if self.domain_allowed(uri, state['url'], state['domain_matching']):
+            self.webview.load_uri(uri)
 
     def on_close(self, window, state):
         with open('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '.window', 'w') as restore_file:
