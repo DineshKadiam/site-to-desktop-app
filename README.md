@@ -34,9 +34,17 @@ This is due to a bug in Ubuntu (see [#72](https://codeberg.org/eyekay/webapps/is
 
 **Does not work on KDE/ XFCE/ any DE other than GNOME**
 
-Web Apps uses the Dynamic Launcher portal from xdg-desktop-portal to install wthe .desktop file for web apps. However, support for this portal varies depending on the xdg-desktop-portal backend used by your DE.
+Web Apps uses the Dynamic Launcher portal from xdg-desktop-portal to install the .desktop file for web apps. However, support for this portal varies depending on the xdg-desktop-portal backend used by your DE.
 
 On KDE, a workaround is to make the desktop files at ~/.local/share/applications/net.codelogistics.webapps.\* and ~/.local/share/xdg-desktop-portal/applications/net.codelogistics.webapps.\* executable.
+
+**CAPTCHA/ login page/ blank page opens in the default browser**
+
+Web pages with a domain name other than the domain name of the URL of the web app will by default open in the system's default web browser. You can alter this behaviour by changing the value for "Domain Matching" in the web app's settings.
+
+**No content visible with NVIDIA graphics card**
+
+The workaround is to set the environment variable ``WEBKIT_DISABLE_DMABUF_RENDERER=1``. This can be done using Flatseal. [Reference](https://github.com/hugolabe/Wike/issues/172)
 
 ## Building
 
