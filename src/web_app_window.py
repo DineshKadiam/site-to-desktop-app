@@ -40,7 +40,7 @@ class WebAppWindow(Adw.ApplicationWindow):
 
         application.create_action('close_webapp', lambda *_: self.close(), ['<primary>w'])
 
-        toolbar = Adw.ToolbarView()
+        self.toolbar = Adw.ToolbarView()
 
         box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
 
@@ -77,8 +77,8 @@ class WebAppWindow(Adw.ApplicationWindow):
         if state['loading_bar']:
             overlay.add_overlay(self.progressbar)
         box.append(overlay)
-        toolbar.set_content(box)
-        self.set_content(toolbar)
+        self.toolbar.set_content(box)
+        self.set_content(self.toolbar)
 
         headerbar = Adw.HeaderBar()
         self.back_button = Gtk.Button()
@@ -111,7 +111,7 @@ class WebAppWindow(Adw.ApplicationWindow):
         self.hide_button.set_tooltip_text(_("Send to Background"))
         self.hide_button.connect("clicked", self.on_hide)
         
-        toolbar.add_top_bar(headerbar)
+        self.toolbar.add_top_bar(headerbar)
         if state['show_navigation']:
             headerbar.pack_start(self.back_button)
             headerbar.pack_start(self.forward_button)
@@ -127,6 +127,7 @@ class WebAppWindow(Adw.ApplicationWindow):
         self.webview.connect("context-menu", self.on_context_menu)
         self.webview.connect("decide-policy", self.on_decide_policy, state)
         self.webview.connect("permission-request", self.on_permission_request, state)
+        self.connect("notify::fullscreened", lambda *_: self.on_fullscreen())
 
         session = self.webview.get_network_session()
         session.connect("download-started", self.on_download)
@@ -135,6 +136,7 @@ class WebAppWindow(Adw.ApplicationWindow):
         application.create_action('zoom-out', lambda *_: self.webview.set_zoom_level(self.webview.get_zoom_level() - 0.1), ['<ctrl>minus'])
         application.create_action('zoom-restore', lambda *_: self.webview.set_zoom_level(1), ['<ctrl>0'])
         application.create_action('reload', lambda *_: self.webview.reload(), ['<Control>r'])
+        application.create_action('fullscreen', lambda *_: self.toggle_fullscreen(), ['F11'])
 
         with open('/'.join(__file__.split('/')[:-1]) + '/exceptions.txt', 'r') as f:
             self.exceptions = f.read().split('\n')
@@ -319,3 +321,19 @@ class WebAppWindow(Adw.ApplicationWindow):
 
     def on_hide(self, button):
         self.set_visible(False)
+
+    def on_fullscreen(self):
+        if self.is_fullscreen():
+            self.toolbar.set_reveal_top_bars(False)
+        else:
+            self.toolbar.set_reveal_top_bars(True)
+
+    def toggle_fullscreen(self):
+        if self.is_fullscreen():
+            self.unfullscreen()
+        else:
+            self.fullscreen()
+
+    def close_fullscreen(self):
+        if self.is_fullscreen():
+            self.unfullscreen()
