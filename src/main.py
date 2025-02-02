@@ -55,10 +55,12 @@ class WebappsApplication(Adw.Application):
         self.args = args
 
     def close_stuff_by_escape(self, action, data):
-        if type(self.get_active_window()) == WebAppsWindow:
-            window = self.get_active_window()
+        window = self.get_active_window()
+        if type(window) == WebAppsWindow:
             if window.get_visible_dialog():
                 window.get_visible_dialog().close()
+        if type(window) == WebAppWindow:
+            window.close_fullscreen()
 
     def do_activate(self):
         """Called when the application is activated.
