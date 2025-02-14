@@ -132,6 +132,7 @@ class URLDialog(Adw.Dialog):
             else:
                 state = {'name': name, 'url': url, 'icon': favicon}
                 self.parent_window.show_create_window(self, state)
+                self.add_button.set_sensitive(False)
 
     def gotten_website_data(self, name, url, favicon, cancellable):
         if not cancellable.is_cancelled():
@@ -143,6 +144,7 @@ class URLDialog(Adw.Dialog):
 
             state = {'name': name, 'url': url, 'icon': favicon}
             self.parent_window.show_create_window(self, state)
+            self.add_button.set_sensitive(False)
 
     def cancelled(self, dialog):
         if self.cancellable and not self.too_late_to_cancel:
