@@ -90,8 +90,8 @@ class WebAppsWindow(Adw.ApplicationWindow):
         self.clamp = Adw.Clamp()
         self.clamp.set_margin_top(8)
         self.clamp.set_margin_bottom(8)
-        self.clamp.set_margin_start(8)
-        self.clamp.set_margin_end(8)
+        self.clamp.set_margin_start(32)
+        self.clamp.set_margin_end(32)
 
         rowbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         rowbox.set_margin_bottom(8)

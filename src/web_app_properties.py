@@ -127,6 +127,8 @@ class WebAppProperties(Adw.Bin):
         prefs_clamp.set_child(prefs_list)
         box.append(prefs_clamp)
         prefs_clamp.set_margin_bottom(8)
+        prefs_clamp.set_margin_start(32)
+        prefs_clamp.set_margin_end(32)
         self.set_child(box)
 
         if not state['icon'] == '/tmp/tmp_webapps_icon.png':
