@@ -131,10 +131,10 @@ class URLDialog(Adw.Dialog):
                 # this is an async function, it will call gotten_website_data()
             else:
                 state = {'name': name, 'url': url, 'icon': favicon}
-                self.parent_window.show_create_window(self, state)
+                self.parent_window.show_create_window(self, state, False)
                 self.add_button.set_sensitive(False)
 
-    def gotten_website_data(self, name, url, favicon, cancellable):
+    def gotten_website_data(self, name, url, giveup, favicon, cancellable):
         if not cancellable.is_cancelled():
             if name == None:
                 # title not found by html parser
@@ -143,7 +143,7 @@ class URLDialog(Adw.Dialog):
                 favicon = '/tmp/tmp_webapps_icon.png'
 
             state = {'name': name, 'url': url, 'icon': favicon}
-            self.parent_window.show_create_window(self, state)
+            self.parent_window.show_create_window(self, state, giveup)
             self.add_button.set_sensitive(False)
 
     def cancelled(self, dialog):

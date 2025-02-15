@@ -33,7 +33,7 @@ def get_website_data_from_webpage(dialog, url, cancellable):
     """ Get the favicon and name from the given url by data gathered by the webview. """
     def check_if_data():
         if favicon or time.time() >= end_time or giveup:
-            dialog.gotten_website_data(name, url, favicon, cancellable)
+            dialog.gotten_website_data(name, url, giveup, favicon, cancellable)
             return False
         return True
 
@@ -52,7 +52,11 @@ def get_website_data_from_webpage(dialog, url, cancellable):
             nonlocal favicon
             nonlocal giveup
             nonlocal cancellable
-            html = session.send_and_read_finish(result).get_data().decode('utf-8')
+            try:
+                html = session.send_and_read_finish(result).get_data().decode('utf-8')
+            except:
+                giveup = True
+                return False
             parser = ManifestHTMLParser()
             parser.feed(html)
 
@@ -118,5 +122,5 @@ def get_website_data_from_webpage(dialog, url, cancellable):
     except Exception as e:
         print(_("Error accessing URL:"), e)
 
-    end_time = time.time() + 10
+    end_time = time.time() + 5
     GLib.timeout_add(200, check_if_data)

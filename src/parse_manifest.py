@@ -50,7 +50,11 @@ def get_website_data_from_manifest(dialog, url, cancellable):
             nonlocal name
             nonlocal favicon
             nonlocal giveup
-            html = str(session.send_and_read_finish(result).get_data())
+            try:
+                html = str(session.send_and_read_finish(result).get_data())
+            except:
+                giveup = True
+                return False
             parser = ManifestHTMLParser()
             parser.feed(html)
             manifest_url = parser.manifest_url
@@ -131,5 +135,5 @@ def get_website_data_from_manifest(dialog, url, cancellable):
     except Exception as e:
         print(_("Error accessing URL:"), e)
 
-    end_time = time.time() + 10
+    end_time = time.time() + 5
     GLib.timeout_add(200, check_if_data)
