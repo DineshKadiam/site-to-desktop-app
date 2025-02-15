@@ -69,7 +69,9 @@ class WebAppWindow(Adw.ApplicationWindow):
             state['url'] = "about:blank"
         self.webview.load_uri(state['url'])
         overlay = Gtk.Overlay()
-        overlay.set_child(self.webview)
+        self.toast_overlay = Adw.ToastOverlay()
+        self.toast_overlay.set_child(self.webview)
+        overlay.set_child(self.toast_overlay)
 
         self.progressbar = Gtk.ProgressBar()
         self.progressbar.add_css_class("osd")
@@ -197,12 +199,17 @@ class WebAppWindow(Adw.ApplicationWindow):
             self.forward_button.set_sensitive(False)
 
     def on_decide_policy(self, webview, decision, decision_type, state):
-        if decision_type == WebKit.PolicyDecisionType.RESPONSE:
-            uri = decision.get_response().get_uri()
-            content_type = decision.get_response().get_http_headers().get_content_type()
+        if decision_type == WebKit.PolicyDecisionType.RESPONSE or decision_type == WebKit.PolicyDecisionType.NEW_WINDOW_ACTION:
+            if decision_type == WebKit.PolicyDecisionType.RESPONSE:
+                uri = decision.get_response().get_uri()
+                content_type = decision.get_response().get_http_headers().get_content_type()
+            else:
+                uri = decision.get_navigation_action().get_request().get_uri()
+                content_type = decision.get_navigation_action().get_request().get_http_headers().get_content_type()
 
             if (not self.domain_allowed(uri, state['url'], state['domain_matching'])) or (not self.webview.can_show_mime_type(content_type[0])):
                 os.system("xdg-open {}".format(uri))
+                self.toast_overlay.add_toast(Adw.Toast.new(_("Link opened in system browser")))
                 decision.ignore()
 
     def on_create(self, uri, state):
