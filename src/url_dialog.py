@@ -27,6 +27,7 @@ from gi.repository import Gtk, Adw, GLib, Gio
 
 from .parse_manifest import get_website_data_from_manifest
 from .parse_webpage import get_website_data_from_webpage
+from .create_web_app_dialog import CreateWebAppDialog
 
 class URLDialog(Adw.Dialog):
     def __init__(self, parent_window, app):
@@ -110,6 +111,11 @@ class URLDialog(Adw.Dialog):
         self.add_button.set_sensitive(False)
 
     def add_webapp(self, button, data = None):
+        active_dialog = self.app.get_active_window().get_visible_dialog()
+        if type(active_dialog) == CreateWebAppDialog:
+            if active_dialog.add_button.get_sensitive():
+                active_dialog.add_button.activate()
+
         if not self.add_button.get_sensitive(): # for the shortcut
             return
 
@@ -122,6 +128,7 @@ class URLDialog(Adw.Dialog):
         self.cancellable = Gio.Cancellable()
         manifest_data = get_website_data_from_manifest(self, url, self.cancellable)
         # this is an async function, it will call gotten_manifest_data()
+        self.add_button.set_sensitive(False)
 
     def gotten_manifest_data(self, name, url, favicon, cancellable):
         if not cancellable.is_cancelled():
@@ -132,7 +139,6 @@ class URLDialog(Adw.Dialog):
             else:
                 state = {'name': name, 'url': url, 'icon': favicon}
                 self.parent_window.show_create_window(self, state, False)
-                self.add_button.set_sensitive(False)
 
     def gotten_website_data(self, name, url, giveup, favicon, cancellable):
         if not cancellable.is_cancelled():
@@ -144,7 +150,6 @@ class URLDialog(Adw.Dialog):
 
             state = {'name': name, 'url': url, 'icon': favicon}
             self.parent_window.show_create_window(self, state, giveup)
-            self.add_button.set_sensitive(False)
 
     def cancelled(self, dialog):
         if self.cancellable and not self.too_late_to_cancel:
