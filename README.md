@@ -50,6 +50,10 @@ The workaround is to set the environment variable ``WEBKIT_DISABLE_DMABUF_RENDER
 
 You can build Web Apps by cloning this repository into GNOME Builder (either the Flatpak or the version shipped with your distro), which will handle all dependencies and build the Flatpak.
 
+## Code of Conduct
+
+Web Apps uses the [GNOME Code of Conduct](https://conduct.gnome.org/).
+
 ## License
 
 This program is licensed under the GNU General Public License, version 3.0 or later.
