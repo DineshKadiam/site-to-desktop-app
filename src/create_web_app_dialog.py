@@ -28,7 +28,7 @@ from .create_desktop_file import desktop_filer
 
 class CreateWebAppDialog(Adw.Dialog):
 
-    def __init__(self, parent_window, state, **kwargs):
+    def __init__(self, parent_window, state, invalid = False, **kwargs):
         super().__init__()
 
         self.parent_window = parent_window
@@ -50,6 +50,14 @@ class CreateWebAppDialog(Adw.Dialog):
         headerbar.pack_end(self.add_button)
 
         toolbar.add_top_bar(headerbar)
+
+        if invalid:
+            invalid_banner = Adw.Banner()
+            invalid_banner.set_title(_("Warning: URL does not refer to a valid website"))
+            invalid_banner.add_css_class("warning")
+            invalid_banner.set_revealed(True)
+
+            toolbar.add_top_bar(invalid_banner)
 
         scrolled = Gtk.ScrolledWindow()
         properties = WebAppProperties(edit=False, state=state, parent_window = parent_window)
