@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2025-02-23 19:21+0000\n"
-"Last-Translator: metahke <metahke@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2025-02-25 07:52+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/pl/>\n"
 "Language: pl\n"
@@ -179,7 +179,7 @@ msgstr "Odśwież"
 
 #: src/web_app_window.py:149
 msgid "Install launcher"
-msgstr ""
+msgstr "Zainstaluj launcher"
 
 #: src/web_app_window.py:149
 msgid ""
