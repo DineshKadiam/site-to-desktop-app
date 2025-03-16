@@ -10,8 +10,8 @@
   </developer>
 
   <branding>
-    <color type="primary" scheme_preference="light">#66dd93</color>
-    <color type="primary" scheme_preference="dark">#1aac69</color>
+    <color type="primary" scheme_preference="light">#a2d0ff</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
   </branding>
 
   <metadata_license>FSFAP</metadata_license>
