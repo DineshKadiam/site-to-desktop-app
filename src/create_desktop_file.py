@@ -38,10 +38,15 @@ def write_desktop_file(parent, app_id, name, icon_path):
         try:
             variant = portal.dynamic_launcher_prepare_install_finish(result)
             token = variant['token']
-
-            desktop_file = '[Desktop Entry]\nExec = webapps {}\nTerminal=false\nType=Application\nCategories=Network;'.format(app_id)
+            # we will replace true with webapps later : https://github.com/flatpak/xdg-desktop-portal/issues/1674
+            desktop_file = '[Desktop Entry]\nExec = true {}\nTerminal=false\nType=Application\nCategories=Network;'.format(app_id)
 
             portal.dynamic_launcher_install(token, "net.codelogistics.webapps." + app_id + ".desktop", desktop_file)
+            with open(os.path.expanduser("~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(app_id)), 'r') as f:
+                desktop_file = f.read().replace("--command=true", "")
+            with open(os.path.expanduser("~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(app_id)), 'w') as f:
+                f.write(desktop_file)
+
         except Exception as e:
             if os.path.exists('.var/app/net.codelogistics.webapps/webapps/' + app_id + '.window'):
                 # Window has been opened atleast once

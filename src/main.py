@@ -39,11 +39,6 @@ class WebappsApplication(Adw.Application):
 
     def __init__(self, args):
         if len(args) > 1 and args[1] + '.json' in os.listdir('.var/app/net.codelogistics.webapps/webapps/'):
-            if args[1] + '.json' in os.listdir('.var/app/net.codelogistics.webapps/webapps/') and not args[1].startswith('webapp-'):
-            # not converted to new format yet, we accommodate it till it is updated
-                self.update_old_webapp(args[1])
-                args[1] = 'webapp-' + args[1]
-
             super().__init__(application_id='net.codelogistics.webapps.' + args[1],
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         else:
@@ -73,9 +68,6 @@ class WebappsApplication(Adw.Application):
             windows[0].set_visible(True)
             return
 
-        with open('.var/app/net.codelogistics.webapps/webapps/' + 'uuid_verified', 'w') as f:
-                f.write('')
-
         if len(self.args) > 1 and self.args[1] + '.json' in os.listdir('.var/app/net.codelogistics.webapps/webapps'):
             with open('.var/app/net.codelogistics.webapps/webapps/' + self.args[1] + '.json', 'r') as f:                
                 state = json.load(f)
@@ -86,47 +78,6 @@ class WebappsApplication(Adw.Application):
             win = WebAppsWindow(application=self)
             win.present()
 
-    def update_old_webapp(self, app_id):
-        # update files in old format (uuid.json) to new format (webapp-uuid.json)
-        # fix for when uuid begins with number, it is not a valid gnome application id for some reason.
-        print('Updating {} to newer format...', app_id)
-        with open('.var/app/net.codelogistics.webapps/webapps/' + app_id + '.json', 'r') as f:
-                state = json.load(f)
-        name = state['name']
-        with open('.var/app/net.codelogistics.webapps/webapps/' + app_id + '.json', 'w') as f:
-                state['icon'] = 'webapp-' + state['icon']
-                state['app_id'] = 'webapp-' + state['app_id']
-                json.dump(state, f)
-        i = app_id
-        new_i = 'webapp-' + app_id
-        pre = os.path.expanduser('~/.var/app/net.codelogistics.webapps/webapps/')
-        shutil.move(pre + i + '.json', pre + new_i + '.json')
-
-        try:
-            shutil.move(pre + i + '.window', pre + new_i + '.window')
-        except Exception as e:
-            pass
-        try:
-            shutil.move(pre + i + '.cookies.txt', pre + new_i + '.cookies.txt')
-        except Exception as e:
-            pass
-        try:
-            shutil.move(pre + i + '.permissions.json', pre + new_i + '.permissions.json')
-        except Exception as e:
-            pass
-        try:
-            shutil.move(os.path.expanduser('~/.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps.') + i + '.png', os.path.expanduser('~/.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps.') + new_i + '.png')
-        except Exception as e:
-            pass
-
-        portal = Xdp.Portal()
-        try:
-            portal.dynamic_launcher_uninstall("net.codelogistics.webapps." + i + ".desktop")
-        except Exception as e:
-            print(e)
-
-        desktop_filer(self, new_i, name)
-
     def on_about_action(self, widget, data):
         """Callback for the app.about action."""
         about = Adw.AboutDialog()
@@ -134,7 +85,7 @@ class WebappsApplication(Adw.Application):
         about.set_comments(_("Install websites as apps"))
         about.set_developer_name("Satvik Patwardhan")
         about.set_application_icon('net.codelogistics.webapps')
-        about.set_version('0.5.9')
+        about.set_version('0.5.10')
         about.set_license_type(Gtk.License.GPL_3_0)
         about.set_developers(['Satvik Patwardhan'])
         about.set_copyright('© 2024 Satvik Patwardhan')
@@ -142,6 +93,7 @@ class WebappsApplication(Adw.Application):
         about.set_issue_url("https://codeberg.org/eyekay/webapps/issues")
         # Translators: add your name here
         about.set_translator_credits(_("Satvik Patwardhan"))
+        about.set_artists(["Micah Ilbery"])
 
         about.present(self.get_active_window())
 
