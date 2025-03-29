@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-12 21:44+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: Do not translate portal
+#: src/create_desktop_file.py:64
+msgid "Portal error:"
+msgstr ""
+
+#: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
+msgid "Add Web App"
+msgstr ""
+
+#: src/create_web_app_dialog.py:47
+msgid "Install"
+msgstr ""
+
+#: src/create_web_app_dialog.py:48
+msgid "Create a new web app"
+msgstr ""
+
+#: src/edit_web_app_dialog.py:38
+msgid "Edit Web App"
+msgstr ""
+
+#: src/edit_web_app_dialog.py:49
+msgid "Save"
+msgstr ""
+
+#: src/edit_web_app_dialog.py:50
+msgid "Save changes to the web app"
+msgstr ""
+
+#: src/main.py:150 src/window.py:46 src/window.py:57
+#: data/net.codelogistics.webapps.appdata.xml.in:5
+#: data/net.codelogistics.webapps.desktop.in:3
+msgid "Web Apps"
+msgstr ""
+
+#: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
+msgid "Install websites as apps"
+msgstr ""
+
+#. Translators: add your name here
+#: src/main.py:161
+msgid "Satvik Patwardhan"
+msgstr ""
+
+#: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
+msgid "Error accessing URL:"
+msgstr ""
+
+#. SECRET google api. Do not trust.
+#: src/parse_webpage.py:92
+msgid ""
+"Google API for favicons being used... if correct favicon is not visible "
+"please file a bug report!"
+msgstr ""
+
+#: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
+msgid "Enter URL"
+msgstr ""
+
+#: src/url_dialog.py:70 src/url_dialog.py:72
+msgid "Add"
+msgstr ""
+
+#. title not found by html parser
+#: src/url_dialog.py:140
+msgid "New Web App"
+msgstr ""
+
+#: src/web_app_properties.py:47
+msgid "Browse Icon"
+msgstr ""
+
+#: src/web_app_properties.py:61
+msgid "Name"
+msgstr ""
+
+#: src/web_app_properties.py:70
+msgid "URL"
+msgstr ""
+
+#: src/web_app_properties.py:76
+msgid "Show Navigation Options"
+msgstr ""
+
+#: src/web_app_properties.py:77
+msgid "Show the buttons for back, forward and reload."
+msgstr ""
+
+#: src/web_app_properties.py:83
+msgid "Domain Matching"
+msgstr ""
+
+#: src/web_app_properties.py:84
+msgid "Set which websites will be allowed to load in the web app."
+msgstr ""
+
+#: src/web_app_properties.py:86
+msgid "Domain and subdomains"
+msgstr ""
+
+#: src/web_app_properties.py:87
+msgid "Domain only"
+msgstr ""
+
+#: src/web_app_properties.py:88
+msgid "Allow all"
+msgstr ""
+
+#: src/web_app_properties.py:95
+msgid "Show Loading Bars"
+msgstr ""
+
+#: src/web_app_properties.py:96
+msgid ""
+"A loading bar will be visible at the top of the web page when it is being "
+"loaded."
+msgstr ""
+
+#: src/web_app_properties.py:103
+msgid "Enable JavaScript"
+msgstr ""
+
+#: src/web_app_properties.py:104
+msgid "Enable web scripting."
+msgstr ""
+
+#: src/web_app_properties.py:111
+msgid "Incognito Browsing"
+msgstr ""
+
+#: src/web_app_properties.py:112
+msgid "Cookies and other data will not be stored."
+msgstr ""
+
+#: src/web_app_properties.py:118
+msgid "User Agent"
+msgstr ""
+
+#. Translators: this is for going back in the browser
+#: src/web_app_window.py:98
+msgid "Back"
+msgstr ""
+
+#. Translators: this is for going back in the browser
+#: src/web_app_window.py:107
+msgid "Forward"
+msgstr ""
+
+#: src/web_app_window.py:115 src/web_app_window.py:157
+#: src/web_app_window.py:180
+msgid "Reload"
+msgstr ""
+
+#: src/web_app_window.py:149
+msgid "Install launcher"
+msgstr ""
+
+#: src/web_app_window.py:149
+msgid ""
+"Due to a change in the way web apps are installed, you will be asked to re-"
+"install this web app's launcher."
+msgstr ""
+
+#: src/web_app_window.py:162 src/web_app_window.py:176
+msgid "Stop"
+msgstr ""
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:262
+msgid "Allow {} access to your location?"
+msgstr ""
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:265
+msgid "Allow {} to send notifications?"
+msgstr ""
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:268
+msgid "Allow {} to install and use DRM?"
+msgstr ""
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:271
+msgid "Allow {} to access your clipboard?"
+msgstr ""
+
+#. Translators: {} is the url of the website and it is necessary!
+#: src/web_app_window.py:274
+msgid "Allow {} to access your microphone and/or camera?"
+msgstr ""
+
+#: src/web_app_window.py:275
+msgid "Yes"
+msgstr ""
+
+#: src/web_app_window.py:275
+msgid "No"
+msgstr ""
+
+#: src/web_app_window.py:302
+msgid "Save File"
+msgstr ""
+
+#: src/window.py:67
+msgid "Main Menu"
+msgstr ""
+
+#: src/window.py:71
+msgid "About"
+msgstr ""
+
+#: src/window.py:74 src/window.py:247
+msgid "Report Broken Website"
+msgstr ""
+
+#: src/window.py:97
+msgid "Your Web Apps"
+msgstr ""
+
+#: src/window.py:114
+msgid "No Web Apps installed"
+msgstr ""
+
+#: src/window.py:115
+msgid "Press the Add Web App button to create one"
+msgstr ""
+
+#. Translators: Keep the {} as it is
+#: src/window.py:154
+msgid "File {} broken! Maybe it was modified locally?"
+msgstr ""
+
+#: src/window.py:160
+msgid "Delete"
+msgstr ""
+
+#: src/window.py:165
+msgid "Edit"
+msgstr ""
+
+#: src/window.py:228
+msgid "Incomplete report"
+msgstr ""
+
+#: src/window.py:229
+msgid ""
+"Please enter the URL and a detailed description (atleast 200 characters) of "
+"the issue in English to help resolve it faster. Please make sure to mention "
+"your desktop environment and distro."
+msgstr ""
+
+#: src/window.py:259
+msgid "Website broken?"
+msgstr ""
+
+#: src/window.py:272
+msgid "I can't install the website"
+msgstr ""
+
+#: src/window.py:277
+msgid "The website is not opening/ working"
+msgstr ""
+
+#: src/window.py:283
+msgid "Enter details"
+msgstr ""
+
+#: src/window.py:289 src/window.py:291
+msgid "Submit"
+msgstr ""
+
+#: data/net.codelogistics.webapps.appdata.xml.in:21
+msgid ""
+"Install websites as desktop apps, so that they appear in their own windows "
+"separate from any browsers installed. This is similar to the \"Install as "
+"App\" feature found in popular web browsers."
+msgstr ""
+
+#: data/net.codelogistics.webapps.appdata.xml.in:25
+msgid ""
+"It uses an internal browser isolated from the system browser, which can "
+"optionally be used in incognito mode. Links to websites other than the one "
+"installed open in a new browser window."
+msgstr ""
