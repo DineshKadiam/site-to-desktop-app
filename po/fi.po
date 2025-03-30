@@ -8,61 +8,64 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-30 10:21+0000\n"
+"Last-Translator: artnay <artnay@noreply.codeberg.org>\n"
+"Language-Team: Finnish <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr ""
+msgstr "Portaalivirhe:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "Lisää web-sovellus"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "Asenna"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "Luo uusi web-sovellus"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "Muokkaa web-sovellusta"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "Tallenna muutokset web-sovellukseen"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "Web-sovellukset"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "Asenna verkkosivustoja sovelluksina"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "Jiri Grönroos"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "Virhe pääsyssä osoitteeseen:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -70,196 +73,200 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"Google-rajapinta faviconeille on käytössä... Jos oikea favicon ei näy, tee "
+"vikailmoitus!"
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "Kirjoita osoite"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "Lisää"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr ""
+msgstr "Uusi web-sovellus"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr ""
+msgstr "Selaa kuvaketta"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "Osoite"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
-msgstr ""
+msgstr "Näytä liikkumisvalinnat"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr ""
+msgstr "Näytä \"Takaisin\"-, \"Seuraava\"- ja \"Päivitä\"-painikkeet."
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr ""
+msgstr "Verkkotunnuksen vastaavuus"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "Aseta verkkosivustot, joiden sallit latautuvan web-sovelluksessa."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr ""
+msgstr "Verkkotunnus ja aliverkkotunnukset"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "Vain verkkotunnus"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "Salli kaikki"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
-msgstr ""
+msgstr "Näytä latauspalkit"
 
 #: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "Latauspalkki näytetään sivun yläosassa, kun sivua ladataan."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "Käytä JavaScriptiä"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "Ota käyttöön verkkosivujen komentosarjat."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr ""
+msgstr "Yksityisen selauksen tila"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "Evästeitä ja muuta dataa ei talleteta."
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
-msgstr ""
+msgstr "Käyttäjäagentti"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
 msgid "Back"
-msgstr ""
+msgstr "Takaisin"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
 msgid "Forward"
-msgstr ""
+msgstr "Seuraava"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
 msgid "Reload"
-msgstr ""
+msgstr "Päivitä"
 
 #: src/web_app_window.py:149
 msgid "Install launcher"
-msgstr ""
+msgstr "Asenna käynnistin"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"Johtuen tavasta miten web-sovellukset asennetaan, sinua pyydetään asentamaan "
+"tämän web-sovelluksen käynnistin uudelleen."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
-msgstr ""
+msgstr "Pysäytä"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "Saako {} käyttää sijaintiasi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "Saako {} lähettää ilmoituksia?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "Saako {} asentaa ja käyttää DRM:ää?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "Saako {} käyttää leikepöytääsi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "Saako {} käyttää mikrofonia ja/tai kameraa?"
 
 #: src/web_app_window.py:275
 msgid "Yes"
-msgstr ""
+msgstr "Kyllä"
 
 #: src/web_app_window.py:275
 msgid "No"
-msgstr ""
+msgstr "Ei"
 
 #: src/web_app_window.py:302
 msgid "Save File"
-msgstr ""
+msgstr "Tallenna tiedosto"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Päävalikko"
 
 #: src/window.py:71
 msgid "About"
-msgstr ""
+msgstr "Tietoja"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
-msgstr ""
+msgstr "Ilmoita rikkinäinen verkkosivusto"
 
 #: src/window.py:97
 msgid "Your Web Apps"
-msgstr ""
+msgstr "Web-sovellukset"
 
 #: src/window.py:114
 msgid "No Web Apps installed"
-msgstr ""
+msgstr "Web-sovelluksia ei ole asennettu"
 
 #: src/window.py:115
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "Paina \"Lisää web-sovellus\" luodaksesi sovelluksen"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "Tiedosto {} on rikki! Muokattiinko sitä tämän sovelluksen ulkopuolella?"
 
 #: src/window.py:160
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 #: src/window.py:165
 msgid "Edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #: src/window.py:228
 msgid "Incomplete report"
-msgstr ""
+msgstr "Keskeneräinen raportti"
 
 #: src/window.py:229
 msgid ""
@@ -267,26 +274,29 @@ msgid ""
 "the issue in English to help resolve it faster. Please make sure to mention "
 "your desktop environment and distro."
 msgstr ""
+"Kirjoita verkko-osoite ja yksityiskohtainen ongelmakuvaus (enintään 200 "
+"merkkiä) englanniksi, jotta ongelma on mahdollista ratkaista nopeasti. "
+"Varmista, että mainitset käyttämäsi työpöytäympäristön ja jakelun."
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr ""
+msgstr "Onko verkkosivusto rikki?"
 
 #: src/window.py:272
 msgid "I can't install the website"
-msgstr ""
+msgstr "En voi asentaa verkkosivustoa"
 
 #: src/window.py:277
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "Verkkosivusto ei avaudu tai toimi"
 
 #: src/window.py:283
 msgid "Enter details"
-msgstr ""
+msgstr "Kirjoita yksityiskohdat"
 
 #: src/window.py:289 src/window.py:291
 msgid "Submit"
-msgstr ""
+msgstr "Lähetä"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
@@ -294,6 +304,9 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
+"Asenna verkkosivustoja työpöytäsovelluksina, jolloin ne saavat muista "
+"selaimista erillisen ikkunan. Tämä on samankaltainen kuin monista selaimista "
+"löytyvä \"Asenna verkkosovelluksena\"-toiminnallisuus."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -301,3 +314,7 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
+"Sovellus käyttää omaa sisäistä selainta, joka on eristetty järjestelmän "
+"oletusarvoisesta selaimesta, jota voidaan valinnaisesti käyttää yksityiseen "
+"selaukseen. Linkit muille verkkosivustoille kuin asennettuun sovellukseen "
+"aukevat uusissa selainikkunoissa."
