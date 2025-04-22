@@ -47,9 +47,9 @@ class WebAppWindow(Adw.ApplicationWindow):
         if state['incognito']:
             network_session = WebKit.NetworkSession.new_ephemeral()
         else:
-            network_session = WebKit.NetworkSession.get_default()
+            network_session = WebKit.NetworkSession.new('.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '_data', '.var/app/net.codelogistics.webapps/webapps/' + state['app_id'] + '_cache')
             cookies = network_session.get_cookie_manager()
-        self.webview = WebKit.WebView()
+        self.webview = WebKit.WebView(network_session=network_session)
         settings = self.webview.get_settings()
         settings.set_enable_media_capabilities(True)
         settings.set_enable_encrypted_media(True)
