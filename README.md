@@ -2,6 +2,8 @@
 
 ![Web Apps logo](data/icons/hicolor/96x96/apps/net.codelogistics.webapps.png)
 
+[![Please do not theme this app](https://stopthemingmy.app/badge.svg)](https://stopthemingmy.app) 
+
 ### Install websites as desktop applications
 
 Install websites as desktop apps, so that they appear in their own windows separate from any browsers installed. This is similar to the "Install as App" feature found in popular web browsers.
