@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-12 14:53+0000\n"
+"Last-Translator: butterflyoffire <butterflyoffire@noreply.codeberg.org>\n"
+"Language-Team: Kabyle <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/kab/>\n"
 "Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
@@ -23,23 +26,23 @@ msgstr ""
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "Rnu asnas Web"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "Sebded"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "Snulfu-d asnas Web amaynut"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "Ẓreg asnas Web"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "Sekles"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
@@ -49,16 +52,16 @@ msgstr ""
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "Isnasen Web"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "Sebded ismal web amzun d isnasen"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "ButterflyOfFire"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
@@ -73,28 +76,28 @@ msgstr ""
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "Sekcem tansa URL"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "Rnu"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr ""
+msgstr "Asnas web amaynut"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr ""
+msgstr "Nadi tignit"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "Isem"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
@@ -118,7 +121,7 @@ msgstr ""
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "Taɣult kan"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
@@ -136,7 +139,7 @@ msgstr ""
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "Rmed JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
@@ -157,17 +160,17 @@ msgstr ""
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
 msgid "Back"
-msgstr ""
+msgstr "Uɣal"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
 msgid "Forward"
-msgstr ""
+msgstr "Uḍfir"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
 msgid "Reload"
-msgstr ""
+msgstr "Smiren"
 
 #: src/web_app_window.py:149
 msgid "Install launcher"
@@ -181,7 +184,7 @@ msgstr ""
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
-msgstr ""
+msgstr "Seḥbes"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
@@ -210,23 +213,23 @@ msgstr ""
 
 #: src/web_app_window.py:275
 msgid "Yes"
-msgstr ""
+msgstr "Ih"
 
 #: src/web_app_window.py:275
 msgid "No"
-msgstr ""
+msgstr "Uhu"
 
 #: src/web_app_window.py:302
 msgid "Save File"
-msgstr ""
+msgstr "Sekles afaylu"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "Umuɣ agejdan"
 
 #: src/window.py:71
 msgid "About"
-msgstr ""
+msgstr "Ɣef"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
@@ -234,7 +237,7 @@ msgstr ""
 
 #: src/window.py:97
 msgid "Your Web Apps"
-msgstr ""
+msgstr "Isnasen-ik·im Web"
 
 #: src/window.py:114
 msgid "No Web Apps installed"
@@ -251,11 +254,11 @@ msgstr ""
 
 #: src/window.py:160
 msgid "Delete"
-msgstr ""
+msgstr "Kkes"
 
 #: src/window.py:165
 msgid "Edit"
-msgstr ""
+msgstr "Ẓreg"
 
 #: src/window.py:228
 msgid "Incomplete report"
@@ -270,7 +273,7 @@ msgstr ""
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr ""
+msgstr "Ur yetteddu ara usmel-nni web?"
 
 #: src/window.py:272
 msgid "I can't install the website"
@@ -282,11 +285,11 @@ msgstr ""
 
 #: src/window.py:283
 msgid "Enter details"
-msgstr ""
+msgstr "Sekcem talqayt"
 
 #: src/window.py:289 src/window.py:291
 msgid "Submit"
-msgstr ""
+msgstr "Azen"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
