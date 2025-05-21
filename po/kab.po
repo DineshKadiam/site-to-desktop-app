@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2025-05-17 15:04+0000\n"
+"PO-Revision-Date: 2025-05-22 04:58+0000\n"
 "Last-Translator: Moonshadow <moonshadow@noreply.codeberg.org>\n"
 "Language-Team: Kabyle <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/kab/>\n"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "Inagan n tuqqna d yisefka niḍen ur ttwaḥrazan ara."
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
