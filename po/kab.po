@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: 2025-05-22 04:58+0000\n"
+"PO-Revision-Date: 2025-05-25 20:58+0000\n"
 "Last-Translator: Moonshadow <moonshadow@noreply.codeberg.org>\n"
 "Language-Team: Kabyle <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/kab/>\n"
@@ -113,7 +113,7 @@ msgstr "Amṣada n taɣulin"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "Sbadu anwi ismal web ara yettwasirgen ad d-alin deg usnas web."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
@@ -135,7 +135,7 @@ msgstr "Sken ifeggagen n usali"
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "Ad d-iban ufeggag n usali deg yixef n usebter web mi ara d-yali."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
@@ -143,7 +143,7 @@ msgstr "Rmed JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "Rmed isekripten web."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
