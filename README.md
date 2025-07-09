@@ -26,7 +26,7 @@ You can install it from GNOME Software, Discover or by using the following comma
 
 `flatpak install flathub net.codelogistics.webapps`
 
-This is application is made for Flatpak only.
+**Note**: Web Apps officially only supports GNOME on Wayland, installed via Flatpak. This means bugs only occuring on other configurations will be given lower priority. However, PRs targeting these configurations will be accepted.
 
 ## Common Issues
 
