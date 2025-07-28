@@ -8,63 +8,65 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-12 21:44+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-07-29 02:09+0000\n"
+"Last-Translator: iramosu <iramosu@noreply.codeberg.org>\n"
+"Language-Team: Arabic <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:64
 msgid "Portal error:"
-msgstr ""
+msgstr "خطأ في البوابة:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:40 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "أضِف تطبيق وِب"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "نصِّب"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "أنشِئ تطبيق وِب جديد"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "حرِّر تطبيق الوِب"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "احفظ"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "احفظ التغييرات على تطبيق الوِب"
 
 #: src/main.py:150 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:3
 msgid "Web Apps"
-msgstr ""
+msgstr "تطبيقات الوب"
 
 #: src/main.py:151 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "نصِّب مواقع الوِب كتطبيقات"
 
 #. Translators: add your name here
 #: src/main.py:161
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "أحمد النجماوي <iramosu@protonmail.com>"
 
 #: src/parse_webpage.py:84 src/parse_webpage.py:111 src/parse_webpage.py:119
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "خطأ في الوصول إلى المسار:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:92
@@ -72,196 +74,200 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"تُستخدَم حاليًا واجهة برمجة تطبيقات جوجل للأيقونات المفضَّلة… إذا لم تظهر "
+"الأيقونة الصحيحة، فأبلِغ عن العلَّة."
 
 #: src/url_dialog.py:55 src/url_dialog.py:61 src/window.py:266
 msgid "Enter URL"
-msgstr ""
+msgstr "أدخِل المسار"
 
 #: src/url_dialog.py:70 src/url_dialog.py:72
 msgid "Add"
-msgstr ""
+msgstr "أضِف"
 
 #. title not found by html parser
 #: src/url_dialog.py:140
 msgid "New Web App"
-msgstr ""
+msgstr "تطبيق وِب جديد"
 
 #: src/web_app_properties.py:47
 msgid "Browse Icon"
-msgstr ""
+msgstr "استعرِض أيقونة"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "المسار"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
-msgstr ""
+msgstr "أظهِر خيارات التنقُّل"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr ""
+msgstr "أظهِر أزرار الرجوع والتقدُّم وإعادة التحميل."
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr ""
+msgstr "مطابقة النطاق"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "عيِّن مواقع الوِب التي سيُسمَح بتحميلها في تطبيق الوِب."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr ""
+msgstr "النطاق والنطاقات الفرعية"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "النطاق حصرًا"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "اسمح للكل"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
-msgstr ""
+msgstr "أظهِر أشرطة التحميل"
 
 #: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "سيظهر شريط تحميل أعلى صفحة الوِب عند تحميلها."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "فعِّل جافاسكرِبت"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "فعِّل برمجة الوِب النصية."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr ""
+msgstr "التصفُّح الخفي"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "لن تُخزَّن الكعكات والبيانات الأخرى."
 
 #: src/web_app_properties.py:118
 msgid "User Agent"
-msgstr ""
+msgstr "عميل المستخدم"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:98
 msgid "Back"
-msgstr ""
+msgstr "ارجع"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:107
 msgid "Forward"
-msgstr ""
+msgstr "تقدَّم"
 
 #: src/web_app_window.py:115 src/web_app_window.py:157
 #: src/web_app_window.py:180
 msgid "Reload"
-msgstr ""
+msgstr "أعِد التحميل"
 
 #: src/web_app_window.py:149
 msgid "Install launcher"
-msgstr ""
+msgstr "نصِّب المُطلق"
 
 #: src/web_app_window.py:149
 msgid ""
 "Due to a change in the way web apps are installed, you will be asked to re-"
 "install this web app's launcher."
 msgstr ""
+"بسبب تغيير في طريقة تنصيب تطبيقات الوِب، فسيُطلب منك إعادة تنصيب مُطلق تطبيق الوِ"
+"ب هذا."
 
 #: src/web_app_window.py:162 src/web_app_window.py:176
 msgid "Stop"
-msgstr ""
+msgstr "أوقِف"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:262
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "أأسمح ل‍ {} بالوصول إلى موضعك؟"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:265
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "أأسمح ل‍ {} بإرسال التنبيهات؟"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:268
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "أأسمح ل‍ {} بتنصيب واستخدام إدارة الحقوق الرقمية (DRM)؟"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:271
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "أأسمح ل‍ {} بالوصول إلى حافظتك؟"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:274
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "أأسمح ل‍ {} بالوصول إلى الميكروفون و\\أو الكاميرا؟"
 
 #: src/web_app_window.py:275
 msgid "Yes"
-msgstr ""
+msgstr "نعم"
 
 #: src/web_app_window.py:275
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #: src/web_app_window.py:302
 msgid "Save File"
-msgstr ""
+msgstr "احفظ الملف"
 
 #: src/window.py:67
 msgid "Main Menu"
-msgstr ""
+msgstr "القائمة الرئيسة"
 
 #: src/window.py:71
 msgid "About"
-msgstr ""
+msgstr "عَنْ التطبيق"
 
 #: src/window.py:74 src/window.py:247
 msgid "Report Broken Website"
-msgstr ""
+msgstr "أبلِغ عن موقع معطوب"
 
 #: src/window.py:97
 msgid "Your Web Apps"
-msgstr ""
+msgstr "تطبيقات الوِب خاصتك"
 
 #: src/window.py:114
 msgid "No Web Apps installed"
-msgstr ""
+msgstr "لا توجد تطبيقات وِب منصَّبة"
 
 #: src/window.py:115
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "اضغط زر «أضف تطبيق وِب» لإنشاء واحد"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:154
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "الملف {} معطوب! لعله عُدِّل محليًا؟"
 
 #: src/window.py:160
 msgid "Delete"
-msgstr ""
+msgstr "احذِف"
 
 #: src/window.py:165
 msgid "Edit"
-msgstr ""
+msgstr "حرِّر"
 
 #: src/window.py:228
 msgid "Incomplete report"
-msgstr ""
+msgstr "بلاغ غير مكتمل"
 
 #: src/window.py:229
 msgid ""
@@ -269,26 +275,29 @@ msgid ""
 "the issue in English to help resolve it faster. Please make sure to mention "
 "your desktop environment and distro."
 msgstr ""
+"أدخِل المسار ووصفًا تفصيليًا للمشكلة (200 حرف على الأقل) باللغة الإنجليزية "
+"للمساعدة في حلِّها بشكل أسرع. تأكَّد من ذكر بيئة سطح المكتب والتوزيعة التي "
+"تستخدمها."
 
 #: src/window.py:259
 msgid "Website broken?"
-msgstr ""
+msgstr "الموقع معطوب؟"
 
 #: src/window.py:272
 msgid "I can't install the website"
-msgstr ""
+msgstr "لا يمكنني تنصيب الموقع"
 
 #: src/window.py:277
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "الموقع لا يفتح أو لا يعمل"
 
 #: src/window.py:283
 msgid "Enter details"
-msgstr ""
+msgstr "أدخِل التفاصيل"
 
 #: src/window.py:289 src/window.py:291
 msgid "Submit"
-msgstr ""
+msgstr "أرسِل"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
@@ -296,6 +305,8 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
+"نصِّب مواقع الوِب كتطبيقات سطح مكتب، بحيث تظهر في نوافذها الخاصة منفصلة عن أي "
+"متصفحات منصَّبة. هذا مشابه لميزة «نصِّب كتطبيق» الموجودة في متصفحات الوِب الشهيرة."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -303,3 +314,6 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
+"يستخدم التطبيق متصفحًا داخليًا معزولًا عن متصفح النظام، والذي يمكن استخدامه "
+"اختياريًا في وضع التصفِّح الخفي. تُفتَح مسارات المواقع الأخرى غير الموقع المنصَّب "
+"في نافذة متصفح جديدة."
