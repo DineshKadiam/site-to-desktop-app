@@ -41,7 +41,7 @@ class WebAppsWindow(Adw.ApplicationWindow):
         super().__init__(application = application)
         self.app = application
         self.set_default_size(800,600)
-        self.set_size_request(360,296)
+        self.set_size_request(360,294)
         self.set_default_icon_name("net.codelogistics.webapps")
         self.set_title(_('Web Apps'))
 
