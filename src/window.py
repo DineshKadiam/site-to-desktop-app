@@ -148,8 +148,6 @@ class WebAppsWindow(Adw.ApplicationWindow):
         rows = {}
         for i in os.listdir('.var/app/net.codelogistics.webapps/webapps/'):
             if i.endswith('.json') and not i.endswith('.permissions.json'):
-                rows[i] = [Adw.ActionRow(), Gtk.Button(), Gtk.Button()]
-
                 with open('.var/app/net.codelogistics.webapps/webapps/' + i, 'r') as f:
                     try:
                         tmpstate = json.load(f)
@@ -158,31 +156,31 @@ class WebAppsWindow(Adw.ApplicationWindow):
                         print(_('File {} broken! Maybe it was modified locally?').format(i))
                         continue
 
-                rows[i][0].set_title(tmpstate['name'])
-                rows[i][1].add_css_class('flat')
-                rows[i][1].set_icon_name('user-trash-symbolic')
-                rows[i][1].set_tooltip_text(_("Delete"))
-                rows[i][1].connect("clicked", self.delete_row, i[:-5])
+                row = Adw.ActionRow.new()
+                row.set_title(tmpstate['name'])
+                row.set_title_lines(1)
 
-                rows[i][2].add_css_class('flat')
-                rows[i][2].set_icon_name('document-edit-symbolic')
-                rows[i][2].set_tooltip_text(_("Edit"))
-                rows[i][2].connect("clicked", self.edit_row, i[:-5])
-                rows[i][2].set_margin_end(8)
+                edit_btn = Gtk.Button.new()
+                edit_btn.add_css_class('flat')
+                edit_btn.set_icon_name('document-edit-symbolic')
+                edit_btn.set_tooltip_text(_("Edit"))
+                edit_btn.connect("clicked", self.edit_row, i[:-5])
+                edit_btn.set_vexpand(False)
+                edit_btn.set_valign(Gtk.Align.CENTER)
+                row.add_suffix(edit_btn)
+
+                delete_btn = Gtk.Button.new()
+                delete_btn.add_css_class('flat')
+                delete_btn.set_icon_name('user-trash-symbolic')
+                delete_btn.set_tooltip_text(_("Delete"))
+                delete_btn.connect("clicked", self.delete_row, i[:-5])
+                delete_btn.set_vexpand(False)
+                delete_btn.set_valign(Gtk.Align.CENTER)
+                row.add_suffix(delete_btn)
                 
-                box1 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-                box1.append(rows[i][1])
+                rows[i] = row
 
-                box2 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-                box2.append(rows[i][2])
-
-                box = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL)
-                box.append(box2)
-                box.append(box1)
-                box.set_margin_top(8)
-
-                rows[i][0].add_suffix(box)
-                apps_list.append(rows[i][0])
+                apps_list.append(rows[i])
 
         return rows
 
@@ -195,7 +193,7 @@ class WebAppsWindow(Adw.ApplicationWindow):
             pass
 
         for i in self.rows:
-            self.apps_list.remove(self.rows[i][0])
+            self.apps_list.remove(self.rows[i])
         self.rows = self.add_rows(self.apps_list)
         if self.rows == {}:
             self.box.remove(self.scrolled)
