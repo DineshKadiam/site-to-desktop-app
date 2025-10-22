@@ -62,10 +62,16 @@ class WebAppsWindow(Adw.ApplicationWindow):
         add_button.connect("clicked", self.on_add_button_clicked, application)
         add_button.set_tooltip_text(_("Add Web App"))
         headerbar.pack_start(add_button)
+        application.create_action(
+            'new-app',
+            lambda *_: self.on_add_button_clicked(add_button, application),
+            ['<primary>n']
+        )
 
         menu_button = Gtk.MenuButton()
         menu_button.set_tooltip_text(_("Main Menu"))
         menu_button.set_icon_name("open-menu-symbolic")
+        menu_button.set_primary(True)
         menu_button_menu = Gio.Menu()
         menu_button.set_menu_model(menu_button_menu)
         about_item = Gio.MenuItem.new(_("About"), "app.about")
