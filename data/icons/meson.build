@@ -48,3 +48,8 @@ install_data(
   join_paths(symbolic_dir, ('background-app-symbolic.svg')),
   install_dir: join_paths(get_option('datadir'), 'icons', symbolic_dir)
 )
+
+install_data(
+  join_paths(symbolic_dir, ('search-global-symbolic.svg')),
+  install_dir: join_paths(get_option('datadir'), 'icons', symbolic_dir)
+)

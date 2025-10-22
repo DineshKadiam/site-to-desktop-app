@@ -36,33 +36,14 @@ class URLDialog(Adw.Dialog):
         self.app = app
         self.parent_window = parent_window
 
-        self.set_title("Enter URL")
-
-        self.set_title(_("Add Web App"))
         self.set_content_width(500)
-        self.set_content_height(300)
+        self.set_content_height(600)
+        self.set_title(_("Add Web App"))
 
-        toolbar = Adw.ToolbarView()
-        headerbar = Adw.HeaderBar()
-
-        self.stack = Gtk.Stack()
-
-        clamp = Adw.Clamp()
-        clamp.set_maximum_size(275)
-        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-        box.set_valign(Gtk.Align.CENTER)
-
-        label = Gtk.Label()
-        label.set_markup(_("Enter URL"))
-        label.add_css_class("title-1")
-        box.append(label)
-        label.set_margin_bottom(8)
-        
         self.url_entry = Gtk.Entry()
-        self.url_entry.set_placeholder_text(_("Enter URL"))
+        self.url_entry.set_placeholder_text(_("Enter URL…"))
         self.url_entry.connect("changed", self.enable_add_button)
-        box.append(self.url_entry)
-        self.url_entry.set_margin_bottom(8)
+        self.url_entry.set_activates_default(True)
 
         self.add_button = Gtk.Button()
         self.add_button.set_sensitive(False)
@@ -73,28 +54,37 @@ class URLDialog(Adw.Dialog):
         self.add_button.set_tooltip_text(_("Add"))
         self.add_button.add_css_class("suggested-action")
         self.add_button.add_css_class("pill")
-        app.create_action('add_webapp', self.add_webapp, ['Return'])
+        self.set_default_widget(self.add_button)
+
+        box = Gtk.Box.new(Gtk.Orientation.VERTICAL, spacing=12)
+        box.set_vexpand(True)
+        box.set_hexpand(True)
+        box.append(self.url_entry)
         box.append(self.add_button)
 
+        clamp = Adw.Clamp()
+        clamp.set_maximum_size(300)
         clamp.set_child(box)
 
-        self.stack.add_named(clamp, "clamp")
+        status_page = Adw.StatusPage.new()
+        status_page.set_title(_("Enter URL"))
+        status_page.set_description(_("Enter the URL of the Web App you want to add"))
+        status_page.set_icon_name("search-global")
+        status_page.set_vexpand(True)
+        status_page.set_hexpand(True)
+        status_page.set_child(clamp)
 
-        loading_box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
-        loading_box.set_vexpand(True)
-        loading_box.set_valign(Gtk.Align.CENTER)
+        spinner = Adw.Spinner.new()
+        spinner.set_size_request(50, 50)
 
-        spinner = Gtk.Spinner()
-        spinner.set_vexpand(True)
-        spinner.set_valign(Gtk.Align.CENTER)
-        spinner.start()
-        loading_box.append(spinner)
+        self.stack = Gtk.Stack()
+        self.stack.add_named(status_page, "clamp")
+        self.stack.add_named(spinner, "loading")
 
-        self.stack.add_named(loading_box, "loading")
-        toolbar.set_content(self.stack)
-
-        toolbar.add_top_bar(headerbar)
-        self.set_child(toolbar)
+        toolbar_view = Adw.ToolbarView()
+        toolbar_view.set_content(self.stack)
+        toolbar_view.add_top_bar(Adw.HeaderBar.new())
+        self.set_child(toolbar_view)
 
         self.cancellable = None
         self.too_late_to_cancel = False
