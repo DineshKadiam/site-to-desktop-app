@@ -48,6 +48,17 @@
   </screenshots>
 
   <releases>
+    <release version="0.5.12" date="2025-10-23">
+      <description translate="no">
+        <ul>
+          <li>UI improvements in main window and Add Web App dialog (Gregor Niehl)</li>
+          <li>New keyboard shortcuts (Gregor Niehl)</li>
+          <li>Web Apps now show proper icon in Phosh</li>
+          <li>Kabyle translation (butterflyoffire)</li>
+          <li>Arabic translation (irabosu)</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.11" date="2025-04-22">
       <description translate="no">
         Web apps now store their data in individual profiles.
