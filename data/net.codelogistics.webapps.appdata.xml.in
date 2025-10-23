@@ -61,23 +61,23 @@
     </release>
     <release version="0.5.11" date="2025-04-22">
       <description translate="no">
-        Web apps now store their data in individual profiles.
+        <p>Web apps now store their data in individual profiles.</p>
       </description>
     </release>
     <release version="0.5.10" date="2025-03-28">
       <description translate="no">
-        <ul>New icon (Micah Ilbery)</ul>
-        <ul>New workaround to install web apps due to broken portal.</ul>
+        <p>New icon (Micah Ilbery)</p>
+        <p>New workaround to install web apps due to broken portal.</p>
       </description>
     </release>
     <release version="0.5.9" date="2025-02-15">
       <description translate="no">
-        <ul>- Fullscreen now disables the topbar for video (@pvermeer)</ul>
-        <ul>- Add warning when invalid URL is added</ul>
-        <ul>- Add toast message when external link is opened in system browser</ul>
-        <ul>- Add Web App dialog no longer opens multiple times when enter is pressed</ul>
-        <ul>- Fix 'create' does not account for Domain matching</ul>
-        <ul>- UI/ UX fixes</ul>
+        <p>- Fullscreen now disables the topbar for video (@pvermeer)</p>
+        <p>- Add warning when invalid URL is added</p>
+        <p>- Add toast message when external link is opened in system browser</p>
+        <p>- Add Web App dialog no longer opens multiple times when enter is pressed</p>
+        <p>- Fix 'create' does not account for Domain matching</p>
+        <p>- UI/ UX fixes</p>
       </description>
     </release>
     <release version="0.5.8" date="2024-11-24">
