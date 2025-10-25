@@ -19,31 +19,31 @@
 
 from html.parser import HTMLParser
 
+
 class ManifestHTMLParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.manifest_url = None
         self.title = None
         self.favicon = None
-        self.starttag = ''
+        self.starttag = ""
 
     def handle_starttag(self, tag, attrs):
+        if tag != "link":
+            return
+
         self.starttag = tag
-        if tag == 'link' and ('rel', 'manifest') in attrs:
-            manifest_url = ''
+        if ("rel", "manifest") in attrs:
+            manifest_url = ""
             for attr in attrs:
-                if attr[0] == 'href':
+                if attr[0] == "href":
                     manifest_url = attr[1]
             self.manifest_url = manifest_url
-        if tag == 'link' and (('rel', 'icon') in attrs or ('rel', 'shortcut icon') in attrs):
+        if ("rel", "icon") in attrs or ("rel", "shortcut icon") in attrs:
             for attr in attrs:
-                if attr[0] == 'href':
+                if attr[0] == "href":
                     self.favicon = attr[1]
 
-    def handle_endtag(self, tag):
-        pass
-
     def handle_data(self, data):
-        if data.strip() != "":
-            if self.starttag == "title":
-                self.title = data
+        if data.strip() != "" and self.starttag == "title":
+            self.title = data

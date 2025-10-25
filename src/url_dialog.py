@@ -18,16 +18,15 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import gi
-import json
-import shutil
 
-gi.require_version("Adw", '1')
+gi.require_version("Adw", "1")
 
-from gi.repository import Gtk, Adw, GLib, Gio
+from gi.repository import Adw, Gio, GLib, Gtk
 
+from .create_web_app_dialog import CreateWebAppDialog
 from .parse_manifest import get_website_data_from_manifest
 from .parse_webpage import get_website_data_from_webpage
-from .create_web_app_dialog import CreateWebAppDialog
+
 
 class URLDialog(Adw.Dialog):
     def __init__(self, parent_window, app):
@@ -88,25 +87,30 @@ class URLDialog(Adw.Dialog):
 
         self.cancellable = None
         self.too_late_to_cancel = False
-        
+
         self.connect("closed", self.cancelled)
 
     def enable_add_button(self, entry):
         test_url = entry.get_text()
         if test_url.strip() != "" and test_url.find(" ") == -1:
-            if (test_url.find(".") != -1 and len(test_url.rpartition(".")[-1]) >= 2) or ((test_url.startswith("http://") or test_url.startswith("https://")) and len(test_url[test_url.find("://")+3:]) >= 1):
+            if (
+                test_url.find(".") != -1 and len(test_url.rpartition(".")[-1]) >= 2
+            ) or (
+                (test_url.startswith("http://") or test_url.startswith("https://"))
+                and len(test_url[test_url.find("://") + 3 :]) >= 1
+            ):
                 self.add_button.set_sensitive(True)
                 return
 
         self.add_button.set_sensitive(False)
 
-    def add_webapp(self, button, data = None):
+    def add_webapp(self, button, data=None):
         active_dialog = self.app.get_active_window().get_visible_dialog()
         if type(active_dialog) == CreateWebAppDialog:
             if active_dialog.add_button.get_sensitive():
                 active_dialog.add_button.activate()
 
-        if not self.add_button.get_sensitive(): # for the shortcut
+        if not self.add_button.get_sensitive():  # for the shortcut
             return
 
         self.stack.set_visible_child_name("loading")
@@ -127,7 +131,7 @@ class URLDialog(Adw.Dialog):
                 website_data = get_website_data_from_webpage(self, url, cancellable)
                 # this is an async function, it will call gotten_website_data()
             else:
-                state = {'name': name, 'url': url, 'icon': favicon}
+                state = {"name": name, "url": url, "icon": favicon}
                 self.parent_window.show_create_window(self, state, False)
 
     def gotten_website_data(self, name, url, giveup, favicon, cancellable):
@@ -136,9 +140,9 @@ class URLDialog(Adw.Dialog):
                 # title not found by html parser
                 name = _("New Web App")
             if favicon == None:
-                favicon = '/tmp/tmp_webapps_icon.png'
+                favicon = "/tmp/tmp_webapps_icon.png"
 
-            state = {'name': name, 'url': url, 'icon': favicon}
+            state = {"name": name, "url": url, "icon": favicon}
             self.parent_window.show_create_window(self, state, giveup)
 
     def cancelled(self, dialog):

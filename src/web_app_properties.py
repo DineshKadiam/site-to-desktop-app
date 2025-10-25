@@ -17,34 +17,35 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import os
-import gi
 import shutil
 
-gi.require_version('WebKit', '6.0')
-from gi.repository import Gtk, Gdk, Gio, Adw, WebKit
+import gi
+
+gi.require_version("WebKit", "6.0")
+from gi.repository import Adw, Gdk, Gio, Gtk, WebKit
+
 
 class WebAppProperties(Adw.Bin):
-    def __init__(self, edit = False, state = False, parent_window = None):
+    def __init__(self, edit=False, state=False, parent_window=None):
         super().__init__()
         self.parent_window = parent_window
 
-        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        box = Gtk.Box.new(orientation=Gtk.Orientation.VERTICAL)
         box.set_halign(Gtk.Align.CENTER)
-        
-        self.avatar = Adw.Avatar()
+
+        self.avatar = Adw.Avatar.new()
         self.avatar.set_size(128)
         self.avatar.set_show_initials(True)
-        self.avatar.set_text(state['name'])
+        self.avatar.set_text(state["name"])
         self.avatar.set_margin_top(8)
         self.avatar.set_margin_bottom(8)
         box.append(self.avatar)
 
-        select_icon_button = Gtk.Button()
+        select_icon_button = Gtk.Button.new()
         select_icon_button.set_hexpand(False)
         select_icon_button.set_halign(Gtk.Align.CENTER)
-        select_icon_button.add_css_class('flat')
-        button_content = Adw.ButtonContent()
+        select_icon_button.add_css_class("flat")
+        button_content = Adw.ButtonContent.new()
         button_content.set_label(_("Browse Icon"))
         button_content.set_icon_name("folder-open-symbolic")
         select_icon_button.set_child(button_content)
@@ -52,76 +53,86 @@ class WebAppProperties(Adw.Bin):
         select_icon_button.set_margin_bottom(8)
         box.append(select_icon_button)
 
-        prefs_clamp = Adw.Clamp()
-        prefs_list = Gtk.ListBox()
+        prefs_clamp = Adw.Clamp.new()
+        prefs_list = Gtk.ListBox.new()
         prefs_list.add_css_class("boxed-list")
         prefs_list.set_selection_mode(Gtk.SelectionMode.NONE)
 
-        self.name_row = Adw.EntryRow()
+        self.name_row = Adw.EntryRow.new()
         self.name_row.set_title(_("Name"))
         if edit:
             self.name_row.set_sensitive(False)
-        if edit or (state and state['name'] != ''):
-            self.name_row.set_text(state['name'])
-        self.name_row.connect("changed", lambda row: self.avatar.set_text(row.get_text()))
+        if edit or (state and state["name"] != ""):
+            self.name_row.set_text(state["name"])
+        self.name_row.connect(
+            "changed", lambda row: self.avatar.set_text(row.get_text())
+        )
         prefs_list.append(self.name_row)
 
-        self.url_row = Adw.EntryRow()
+        self.url_row = Adw.EntryRow.new()
         self.url_row.set_title(_("URL"))
         if state:
-            self.url_row.set_text(state['url'])
+            self.url_row.set_text(state["url"])
         prefs_list.append(self.url_row)
 
-        self.show_navigation_row = Adw.SwitchRow()
+        self.show_navigation_row = Adw.SwitchRow.new()
         self.show_navigation_row.set_title(_("Show Navigation Options"))
-        self.show_navigation_row.set_subtitle(_("Show the buttons for back, forward and reload."))
+        self.show_navigation_row.set_subtitle(
+            _("Show the buttons for back, forward and reload.")
+        )
         if edit:
-            self.show_navigation_row.set_active(state['show_navigation'])
+            self.show_navigation_row.set_active(state["show_navigation"])
         prefs_list.append(self.show_navigation_row)
 
-        self.domain_matching_row = Adw.ComboRow()
+        self.domain_matching_row = Adw.ComboRow.new()
         self.domain_matching_row.set_title(_("Domain Matching"))
-        self.domain_matching_row.set_subtitle(_("Set which websites will be allowed to load in the web app."))
-        domain_options = Gtk.StringList()
+        self.domain_matching_row.set_subtitle(
+            _("Set which websites will be allowed to load in the web app.")
+        )
+        domain_options = Gtk.StringList.new()
         domain_options.append(_("Domain and subdomains"))
         domain_options.append(_("Domain only"))
         domain_options.append(_("Allow all"))
         self.domain_matching_row.set_model(domain_options)
         if edit:
-            self.domain_matching_row.set_selected(state['domain_matching'])
+            self.domain_matching_row.set_selected(state["domain_matching"])
         prefs_list.append(self.domain_matching_row)
 
-        self.loading_bar_row = Adw.SwitchRow()
+        self.loading_bar_row = Adw.SwitchRow.new()
         self.loading_bar_row.set_title(_("Show Loading Bars"))
-        self.loading_bar_row.set_subtitle(_("A loading bar will be visible at the top of the web page when it is being loaded."))
+        self.loading_bar_row.set_subtitle(
+            _(
+                "A loading bar will be visible at the top of the web page when it is being loaded."
+            )
+        )
         self.loading_bar_row.set_active(True)
         if edit:
-            self.loading_bar_row.set_active(state['loading_bar'])
+            self.loading_bar_row.set_active(state["loading_bar"])
         prefs_list.append(self.loading_bar_row)
 
-        self.javascript_row = Adw.SwitchRow()
+        self.javascript_row = Adw.SwitchRow.new()
         self.javascript_row.set_title(_("Enable JavaScript"))
         self.javascript_row.set_subtitle(_("Enable web scripting."))
         self.javascript_row.set_active(True)
         if edit:
-            self.javascript_row.set_active(state['javascript'])
+            self.javascript_row.set_active(state["javascript"])
         prefs_list.append(self.javascript_row)
 
-        self.incognito_row = Adw.SwitchRow()
+        self.incognito_row = Adw.SwitchRow.new()
         self.incognito_row.set_title(_("Incognito Browsing"))
         self.incognito_row.set_subtitle(_("Cookies and other data will not be stored."))
         if edit:
-            self.incognito_row.set_active(state['incognito'])
+            self.incognito_row.set_active(state["incognito"])
         prefs_list.append(self.incognito_row)
 
-        webkit_settings = WebKit.Settings()
+        webkit_settings = WebKit.Settings.new()
         user_agent = webkit_settings.get_user_agent()
-        del(webkit_settings)
-        self.user_agent_row = Adw.EntryRow()
+        del webkit_settings
+        self.user_agent_row = Adw.EntryRow.new()
         self.user_agent_row.set_title(_("User Agent"))
         self.user_agent_row.set_text(user_agent)
-        if state and 'user_agent' in state:
-            self.user_agent_row.set_text(state['user_agent'])
+        if state and "user_agent" in state:
+            self.user_agent_row.set_text(state["user_agent"])
         prefs_list.append(self.user_agent_row)
 
         prefs_clamp.set_child(prefs_list)
@@ -131,25 +142,27 @@ class WebAppProperties(Adw.Bin):
         prefs_clamp.set_margin_end(20)
         self.set_child(box)
 
-        if not state['icon'] == '/tmp/tmp_webapps_icon.png':
-            texture = None
-            try:
-                texture = Gdk.Texture.new_from_file(Gio.File.new_for_path(state['icon']))
-            except Exception as e:
-                print(e)
-            if texture:
-                self.avatar.set_custom_image(texture)
+        if state["icon"] == "/tmp/tmp_webapps_icon.png":
+            return
+        try:
+            texture = Gdk.Texture.new_from_file(Gio.File.new_for_path(state["icon"]))
+            self.avatar.set_custom_image(texture)
+        except Exception as e:
+            print(e)
 
     def choose_icon(self, button):
+        choose_dialog = Gtk.FileDialog.new()
+
         def choose_icon_finish(dialog, result):
             selected_icon = choose_dialog.open_finish(result).get_path()
-            icon_path = '/tmp/webapps_icon.png'
+            icon_path = "/tmp/webapps_icon.png"
             shutil.copyfile(selected_icon, icon_path)
-            texture = Gdk.Texture.new_from_file(Gio.File.new_for_path('/tmp/webapps_icon.png'))
+            texture = Gdk.Texture.new_from_file(
+                Gio.File.new_for_path("/tmp/webapps_icon.png")
+            )
             self.avatar.set_custom_image(texture)
 
-        choose_dialog = Gtk.FileDialog()
-        pngfilter = Gtk.FileFilter()
+        pngfilter = Gtk.FileFilter.new()
         pngfilter.set_name("PNG")
         pngfilter.add_suffix("png")
         choose_dialog.set_default_filter(pngfilter)
