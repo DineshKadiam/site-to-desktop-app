@@ -8,47 +8,49 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-11-10 11:09+0000\n"
+"Last-Translator: camegone <camegone@noreply.codeberg.org>\n"
+"Language-Team: Japanese <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.14\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
 msgid "Portal error:"
-msgstr ""
+msgstr "Portal エラー:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:41 src/window.py:63
 msgid "Add Web App"
-msgstr ""
+msgstr "ウェブアプリを追加"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr ""
+msgstr "インストール"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr ""
+msgstr "新しいウェブアプリを作成"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr ""
+msgstr "警告: URLが正しいウェブサイトのものではありません"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr ""
+msgstr "ウェブアプリを編集"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr ""
+msgstr "ウェブアプリへの変更を保存"
 
 #: src/main.py:84 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
@@ -58,231 +60,232 @@ msgstr ""
 
 #: src/main.py:85 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr ""
+msgstr "ウェブサイトをアプリとしてインストール"
 
 #. Translators: add your name here
 #: src/main.py:95
 msgid "Satvik Patwardhan"
-msgstr ""
+msgstr "camegone"
 
 #: src/parse_webpage.py:88 src/parse_webpage.py:115 src/parse_webpage.py:123
 msgid "Error accessing URL:"
-msgstr ""
+msgstr "URL へのアクセス失敗:"
 
 #. SECRET google api. Do not trust.
 #: src/parse_webpage.py:96
 msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
-msgstr ""
+msgstr "ファビコン向けの Google API が使用されています... もし正しい画像が表示されて"
+"いない場合は、バグ報告をしてください!"
 
 #: src/url_dialog.py:44
 msgid "Enter URL…"
-msgstr ""
+msgstr "URLを入力…"
 
 #: src/url_dialog.py:52 src/url_dialog.py:54
 msgid "Add"
-msgstr ""
+msgstr "追加"
 
 #: src/url_dialog.py:70 src/window.py:257
 msgid "Enter URL"
-msgstr ""
+msgstr "URL を入力"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
-msgstr ""
+msgstr "追加したいウェブアプリの URL を入力してください"
 
 #. title not found by html parser
 #: src/url_dialog.py:137
 msgid "New Web App"
-msgstr ""
+msgstr "新しいウェブアプリ"
 
 #: src/web_app_properties.py:48
 msgid "Browse Icon"
-msgstr ""
+msgstr "アイコンを選択"
 
 #: src/web_app_properties.py:61
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 #: src/web_app_properties.py:70
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/web_app_properties.py:76
 msgid "Show Navigation Options"
-msgstr ""
+msgstr "ナビゲーションボタンを表示"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr ""
+msgstr "戻る、進む、再読み込みボタンを表示します。"
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr ""
+msgstr "ドメインの許可範囲"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr ""
+msgstr "どのウェブサイトがウェブアプリの中で表示できるかを設定します。"
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr ""
+msgstr "ドメインとサブドメイン"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr ""
+msgstr "ドメインのみ"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
-msgstr ""
+msgstr "全て許可"
 
 #: src/web_app_properties.py:95
 msgid "Show Loading Bars"
-msgstr ""
+msgstr "ローディングバーを表示"
 
 #: src/web_app_properties.py:96
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "ウェブページの読み込み中に、画面上部にローディングバーが表示されます。"
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
-msgstr ""
+msgstr "JavaScript の有効化"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr ""
+msgstr "ウェブサイトのスクリプトを有効にします。"
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
-msgstr ""
+msgstr "プライベートモード"
 
 #: src/web_app_properties.py:112
 msgid "Cookies and other data will not be stored."
-msgstr ""
+msgstr "Cookie やその他のデータを保存しないようにします。"
 
 #: src/web_app_properties.py:121
 msgid "User Agent"
-msgstr ""
+msgstr "ユーザーエージェント"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:88
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:97
 msgid "Forward"
-msgstr ""
+msgstr "進む"
 
 #: src/web_app_window.py:105 src/web_app_window.py:168
 #: src/web_app_window.py:191
 msgid "Reload"
-msgstr ""
+msgstr "再読み込み"
 
 #: src/web_app_window.py:113
 msgid "Send to Background"
-msgstr ""
+msgstr "バックグラウンドにする"
 
 #: src/web_app_window.py:173 src/web_app_window.py:187
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: src/web_app_window.py:212
 msgid "Link opened in system browser"
-msgstr ""
+msgstr "リンクはシステムのブラウザーで開かれました"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:284
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "{} に位置情報の使用を許可しますか?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:287
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "{} に通知の送信を許可しますか?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:290
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "{} にDRM のインストールと使用を許可しますか?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:293
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "{} にクリップボードへのアクセスを許可しますか?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:296
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "{} にマイクやカメラへのアクセスを許可しますか?"
 
 #: src/web_app_window.py:297
 msgid "Yes"
-msgstr ""
+msgstr "はい"
 
 #: src/web_app_window.py:297
 msgid "No"
-msgstr ""
+msgstr "いいえ"
 
 #: src/web_app_window.py:324
 msgid "Save File"
-msgstr ""
+msgstr "ファイルを保存"
 
 #: src/window.py:72
 msgid "Main Menu"
-msgstr ""
+msgstr "メインメニュー"
 
 #: src/window.py:77
 msgid "About"
-msgstr ""
+msgstr "このアプリについて"
 
 #: src/window.py:80 src/window.py:238
 msgid "Report Broken Website"
-msgstr ""
+msgstr "正常に動作しないウェブサイトの報告"
 
 #: src/window.py:104
 msgid "Your Web Apps"
-msgstr ""
+msgstr "作成したウェブアプリ"
 
 #: src/window.py:120
 msgid "No Web Apps installed"
-msgstr ""
+msgstr "ウェブアプリが何もインストールされていません"
 
 #: src/window.py:121
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "ウェブアプリの追加ボタンを押して作成してください"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:156
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "ファイル {} が壊れています! ローカルで変更されましたか?"
 
 #: src/window.py:166
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 #: src/window.py:175
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: src/window.py:250
 msgid "Website broken?"
-msgstr ""
+msgstr "ウェブサイトが正常に動作しませんか?"
 
 #: src/window.py:263
 msgid "I can't install the website"
-msgstr ""
+msgstr "ウェブサイトをインストールできません"
 
 #: src/window.py:268
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "ウェブサイトが開かない、もしくは動作しない"
 
 #: src/window.py:274 src/window.py:276
 msgid "Submit"
-msgstr ""
+msgstr "提出"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
@@ -290,6 +293,10 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
+"ウェブサイトをデスクトップアプリとしてインストールします。そのため、その他の"
+"インストールされたブラウザからは独立したウィンドウで表示されます。これは有名"
+"なブラウザに搭載されている「アプリとしてインストール」する機能と似たようなも"
+"のです。"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -297,3 +304,6 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
+"システムのブラウザーからは隔離された内蔵のブラウザを使用します。また、プライ"
+"ベートモードを使うこともできます。インストールされたウェブサイト以外は、新し"
+"いブラウザのウィンドウで開かれます。"
