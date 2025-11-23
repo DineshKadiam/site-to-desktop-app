@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2025-03-30 10:21+0000\n"
+"PO-Revision-Date: 2025-11-24 11:10+0000\n"
 "Last-Translator: artnay <artnay@noreply.codeberg.org>\n"
-"Language-Team: Finnish <https://translate.codeberg.org/projects/web-apps/web-"
-"apps/fi/>\n"
+"Language-Team: Finnish <https://translate.codeberg.org/projects/web-apps/"
+"web-apps/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.14\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -38,7 +38,7 @@ msgstr "Luo uusi web-sovellus"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr ""
+msgstr "Varoitus: URL-osoite ei viittaa kelvolliseen verkkosivuun"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
@@ -81,9 +81,8 @@ msgstr ""
 "vikailmoitus!"
 
 #: src/url_dialog.py:44
-#, fuzzy
 msgid "Enter URL…"
-msgstr "Kirjoita osoite"
+msgstr "Kirjoita URL-osoite…"
 
 #: src/url_dialog.py:52 src/url_dialog.py:54
 msgid "Add"
@@ -95,7 +94,7 @@ msgstr "Kirjoita osoite"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
-msgstr ""
+msgstr "Kirjoita sen verkkosovelluksen URL-osoite, jonka haluat lisätä"
 
 #. title not found by html parser
 #: src/url_dialog.py:137
@@ -189,7 +188,7 @@ msgstr "Päivitä"
 
 #: src/web_app_window.py:113
 msgid "Send to Background"
-msgstr ""
+msgstr "Lähetä taustalle"
 
 #: src/web_app_window.py:173 src/web_app_window.py:187
 msgid "Stop"
@@ -197,7 +196,7 @@ msgstr "Pysäytä"
 
 #: src/web_app_window.py:212
 msgid "Link opened in system browser"
-msgstr ""
+msgstr "Linkki avattu järjestelmän selaimessa"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:284
