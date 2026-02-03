@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2024-09-14 22:18+0000\n"
-"Last-Translator: Napoleoon <Napoleoon@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2026-02-04 11:29+0000\n"
+"Last-Translator: YoavRheims <yoavrheims@noreply.codeberg.org>\n"
 "Language-Team: French <https://translate.codeberg.org/projects/web-apps/web-"
 "apps/fr/>\n"
 "Language: fr\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
 msgid "Portal error:"
-msgstr "Erreur du portail :"
+msgstr "Erreur du portal :"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:41 src/window.py:63
 msgid "Add Web App"
@@ -38,7 +38,7 @@ msgstr "Créer une nouvelle application Web"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr ""
+msgstr "Avertissement : l’URL ne correspond pas à un site Web valide"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
@@ -81,9 +81,8 @@ msgstr ""
 "visible, veuillez soumettre un rapport de bug !"
 
 #: src/url_dialog.py:44
-#, fuzzy
 msgid "Enter URL…"
-msgstr "Entrer l’URL"
+msgstr "Entrer l'URL"
 
 #: src/url_dialog.py:52 src/url_dialog.py:54
 msgid "Add"
@@ -95,7 +94,7 @@ msgstr "Entrer l’URL"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
-msgstr ""
+msgstr "Entrez l'URL de l’application Web que vous souhaitez ajouter"
 
 #. title not found by html parser
 #: src/url_dialog.py:137
@@ -194,7 +193,7 @@ msgstr "Rafraîchir"
 
 #: src/web_app_window.py:113
 msgid "Send to Background"
-msgstr ""
+msgstr "Envoyer en arrière-plan"
 
 #: src/web_app_window.py:173 src/web_app_window.py:187
 msgid "Stop"
@@ -202,7 +201,7 @@ msgstr "Arrêter"
 
 #: src/web_app_window.py:212
 msgid "Link opened in system browser"
-msgstr ""
+msgstr "Lien ouvert dans le navigateur du système"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:284
