@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2026-01-09 11:21+0000\n"
-"Last-Translator: astro-ray <astro-ray@noreply.codeberg.org>\n"
+"PO-Revision-Date: 2026-02-07 05:29+0000\n"
+"Last-Translator: Sagor Islam <sagor_islam@noreply.codeberg.org>\n"
 "Language-Team: Bengali <https://translate.codeberg.org/projects/web-apps/web-"
 "apps/bn/>\n"
 "Language: bn\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -124,7 +124,7 @@ msgstr "ব্যাক, ফরওয়ার্ড এবং রিলোড-এ�
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
-msgstr "ডোমেন ম্যাচিং"
+msgstr "ডোমেইন ম্যাচিং"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
@@ -132,11 +132,11 @@ msgstr "ওয়েব অ্যাপে কোন ওয়েবসাইট
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
-msgstr "ডোমেন এবং সাবডোমেন"
+msgstr "ডোমেইন এবং সাবডোমেইন"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr "শুধুমাত্র ডোমেন"
+msgstr "শুধুমাত্র ডোমেইন"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
@@ -170,7 +170,7 @@ msgstr "কুকি এবং অন্যান্য তথ্য সংগ�
 
 #: src/web_app_properties.py:121
 msgid "User Agent"
-msgstr "উজার এজেন্ট"
+msgstr "ইউজার এজেন্ট"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:88
