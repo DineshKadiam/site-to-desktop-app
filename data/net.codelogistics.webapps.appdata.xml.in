@@ -26,6 +26,9 @@
       It uses an internal browser isolated from the system browser, which can optionally be used in incognito mode.
       Links to websites other than the one installed open in a new browser window.
     </p>
+    <p>NOTE FOR UBUNTU USERS: Ubuntu has a bug that prevents Web Apps from working. A workaround is avaiable at
+    https://etbe.coker.com.au/2024/04/24/ubuntu-24-04-bubblewrap/ (see https://codeberg.org/eyekay/webapps/issues/15
+    for details)</p>
   </description>
 
   <content_rating type="oars-1.0" />
@@ -48,6 +51,17 @@
   </screenshots>
 
   <releases>
+    <release version="0.6.0" date="2026-02-08">
+      <description translate="no">
+        <p>There are no user-facing changes in this release as the focus was on refactoring.
+        There is still more to be done in this respect in future releases but considerable progress has been made.</p>
+        <ul>
+          <li>The UI has been separated from the logic and is now fully written in Blueprint.</li>
+          <li>Formatting and refactoring (Gregor Niehl)</li>
+          <li>Translation updates (various)</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.12" date="2025-10-23">
       <description translate="no">
         <ul>
