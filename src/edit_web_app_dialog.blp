@@ -1,0 +1,24 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EditWebAppDialog : Adw.Dialog {
+  title: _("Edit Web App");
+  content-width: 500;
+  content-height: 800;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      Gtk.Button edit_button {
+        label: _("Save");
+        tooltip-text: _("Save changes to the web app");
+        sensitive: false;
+        styles ["suggested-action"]
+      }
+    }
+
+    content: Gtk.ScrolledWindow content_scrolled {
+    };
+  }
+}

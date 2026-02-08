@@ -28,62 +28,23 @@ from .parse_manifest import get_website_data_from_manifest
 from .parse_webpage import get_website_data_from_webpage
 
 
+@Gtk.Template(resource_path="/net/codelogistics/webapps/url_dialog.ui")
 class URLDialog(Adw.Dialog):
+    __gtype_name__ = "URLDialog"
+
+    url_entry = Gtk.Template.Child()
+    add_button = Gtk.Template.Child()
+    stack = Gtk.Template.Child()
+
     def __init__(self, parent_window, app):
         super().__init__()
 
         self.app = app
         self.parent_window = parent_window
 
-        self.set_content_width(500)
-        self.set_content_height(600)
-        self.set_title(_("Add Web App"))
-
-        self.url_entry = Gtk.Entry()
-        self.url_entry.set_placeholder_text(_("Enter URL…"))
         self.url_entry.connect("changed", self.enable_add_button)
-        self.url_entry.set_activates_default(True)
-
-        self.add_button = Gtk.Button()
-        self.add_button.set_sensitive(False)
-        self.add_button.set_vexpand(False)
-        self.add_button.set_halign(Gtk.Align.CENTER)
-        self.add_button.set_label(_("Add"))
         self.add_button.connect("clicked", self.add_webapp)
-        self.add_button.set_tooltip_text(_("Add"))
-        self.add_button.add_css_class("suggested-action")
-        self.add_button.add_css_class("pill")
         self.set_default_widget(self.add_button)
-
-        box = Gtk.Box.new(Gtk.Orientation.VERTICAL, spacing=12)
-        box.set_vexpand(True)
-        box.set_hexpand(True)
-        box.append(self.url_entry)
-        box.append(self.add_button)
-
-        clamp = Adw.Clamp()
-        clamp.set_maximum_size(300)
-        clamp.set_child(box)
-
-        status_page = Adw.StatusPage.new()
-        status_page.set_title(_("Enter URL"))
-        status_page.set_description(_("Enter the URL of the Web App you want to add"))
-        status_page.set_icon_name("search-global")
-        status_page.set_vexpand(True)
-        status_page.set_hexpand(True)
-        status_page.set_child(clamp)
-
-        spinner = Adw.Spinner.new()
-        spinner.set_size_request(50, 50)
-
-        self.stack = Gtk.Stack()
-        self.stack.add_named(status_page, "clamp")
-        self.stack.add_named(spinner, "loading")
-
-        toolbar_view = Adw.ToolbarView()
-        toolbar_view.set_content(self.stack)
-        toolbar_view.add_top_bar(Adw.HeaderBar.new())
-        self.set_child(toolbar_view)
 
         self.cancellable = None
         self.too_late_to_cancel = False

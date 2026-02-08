@@ -1,0 +1,100 @@
+using Gtk 4.0;
+using Adw 1;
+
+menu primary_menu {
+  item {
+    label: _("About");
+    action: "app.about";
+  }
+
+  item {
+    label: _("Report Broken Website");
+    action: "app.report";
+  }
+}
+
+template $WebAppsWindow : Adw.ApplicationWindow {
+  default-width: 800;
+  default-height: 600;
+  width-request: 360;
+  height-request: 294;
+  title: _("Web Apps");
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [title]
+      Adw.WindowTitle {
+        title: _("Web Apps");
+      }
+
+      [start]
+      Gtk.Button add_button {
+        icon-name: "list-add-symbolic";
+        tooltip-text: _("Add Web App");
+      }
+
+      [end]
+      Gtk.MenuButton {
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+        primary: true;
+        menu-model: primary_menu;
+      }
+    }
+
+    content: Gtk.Box {
+      orientation: vertical;
+      hexpand: true;
+
+      Gtk.Stack stack {
+        transition-type: crossfade;
+
+        Gtk.StackPage {
+          name: "list";
+          child: Gtk.ScrolledWindow {
+            vexpand: true;
+            valign: fill;
+            halign: fill;
+            hexpand: true;
+
+            Adw.Clamp {
+              margin-top: 8;
+              margin-bottom: 8;
+              margin-start: 32;
+              margin-end: 32;
+
+              Gtk.Box {
+                orientation: vertical;
+                margin-bottom: 8;
+
+                Gtk.Label {
+                  label: _("Your Web Apps");
+                  halign: start;
+                  margin-bottom: 8;
+                  styles ["heading"]
+                }
+
+                Gtk.ListBox apps_list {
+                  selection-mode: none;
+                  styles ["boxed-list"]
+                }
+              }
+            }
+          };
+        }
+
+        Gtk.StackPage {
+          name: "empty";
+          child: Adw.StatusPage {
+            hexpand: true;
+            vexpand: true;
+            title: _("No Web Apps installed");
+            description: _("Press the Add Web App button to create one");
+            icon-name: "web-browser-symbolic";
+          };
+        }
+      }
+    };
+  };
+}

@@ -1,0 +1,59 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $URLDialog : Adw.Dialog {
+  title: _("Add Web App");
+  content-width: 500;
+  content-height: 600;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {}
+
+    content: Gtk.Stack stack {
+      Gtk.StackPage {
+        name: "clamp";
+        child: Adw.StatusPage {
+          title: _("Enter URL");
+          description: _("Enter the URL of the Web App you want to add");
+          icon-name: "search-global";
+          vexpand: true;
+          hexpand: true;
+
+          child: Adw.Clamp {
+            maximum-size: 300;
+
+            Gtk.Box {
+              orientation: vertical;
+              spacing: 12;
+              vexpand: true;
+              hexpand: true;
+
+              Gtk.Entry url_entry {
+                placeholder-text: _("Enter URL…");
+                activates-default: true;
+              }
+
+              Gtk.Button add_button {
+                sensitive: false;
+                vexpand: false;
+                halign: center;
+                label: _("Add");
+                tooltip-text: _("Add");
+                styles ["suggested-action", "pill"]
+              }
+            }
+          };
+        };
+      }
+
+      Gtk.StackPage {
+        name: "loading";
+        child: Adw.Spinner {
+          width-request: 50;
+          height-request: 50;
+        };
+      }
+    };
+  }
+}

@@ -2,5 +2,12 @@
 <gresources>
   <gresource prefix="/net/codelogistics/webapps">
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">web_app_properties.ui</file>
+    <file preprocess="xml-stripblanks">create_web_app_dialog.ui</file>
+    <file preprocess="xml-stripblanks">edit_web_app_dialog.ui</file>
+    <file preprocess="xml-stripblanks">url_dialog.ui</file>
+    <file preprocess="xml-stripblanks">web_app_window.ui</file>
+    <file preprocess="xml-stripblanks">report_broken_dialog.ui</file>
   </gresource>
 </gresources>

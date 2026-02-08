@@ -26,68 +26,35 @@ from .create_desktop_file import desktop_filer
 from .web_app_properties import WebAppProperties
 
 
+@Gtk.Template(resource_path="/net/codelogistics/webapps/create_web_app_dialog.ui")
 class CreateWebAppDialog(Adw.Dialog):
+    __gtype_name__ = "CreateWebAppDialog"
+
+    add_button = Gtk.Template.Child()
+    invalid_banner = Gtk.Template.Child()
+    content_scrolled = Gtk.Template.Child()
+
     def __init__(self, parent_window, state, invalid=False, **kwargs):
         super().__init__()
 
         self.parent_window = parent_window
 
-        self.set_title(_("Add Web App"))
-        self.set_content_width(500)
-        self.set_content_height(800)
-
-        self.add_button = Gtk.Button.new()
-        self.add_button.add_css_class("suggested-action")
-        self.add_button.set_sensitive(False)
-        self.add_button.set_label(_("Install"))
-        self.add_button.set_tooltip_text(_("Create a new web app"))
-
-        headerbar = Adw.HeaderBar.new()
-        headerbar.pack_end(self.add_button)
-
-        toolbar = Adw.ToolbarView.new()
-        toolbar.add_top_bar(headerbar)
-
         if invalid:
-            invalid_banner = Adw.Banner.new()
-            invalid_banner.set_title(
-                _("Warning: URL does not refer to a valid website")
-            )
-            invalid_banner.add_css_class("warning")
-            invalid_banner.set_revealed(True)
+            self.invalid_banner.set_revealed(True)
 
-            toolbar.add_top_bar(invalid_banner)
-
-        scrolled = Gtk.ScrolledWindow.new()
-        properties = WebAppProperties(
+        self.properties = WebAppProperties(
             edit=False, state=state, parent_window=parent_window
         )
-        scrolled.set_child(properties)
-        toolbar.set_content(scrolled)
-        self.set_child(toolbar)
+        self.content_scrolled.set_child(self.properties)
 
-        properties.name_row.connect("changed", self.enable_install)
-        self.add_button.connect(
-            "clicked",
-            self.install_webapp,
-            [
-                properties.name_row,
-                properties.url_row,
-                properties.avatar,
-                properties.show_navigation_row,
-                properties.domain_matching_row,
-                properties.loading_bar_row,
-                properties.javascript_row,
-                properties.incognito_row,
-                properties.user_agent_row,
-            ],
-        )
-        self.enable_install(properties.name_row)
+        self.properties.name_row.connect("changed", self.enable_install)
+        self.add_button.connect("clicked", self.install_webapp)
+        self.enable_install(self.properties.name_row)
 
     def enable_install(self, entry):
-        self.add_button.set_sensitive(entry.get_text().strip() == "")
+        self.add_button.set_sensitive(entry.get_text().strip() != "")
 
-    def install_webapp(self, button, widgets):
+    def install_webapp(self, button):
         app_id = "webapp_" + str(uuid.uuid4()).replace("-", "_")
 
         icon_path = (
@@ -95,25 +62,25 @@ class CreateWebAppDialog(Adw.Dialog):
             + app_id
             + ".png"
         )
-        paintable = widgets[2].draw_to_texture(1)
+        paintable = self.properties.avatar.draw_to_texture(1)
         paintable.save_to_png(icon_path)
 
-        text = widgets[1].get_text()
+        text = self.properties.url_row.get_text()
         url = text if text != "" else "about:blank"
         if not url.startswith("http"):
             url = "https://" + url
 
         state = {
             "app_id": app_id,
-            "name": widgets[0].get_text(),
+            "name": self.properties.name_row.get_text(),
             "url": url,
             "icon": icon_path,
-            "show_navigation": widgets[3].get_active(),
-            "domain_matching": widgets[4].get_selected(),
-            "loading_bar": widgets[5].get_active(),
-            "javascript": widgets[6].get_active(),
-            "incognito": widgets[7].get_active(),
-            "user_agent": widgets[8].get_text(),
+            "show_navigation": self.properties.show_navigation_row.get_active(),
+            "domain_matching": self.properties.domain_matching_row.get_selected(),
+            "loading_bar": self.properties.loading_bar_row.get_active(),
+            "javascript": self.properties.javascript_row.get_active(),
+            "incognito": self.properties.incognito_row.get_active(),
+            "user_agent": self.properties.user_agent_row.get_text(),
         }
 
         with open(

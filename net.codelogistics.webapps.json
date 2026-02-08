@@ -1,10 +1,10 @@
 {
-    "app-id": "net.codelogistics.webapps",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
-    "sdk": "org.gnome.Sdk",
-    "command": "webapps",
-    "finish-args": [
+    "app-id" : "net.codelogistics.webapps",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "49",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "webapps",
+    "finish-args" : [
         "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
@@ -13,7 +13,7 @@
         "--socket=pulseaudio",
         "--filesystem=xdg-data"
     ],
-    "cleanup": [
+    "cleanup" : [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -24,37 +24,43 @@
         "*.la",
         "*.a"
     ],
-    "modules": [
+    "modules" : [
         {
-            "name": "libportal",
-            "buildsystem": "meson",
-            "config-opts": [
+            "name" : "libportal",
+            "buildsystem" : "meson",
+            "config-opts" : [
                 "-Ddocs=false",
                 "-Dintrospection=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/flatpak/libportal.git",
-                    "tag": "0.9.1",
-                    "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^([\\d.]+)$"
+                    "type" : "git",
+                    "url" : "https://github.com/flatpak/libportal.git",
+                    "tag" : "0.9.1",
+                    "x-checker-data" : {
+                        "type" : "git",
+                        "tag-pattern" : "^([\\d.]+)$"
                     },
-                    "commit": "8f5dc8d192f6e31dafe69e35219e3b707bde71ce"
+                    "commit" : "8f5dc8d192f6e31dafe69e35219e3b707bde71ce"
                 }
             ]
         },
         {
-            "name": "webapps",
-            "builddir": true,
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "webapps",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "dir",
-                    "path": "."
+                    "type" : "dir",
+                    "path" : "."
                 }
+            ],
+            "config-opts" : [
+                "--libdir=lib"
             ]
         }
-    ]
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
 }

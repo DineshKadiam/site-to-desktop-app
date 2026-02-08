@@ -1,0 +1,50 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ReportBrokenDialog : Adw.Dialog {
+  title: _("Report Broken Website");
+  content-width: 500;
+  content-height: 300;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {}
+
+    content: Adw.Clamp {
+      Gtk.Box {
+        orientation: vertical;
+        valign: center;
+
+        Gtk.Label {
+          label: _("Website broken?");
+          margin-bottom: 8;
+          styles ["title-1"]
+        }
+
+        Gtk.Entry url_entry {
+          hexpand: true;
+          placeholder-text: _("Enter URL");
+          margin-bottom: 8;
+        }
+
+        Gtk.CheckButton app_creation_radio {
+          active: true;
+          label: _("I can't install the website");
+        }
+
+        Gtk.CheckButton website_broken_radio {
+          group: app_creation_radio;
+          label: _("The website is not opening/ working");
+          margin-bottom: 8;
+        }
+
+        Gtk.Button submit_button {
+          vexpand: false;
+          label: _("Submit");
+          tooltip-text: _("Submit");
+          styles ["suggested-action", "pill"]
+        }
+      }
+    };
+  }
+}

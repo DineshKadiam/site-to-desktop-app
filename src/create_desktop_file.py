@@ -19,7 +19,7 @@
 
 import os
 
-from gi.repository import Gio, GLib, Xdp
+from gi.repository import GdkPixbuf, Gio, GLib, Xdp
 
 
 def desktop_filer(parent, app_id, name):
@@ -31,68 +31,67 @@ def desktop_filer(parent, app_id, name):
     write_desktop_file(parent, app_id, name, icon_path)
 
 
-def get_result(portal, result):
-    try:
-        variant = portal.dynamic_launcher_prepare_install_finish(result)
-        token = variant["token"]
-        # we will replace true with webapps later : https://github.com/flatpak/xdg-desktop-portal/issues/1674
-        desktop_file = "[Desktop Entry]\nExec = true {}\nTerminal=false\nType=Application\nCategories=Network;".format(
-            app_id
-        )
+def write_desktop_file(parent, app_id, name, icon_path):
+    def get_result(portal, result):
+        try:
+            variant = portal.dynamic_launcher_prepare_install_finish(result)
+            token = variant["token"]
+            # we will replace true with webapps later : https://github.com/flatpak/xdg-desktop-portal/issues/1674
+            desktop_file = "[Desktop Entry]\nExec = true {}\nTerminal=false\nType=Application\nCategories=Network;".format(
+                app_id
+            )
 
-        portal.dynamic_launcher_install(
-            token, "net.codelogistics.webapps." + app_id + ".desktop", desktop_file
-        )
-        with open(
-            os.path.expanduser(
-                "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
-                    app_id
-                )
-            ),
-            "r",
-        ) as f:
-            desktop_file = f.read().replace("--command=true", "")
-        with open(
-            os.path.expanduser(
-                "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
-                    app_id
-                )
-            ),
-            "w",
-        ) as f:
-            f.write(desktop_file)
+            portal.dynamic_launcher_install(
+                token, "net.codelogistics.webapps." + app_id + ".desktop", desktop_file
+            )
+            with open(
+                os.path.expanduser(
+                    "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
+                        app_id
+                    )
+                ),
+                "r",
+            ) as f:
+                desktop_file = f.read().replace("--command=true", "")
+            with open(
+                os.path.expanduser(
+                    "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
+                        app_id
+                    )
+                ),
+                "w",
+            ) as f:
+                f.write(desktop_file)
 
-    except Exception as e:
-        if os.path.exists(
-            ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".window"
-        ):
-            # Window has been opened atleast once
-            pass
-        else:
+        except Exception as e:
             if os.path.exists(
-                ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json"
+                ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".window"
             ):
-                os.remove(
+                # Window has been opened atleast once
+                pass
+            else:
+                if os.path.exists(
                     ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json"
-                )
-            if os.path.exists(
-                ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-                + app_id
-                + ".png"
-            ):
-                os.remove(
+                ):
+                    os.remove(
+                        ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json"
+                    )
+                if os.path.exists(
                     ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
                     + app_id
                     + ".png"
-                )
-            parent.refresh_rows()
+                ):
+                    os.remove(
+                        ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
+                        + app_id
+                        + ".png"
+                    )
+                parent.refresh_rows()
 
-        # Translators: Do not translate portal
-        print(_("Portal error:"), e)
-        return
+            # Translators: Do not translate portal
+            print(_("Portal error:"), e)
+            return
 
-
-def write_desktop_file(parent, app_id, name, icon_path):
     with open(icon_path, "rb") as f:
         icon = Gio.BytesIcon.new(GLib.Bytes.new(f.read())).serialize()
 

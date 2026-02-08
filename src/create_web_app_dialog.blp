@@ -1,0 +1,31 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CreateWebAppDialog : Adw.Dialog {
+  title: _("Add Web App");
+  content-width: 500;
+  content-height: 800;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      Gtk.Button add_button {
+        label: _("Install");
+        tooltip-text: _("Create a new web app");
+        sensitive: false;
+        styles ["suggested-action"]
+      }
+    }
+
+    [top]
+    Adw.Banner invalid_banner {
+      title: _("Warning: URL does not refer to a valid website");
+      revealed: false;
+      styles ["warning"]
+    }
+
+    content: Gtk.ScrolledWindow content_scrolled {
+    };
+  }
+}

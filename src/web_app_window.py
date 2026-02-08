@@ -29,12 +29,23 @@ gi.require_version("WebKit", "6.0")
 from gi.repository import Adw, Gtk, WebKit
 
 
+@Gtk.Template(resource_path="/net/codelogistics/webapps/web_app_window.ui")
 class WebAppWindow(Adw.ApplicationWindow):
+    __gtype_name__ = "WebAppWindow"
+
+    toolbar = Gtk.Template.Child()
+    headerbar = Gtk.Template.Child()
+    back_button = Gtk.Template.Child()
+    forward_button = Gtk.Template.Child()
+    reload_button = Gtk.Template.Child()
+    hide_button = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
+    progressbar = Gtk.Template.Child()
+
     def __init__(self, application, state, **kwargs):
         super().__init__(application=application)
         self.set_title(state["name"])
-        self.set_default_size(800, 600)
-
+        
         self.set_default_icon_name("net.codelogistics.webapps")
         self.connect("close-request", self.on_close, state)
 
@@ -73,66 +84,43 @@ class WebAppWindow(Adw.ApplicationWindow):
                 storage,
             )
 
-        box = Gtk.Box.new(orientation=Gtk.Orientation.VERTICAL)
-
         self.webview.set_vexpand(True)
         if state["url"] == "":
             state["url"] = "about:blank"
         self.webview.load_uri(state["url"])
-        overlay = Gtk.Overlay.new()
-        self.toast_overlay = Adw.ToastOverlay.new()
+        
         self.toast_overlay.set_child(self.webview)
-        overlay.set_child(self.toast_overlay)
 
-        self.progressbar = Gtk.ProgressBar.new()
-        self.progressbar.add_css_class("osd")
-        self.progressbar.set_valign(Gtk.Align.START)
         if state["loading_bar"]:
-            overlay.add_overlay(self.progressbar)
-        box.append(overlay)
-        self.toolbar.set_content(box)
-        self.set_content(self.toolbar)
+            self.progressbar.set_visible(True)
+        else:
+            self.progressbar.set_visible(False)
 
-        headerbar = Adw.HeaderBar.new()
-        self.back_button = Gtk.Button.new()
         # Translators: this is for going back in the browser
-        self.back_button.set_tooltip_text(_("Back"))
-        self.back_button.set_icon_name("go-previous-symbolic")
-        self.back_button.add_css_class("flat")
-        self.back_button.set_sensitive(False)
         self.back_button.connect("clicked", lambda button: self.webview.go_back())
         application.create_action(
             "back", lambda *_: self.webview.go_back(), ["<alt>Left", "Back"]
         )
 
-        self.forward_button = Gtk.Button.new()
         # Translators: this is for going back in the browser
-        self.forward_button.set_tooltip_text(_("Forward"))
-        self.forward_button.set_icon_name("go-next-symbolic")
-        self.forward_button.add_css_class("flat")
-        self.forward_button.set_sensitive(False)
         self.forward_button.connect("clicked", lambda button: self.webview.go_forward())
         application.create_action(
             "forward", lambda *_: self.webview.go_forward(), ["<alt>Right", "Forward"]
         )
 
-        self.reload_button = Gtk.Button.new()
-        self.reload_button.set_tooltip_text(_("Reload"))
-        self.reload_button.set_icon_name("view-refresh-symbolic")
-        self.reload_button.add_css_class("flat")
         self.reload_button.connect("clicked", self.on_reload_clicked)
-        self.hide_button = Gtk.Button.new()
-        self.hide_button.set_icon_name("background-app-symbolic")
-        self.hide_button.add_css_class("flat")
-        self.hide_button.set_tooltip_text(_("Send to Background"))
         self.hide_button.connect("clicked", self.on_hide)
 
-        self.toolbar.add_top_bar(headerbar)
         if state["show_navigation"]:
-            headerbar.pack_start(self.back_button)
-            headerbar.pack_start(self.forward_button)
-            headerbar.pack_start(self.reload_button)
-            headerbar.pack_end(self.hide_button)
+            self.back_button.set_visible(True)
+            self.forward_button.set_visible(True)
+            self.reload_button.set_visible(True)
+            self.hide_button.set_visible(True)
+        else:
+            self.back_button.set_visible(False)
+            self.forward_button.set_visible(False)
+            self.reload_button.set_visible(False)
+            self.hide_button.set_visible(False)
 
         if "user_agent" in state and state["user_agent"]:
             settings.set_user_agent(state["user_agent"])

@@ -1,0 +1,85 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $WebAppProperties : Adw.Bin {
+  Gtk.Box {
+    orientation: vertical;
+    halign: center;
+
+    Adw.Avatar avatar {
+      size: 128;
+      show-initials: true;
+      margin-top: 8;
+      margin-bottom: 8;
+    }
+
+    Gtk.Button select_icon_button {
+      hexpand: false;
+      halign: center;
+      margin-bottom: 8;
+      styles ["flat"]
+
+      Adw.ButtonContent {
+        label: _("Browse Icon");
+        icon-name: "folder-open-symbolic";
+      }
+    }
+
+    Adw.Clamp {
+      margin-bottom: 20;
+      margin-start: 20;
+      margin-end: 20;
+
+      Gtk.ListBox {
+        selection-mode: none;
+        styles ["boxed-list"]
+
+        Adw.EntryRow name_row {
+          title: _("Name");
+        }
+
+        Adw.EntryRow url_row {
+          title: _("URL");
+        }
+
+        Adw.SwitchRow show_navigation_row {
+          title: _("Show Navigation Options");
+          subtitle: _("Show the buttons for back, forward and reload.");
+        }
+
+        Adw.ComboRow domain_matching_row {
+          title: _("Domain Matching");
+          subtitle: _("Set which websites will be allowed to load in the web app.");
+          model: Gtk.StringList {
+            strings [
+              _("Domain and subdomains"),
+              _("Domain only"),
+              _("Allow all")
+            ]
+          };
+        }
+
+        Adw.SwitchRow loading_bar_row {
+          title: _("Show Loading Bars");
+          subtitle: _("A loading bar will be visible at the top of the web page when it is being loaded.");
+          active: true;
+        }
+
+        Adw.SwitchRow javascript_row {
+          title: _("Enable JavaScript");
+          subtitle: _("Enable web scripting.");
+          active: true;
+        }
+
+        Adw.SwitchRow incognito_row {
+          title: _("Incognito Browsing");
+          subtitle: _("Cookies and other data will not be stored.");
+        }
+
+        Adw.EntryRow user_agent_row {
+          title: _("User Agent");
+        }
+      }
+    }
+  }
+}

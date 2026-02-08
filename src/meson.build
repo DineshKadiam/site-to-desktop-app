@@ -2,11 +2,27 @@ pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.proje
 moduledir = join_paths(pkgdatadir, 'webapps')
 gnome = import('gnome')
 
+blueprints = custom_target('blueprints',
+  input: files(
+    # LIST YOUR BLUEPRINT FILES HERE
+    'window.blp',
+    'web_app_properties.blp',
+    'create_web_app_dialog.blp',
+    'edit_web_app_dialog.blp',
+    'url_dialog.blp',
+    'web_app_window.blp',
+    'report_broken_dialog.blp',
+  ),
+  output: '.',
+  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+)
+
 gnome.compile_resources('webapps',
   'webapps.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
+  dependencies: blueprints,
 )
 
 python = import('python')
@@ -40,6 +56,7 @@ webapps_sources = [
   'url_dialog.py',
   'parse_manifest.py',
   'parse_webpage.py',
+  'report_broken_dialog.py',
 ]
 
 install_data(webapps_sources, install_dir: moduledir)
