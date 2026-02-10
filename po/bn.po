@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2026-02-07 05:29+0000\n"
-"Last-Translator: Sagor Islam <sagor_islam@noreply.codeberg.org>\n"
+"PO-Revision-Date: 2026-02-11 11:29+0000\n"
+"Last-Translator: astro-ray <astro-ray@noreply.codeberg.org>\n"
 "Language-Team: Bengali <https://translate.codeberg.org/projects/web-apps/web-"
 "apps/bn/>\n"
 "Language: bn\n"
@@ -265,7 +265,7 @@ msgstr ""
 #. Translators: Keep the {} as it is
 #: src/window.py:156
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "ফাইল {} ভেঙে গেছে! সম্ভবত এটি স্থানীয়ভাবে পরিবর্তিত হয়েছে?"
 
 #: src/window.py:166
 msgid "Edit"
