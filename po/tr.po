@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2024-07-19 15:33+0000\n"
-"Last-Translator: eyekay <eyekay@users.noreply.translate.codeberg.org>\n"
+"PO-Revision-Date: 2026-03-27 10:57+0000\n"
+"Last-Translator: yakushabb <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://translate.codeberg.org/projects/web-apps/web-"
 "apps/tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -38,7 +38,7 @@ msgstr "Yeni web uygulaması oluştur"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr ""
+msgstr "Uyarı: URL geçerli bir web sitesi olarak görünmüyor"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
@@ -77,11 +77,12 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
+"Favicon simgeleri için Google API kullanılmıştır. Eğer geçerli favicon "
+"görünmüyorsa lütfen hata raporlayın!"
 
 #: src/url_dialog.py:44
-#, fuzzy
 msgid "Enter URL…"
-msgstr "URLʼyi Gir"
+msgstr "URL Gir…"
 
 #: src/url_dialog.py:52 src/url_dialog.py:54
 msgid "Add"
@@ -93,7 +94,7 @@ msgstr "URLʼyi Gir"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
-msgstr ""
+msgstr "Eklemek istediğiniz Web Uygulamasının URLʼsini girin"
 
 #. title not found by html parser
 #: src/url_dialog.py:137
@@ -127,6 +128,8 @@ msgstr "Alan Adı Eşleştirme"
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
 msgstr ""
+"Web uygulamasında hangi web sitelerinin yüklenmesine izin verildiğini "
+"belirle."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
@@ -148,7 +151,7 @@ msgstr "Yükleniyor Çubuklarını Göster"
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr ""
+msgstr "Yüklenirken web sayfasının üstünde yükleme çubuğu görünür."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
@@ -168,7 +171,7 @@ msgstr "Çerezler ve diğer veriler depolanmayacak."
 
 #: src/web_app_properties.py:121
 msgid "User Agent"
-msgstr ""
+msgstr "Kullanıcı Aracısı"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:88
@@ -187,7 +190,7 @@ msgstr "Yeniden Yükle"
 
 #: src/web_app_window.py:113
 msgid "Send to Background"
-msgstr ""
+msgstr "Arka Plana Gönder"
 
 #: src/web_app_window.py:173 src/web_app_window.py:187
 msgid "Stop"
@@ -195,32 +198,32 @@ msgstr "Durdur"
 
 #: src/web_app_window.py:212
 msgid "Link opened in system browser"
-msgstr ""
+msgstr "Bağlantı sistem tarayıcısında açıldı"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:284
 msgid "Allow {} access to your location?"
-msgstr ""
+msgstr "{} konumunuza erişebilsin mi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:287
 msgid "Allow {} to send notifications?"
-msgstr ""
+msgstr "{} bildirim gönderebilsin mi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:290
 msgid "Allow {} to install and use DRM?"
-msgstr ""
+msgstr "{} DRM kurup kullanabilsin mi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:293
 msgid "Allow {} to access your clipboard?"
-msgstr ""
+msgstr "{} panonuza erişebilsin mi?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:296
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr ""
+msgstr "{} mikrofon ve/veya kameranıza erişebilsin mi?"
 
 #: src/web_app_window.py:297
 msgid "Yes"
@@ -244,7 +247,7 @@ msgstr "Hakkında"
 
 #: src/window.py:80 src/window.py:238
 msgid "Report Broken Website"
-msgstr ""
+msgstr "Bozuk Web Sitesi Raporla"
 
 #: src/window.py:104
 msgid "Your Web Apps"
@@ -256,36 +259,36 @@ msgstr "Web Uygulaması Kurulmadı"
 
 #: src/window.py:121
 msgid "Press the Add Web App button to create one"
-msgstr ""
+msgstr "Yeni bir tane oluşturmak için Web Uygulaması düğmesine basın"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:156
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr ""
+msgstr "{} dosyası bozuk! Yerel olarak düzenlenmiş olabilir mi?"
 
 #: src/window.py:166
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #: src/window.py:175
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: src/window.py:250
 msgid "Website broken?"
-msgstr ""
+msgstr "Web sitesi bozuk mu?"
 
 #: src/window.py:263
 msgid "I can't install the website"
-msgstr ""
+msgstr "Web sitesini kuramadım"
 
 #: src/window.py:268
 msgid "The website is not opening/ working"
-msgstr ""
+msgstr "Web sitesi açılmıyor ya da çalışmıyor"
 
 #: src/window.py:274 src/window.py:276
 msgid "Submit"
-msgstr ""
+msgstr "Gönder"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:21
 msgid ""
@@ -293,6 +296,9 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
+"Web sitelerini masaüstü uygulamaları olarak kur, böylece kurulu "
+"tarayıcılardan ayrı, kendi pencerelerinde görünürler. Bu, popüler web "
+"tarayıcılarında bulunan \"Uygulama Olarak Kur\" özelliğine benzer."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -300,6 +306,9 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
+"Sistem tarayıcısından ayrı, dahili tarayıcı kullanır ve isteğe bağlı olarak "
+"gizli kipte kullanılabilir. Kurulu web sitesi dışındaki web sitelerine ait "
+"bağlantılar yeni tarayıcı penceresinde açılır."
 
 #~ msgid "Install launcher"
 #~ msgstr "Başlatıcıyı kur"
