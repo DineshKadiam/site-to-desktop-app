@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2026-01-26 19:21+0000\n"
-"Last-Translator: Atalanttore <atalanttore@noreply.codeberg.org>\n"
+"PO-Revision-Date: 2026-03-30 20:57+0000\n"
+"Last-Translator: North-DaCoder <north-dacoder@noreply.codeberg.org>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/web-apps/web-"
 "apps/de/>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -147,7 +147,7 @@ msgstr "Zeige Ladebalken"
 msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
-msgstr "Ein Ladebalken wird über der Website bei Ladevorgängen angezeigt"
+msgstr "Ein Ladebalken wird über der Website bei Ladevorgängen angezeigt."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
