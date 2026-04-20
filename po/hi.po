@@ -6,16 +6,16 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2025-10-23 19:24+0000\n"
-"Last-Translator: eyekay <eyekay@noreply.codeberg.org>\n"
-"Language-Team: Hindi <https://translate.codeberg.org/projects/web-apps/"
-"web-apps/hi/>\n"
+"PO-Revision-Date: 2026-04-21 16:57+0000\n"
+"Last-Translator: chaitanyacodes <chaitanyacodes@noreply.codeberg.org>\n"
+"Language-Team: Hindi <https://translate.codeberg.org/projects/web-apps/web-"
+"apps/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 5.17\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -28,7 +28,7 @@ msgstr "वेब ऐप जोड़ें"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
-msgstr "स्थापित करें"
+msgstr "इंस्टॉल करें"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
@@ -36,7 +36,7 @@ msgstr "नया वेब ऐप बनाएं"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr "चेतवनी: यूआरएल मान्य वेबसाईट नहीं है"
+msgstr "चेतावनी: यूआरएल मान्य वेबसाइट नहीं है"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
@@ -58,7 +58,7 @@ msgstr "वेब ऐप्स"
 
 #: src/main.py:85 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr "वेबसाइटों को ऐप के रूप में स्थापित करें"
+msgstr "वेबसाइटों को ऐप के रूप में इंस्टॉल करें"
 
 #. Translators: add your name here
 #: src/main.py:95
@@ -75,12 +75,12 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
-"फ़ैविकान के लिये गूगल एपीआई उपयोग किया जा रहा है... अगर फ़ैविकान दिखाई नहीं दे तो कृपया "
+"फ़ैविकान के लिए गूगल एपीआई उपयोग किया जा रहा है... अगर फ़ैविकान दिखाई नहीं दे तो कृपया "
 "बग रिपोर्ट जमा करें!"
 
 #: src/url_dialog.py:44
 msgid "Enter URL…"
-msgstr "URL दर्ज करें…"
+msgstr "यूआरएल दर्ज करें…"
 
 #: src/url_dialog.py:52 src/url_dialog.py:54
 msgid "Add"
@@ -88,7 +88,7 @@ msgstr "जोड़ें"
 
 #: src/url_dialog.py:70 src/window.py:257
 msgid "Enter URL"
-msgstr "URL दर्ज करें"
+msgstr "यूआरएल दर्ज करें"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
@@ -101,7 +101,7 @@ msgstr "नया वेब ऐप"
 
 #: src/web_app_properties.py:48
 msgid "Browse Icon"
-msgstr "आईकन का चयन करें"
+msgstr "आइकन का चयन करें"
 
 #: src/web_app_properties.py:61
 msgid "Name"
@@ -167,7 +167,7 @@ msgstr "कुकीज़ और अन्य डेटा संचित न�
 
 #: src/web_app_properties.py:121
 msgid "User Agent"
-msgstr "यूज़र एजेण्ट"
+msgstr "यूज़र एजेंट"
 
 #. Translators: this is for going back in the browser
 #: src/web_app_window.py:88
@@ -209,17 +209,17 @@ msgstr "क्या {} को अधिसूचनाएँ भेजने �
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:290
 msgid "Allow {} to install and use DRM?"
-msgstr "क्या {} को DRM स्थापित और उपयोग करने की अनुमति दें?"
+msgstr "क्या {} को DRM इंस्टॉल और उपयोग करने की अनुमति दें?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:293
 msgid "Allow {} to access your clipboard?"
-msgstr "क्या {} को आपके क्लिपबोर्ड के प्रबंध की अनुमति दें?"
+msgstr "क्या {} को आपके क्लिपबोर्ड के इस्तेमाल की अनुमति दें?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:296
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr "क्या {} को आपके माइक्रोफोन और/या कैमरा के प्रबंध की अनुमति दें?"
+msgstr "क्या {} को आपके माइक्रोफोन और/या कैमरा के इस्तेमाल की अनुमति दें?"
 
 #: src/web_app_window.py:297
 msgid "Yes"
@@ -251,7 +251,7 @@ msgstr "आपके वेब ऐप्स"
 
 #: src/window.py:120
 msgid "No Web Apps installed"
-msgstr "कोई वेब ऐप्स स्थापित नहीं हैं"
+msgstr "कोई वेब ऐप्स इंस्टॉल नहीं हैं"
 
 #: src/window.py:121
 msgid "Press the Add Web App button to create one"
@@ -260,7 +260,7 @@ msgstr "नया वेब ऐप बनाने के लिये \"नय�
 #. Translators: Keep the {} as it is
 #: src/window.py:156
 msgid "File {} broken! Maybe it was modified locally?"
-msgstr "{} फ़ाइल में समस्या है! क्या वह संपादित की गयी है?"
+msgstr "{} फ़ाइल में समस्या है! क्या वह स्थानीय रूप से संपादित की गयी है?"
 
 #: src/window.py:166
 msgid "Edit"
@@ -276,7 +276,7 @@ msgstr "वेबसाइट ठीक से काम नहीं कर र
 
 #: src/window.py:263
 msgid "I can't install the website"
-msgstr "मुझे वेबसाइट स्थापित करने में समस्या हो रही है"
+msgstr "मुझे वेबसाइट इंस्टॉल करने में समस्या हो रही है"
 
 #: src/window.py:268
 msgid "The website is not opening/ working"
@@ -293,8 +293,8 @@ msgid ""
 "App\" feature found in popular web browsers."
 msgstr ""
 "वेबसाइटों को डेस्कटॉप ऐप के रूप में इंस्टॉल करें, ताकि वे किसी भी इंस्टॉल किए गए ब्राउज़र से "
-"अलग अपनी विंडो में दिखाई दें। यह कुछ वेब ब्राउज़रों में पाए जाने वाले ऐप के रूप में इंस्टॉल करने "
-"के सुविधा के समान है।"
+"अलग अपनी विंडो में दिखाई दें। यह कुछ वेब ब्राउज़रों में पाए जाने वाले \"ऐप के रूप में इंस्टॉल "
+"करें\" सुविधा के समान है।"
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -302,9 +302,9 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
-"यह सिस्टम ब्राउज़र से अलग एक आंतरिक ब्राउज़र का उपयोग करता है, जिसे गुप्त मोड में भी "
-"उपयोग किया जा सकता है। इंस्टॉल की गई वेबसाइट के अलावा अन्य वेबसाइटों के लिंक एक नए "
-"ब्राउज़र विंडो में खुलते हैं।"
+"यह सिस्टम ब्राउज़र से अलग एक आंतरिक ब्राउज़र का उपयोग करता है, जिसे गुप्त रूप में भी उपयोग "
+"किया जा सकता है। इंस्टॉल की गई वेबसाइट के अलावा अन्य वेबसाइटों के लिंक एक नई ब्राउज़र "
+"विंडो में खुलते हैं।"
 
 #~ msgid "Install launcher"
 #~ msgstr "लांचर स्थापित करें"
