@@ -39,7 +39,7 @@ class WebappsApplication(Adw.Application):
     """The main application singleton class."""
 
     def __init__(self, app_id=None):
-        full_app_id = f"{APP_ID}.Webapps"
+        full_app_id = APP_ID
 
         # check if app_id webapp is known
         if app_id is not None:

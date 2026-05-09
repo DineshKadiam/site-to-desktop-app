@@ -24,7 +24,7 @@ import gi
 
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gtk
+from gi.repository import Adw, GLib, Gtk
 
 from . import web_app_paths as paths
 from .create_desktop_file import name_desktop_file, uninstall_desktop_file
@@ -46,6 +46,8 @@ class WebAppsWindow(Adw.ApplicationWindow):
     def __init__(self, application, **kwargs):
         super().__init__(application=application)
         self.app = application
+        self.set_title(_("Web Apps"))
+        GLib.set_application_name(_("Web Apps"))
 
         application.create_action(
             "close_mainwindow", lambda *_: self.close(), ["<primary>w"]
