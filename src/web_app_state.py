@@ -33,11 +33,7 @@ def load_state(app_id):
 
 
 def states():
-    for app_folder in paths.WEBAPPS_DATA_DIR.iterdir():
-        if not app_folder.is_dir():
-            continue
-
-        app_id = app_folder.name
+    for app_id in paths.app_ids():
         state = load_state(app_id)
         if state is not None:
             yield state

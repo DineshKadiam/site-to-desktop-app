@@ -123,9 +123,6 @@ class WebappsApplication(Adw.Application):
 def main(version):
     """The application's entry point."""
 
-    paths.WEBAPPS_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    paths.ICONS_DIR.mkdir(parents=True, exist_ok=True)
-
     args = sys.argv
     app_id = args[1] if len(args) > 1 else None
 

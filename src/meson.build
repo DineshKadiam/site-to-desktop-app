@@ -44,6 +44,7 @@ configure_file(
 
 webapps_sources = [
   '__init__.py',
+  'legacy_web_app_paths.py',
   'main.py',
   'window.py',
   'web_app_properties.py',
