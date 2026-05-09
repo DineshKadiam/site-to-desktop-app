@@ -35,7 +35,7 @@ from .web_app_state import (
 gi.require_version("Adw", "1")
 gi.require_version("WebKit", "6.0")
 
-from gi.repository import Adw, Gtk, WebKit
+from gi.repository import Adw, GLib, Gtk, WebKit
 
 
 @Gtk.Template(resource_path="/net/codelogistics/webapps/web_app_window.ui")
@@ -53,7 +53,9 @@ class WebAppWindow(Adw.ApplicationWindow):
 
     def __init__(self, application, state, **kwargs):
         super().__init__(application=application)
-        self.set_title(state["name"])
+        name = state["name"]
+        self.set_title(name)
+        GLib.set_application_name(name)
 
         self.set_default_icon_name(APP_ID)
         self.connect("close-request", self.on_close, state)
@@ -182,7 +184,9 @@ class WebAppWindow(Adw.ApplicationWindow):
                 if len(restore_window) > 2 and restore_window[2]:
                     self.webview.set_zoom_level(float(restore_window[2]))
         else:
-            save_window_state(app_id, self.is_maximized(), self.get_width(), self.get_height())
+            save_window_state(
+                app_id, self.is_maximized(), self.get_width(), self.get_height()
+            )
 
     def on_reload_clicked(self, button):
         if button.get_icon_name() == "process-stop-symbolic":
