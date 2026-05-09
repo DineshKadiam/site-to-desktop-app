@@ -17,11 +17,20 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
 import os
+from pathlib import Path
 from urllib import parse
 
 import gi
+
+from . import web_app_paths as paths
+from .web_app_paths import APP_ID
+from .web_app_state import (
+    load_permissions,
+    load_window_state,
+    save_permissions,
+    save_window_state,
+)
 
 gi.require_version("Adw", "1")
 gi.require_version("WebKit", "6.0")
@@ -45,24 +54,21 @@ class WebAppWindow(Adw.ApplicationWindow):
     def __init__(self, application, state, **kwargs):
         super().__init__(application=application)
         self.set_title(state["name"])
-        
-        self.set_default_icon_name("net.codelogistics.webapps")
+
+        self.set_default_icon_name(APP_ID)
         self.connect("close-request", self.on_close, state)
 
         application.create_action(
             "close_webapp", lambda *_: self.close(), ["<primary>w"]
         )
+        app_id = state["app_id"]
 
         network_session = WebKit.NetworkSession.new_ephemeral()
         if not state["incognito"]:
-            network_session = WebKit.NetworkSession.new(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + "_data",
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + "_cache",
-            )
+            data_dir = paths.app_webkitgtk_data(app_id)
+            cache_dir = paths.app_webkitgtk_cache(app_id)
+
+            network_session = WebKit.NetworkSession.new(str(data_dir), str(cache_dir))
             cookies = network_session.get_cookie_manager()
         self.webview = WebKit.WebView(network_session=network_session)
         settings = self.webview.get_settings()
@@ -78,9 +84,7 @@ class WebAppWindow(Adw.ApplicationWindow):
             policy = WebKit.CookieAcceptPolicy.ALWAYS
             cookies.set_accept_policy(policy)
             cookies.set_persistent_storage(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + ".cookies.txt",
+                str(paths.app_webkitgtk_cookies(app_id)),
                 storage,
             )
 
@@ -88,7 +92,7 @@ class WebAppWindow(Adw.ApplicationWindow):
         if state["url"] == "":
             state["url"] = "about:blank"
         self.webview.load_uri(state["url"])
-        
+
         self.toast_overlay.set_child(self.webview)
 
         if state["loading_bar"]:
@@ -122,7 +126,7 @@ class WebAppWindow(Adw.ApplicationWindow):
             self.reload_button.set_visible(False)
             self.hide_button.set_visible(False)
 
-        if "user_agent" in state and state["user_agent"]:
+        if state.get("user_agent"):
             settings.set_user_agent(state["user_agent"])
 
         self.webview.connect("load-changed", self.on_load_changed)
@@ -161,45 +165,24 @@ class WebAppWindow(Adw.ApplicationWindow):
             "fullscreen", lambda *_: self.toggle_fullscreen(), ["F11"]
         )
 
-        with open("/".join(__file__.split("/")[:-1]) + "/exceptions.txt", "r") as f:
-            self.exceptions = f.read().split("\n")
+        current_dir = Path(__file__).parent
+        exceptions_file = current_dir / "exceptions.txt"
+        self.exceptions = exceptions_file.read_text().splitlines()
 
-        if not os.path.exists(
-            ".var/app/net.codelogistics.webapps/webapps/" + state["app_id"] + ".window"
-        ):
-            with open(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + ".window",
-                "w",
-            ) as restore_file:
-                restore_file.write(str(self.is_maximized()))
-                restore_file.write("\n")
-                restore_file.write(str(self.get_width()) + "x" + str(self.get_height()))
-                restore_file.write("\n")
-                restore_file.write("1.0")
-            return
-
-        restore_window = (
-            open(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + ".window",
-                "r",
-            )
-            .read()
-            .split("\n")
-        )
-        if restore_window[0] == "True":
-            self.maximize()
-        if len(restore_window) > 1:
-            if len(restore_window[1].split("x")) == 2:
-                self.set_default_size(
-                    int(restore_window[1].split("x")[0]),
-                    int(restore_window[1].split("x")[1]),
-                )
-            if len(restore_window) > 2 and restore_window[2]:
-                self.webview.set_zoom_level(float(restore_window[2]))
+        restore_window = load_window_state(app_id)
+        if restore_window is not None:
+            if restore_window[0] == "True":
+                self.maximize()
+            if len(restore_window) > 1:
+                if len(restore_window[1].split("x")) == 2:
+                    self.set_default_size(
+                        int(restore_window[1].split("x")[0]),
+                        int(restore_window[1].split("x")[1]),
+                    )
+                if len(restore_window) > 2 and restore_window[2]:
+                    self.webview.set_zoom_level(float(restore_window[2]))
+        else:
+            save_window_state(app_id, self.is_maximized(), self.get_width(), self.get_height())
 
     def on_reload_clicked(self, button):
         if button.get_icon_name() == "process-stop-symbolic":
@@ -221,7 +204,7 @@ class WebAppWindow(Adw.ApplicationWindow):
             or hit_test_result.context_is_link()
             or hit_test_result.context_is_media()
         ):
-            return
+            return None
         return True
 
     def on_load_changed(self, webview, event):
@@ -258,7 +241,7 @@ class WebAppWindow(Adw.ApplicationWindow):
             if (
                 not self.domain_allowed(uri, state["url"], state["domain_matching"])
             ) or (not self.webview.can_show_mime_type(content_type[0])):
-                os.system("xdg-open {}".format(uri))
+                os.system(f"xdg-open {uri}")
                 self.toast_overlay.add_toast(
                     Adw.Toast.new(_("Link opened in system browser"))
                 )
@@ -269,15 +252,13 @@ class WebAppWindow(Adw.ApplicationWindow):
             self.webview.load_uri(uri)
 
     def on_close(self, window, state):
-        with open(
-            ".var/app/net.codelogistics.webapps/webapps/" + state["app_id"] + ".window",
-            "w",
-        ) as restore_file:
-            restore_file.write(str(self.is_maximized()))
-            restore_file.write("\n")
-            restore_file.write(str(self.get_width()) + "x" + str(self.get_height()))
-            restore_file.write("\n")
-            restore_file.write(str(self.webview.get_zoom_level()))
+        save_window_state(
+            state["app_id"],
+            self.is_maximized(),
+            self.get_width(),
+            self.get_height(),
+            self.webview.get_zoom_level(),
+        )
         self.webview.terminate_web_process()
 
     def domain_allowed(self, new_uri, uri, strict) -> bool:
@@ -303,22 +284,14 @@ class WebAppWindow(Adw.ApplicationWindow):
         )
 
     def on_permission_request(self, webview, request, state):
-        def request_allow(permission):
-            permissions = {permission: False}
-            if os.path.exists(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + state["app_id"]
-                + ".permissions.json"
-            ):
-                with open(
-                    ".var/app/net.codelogistics.webapps/webapps/"
-                    + state["app_id"]
-                    + ".permissions.json",
-                    "r",
-                ) as f:
-                    permissions = json.load(f)
+        app_id = state["app_id"]
 
-            if permissions[permission]:
+        def request_allow(permission):
+            permissions = load_permissions(app_id)
+            if permissions is None:
+                permissions = {permission: False}
+
+            if permissions.get(permission):
                 request.allow()
                 return
 
@@ -331,21 +304,10 @@ class WebAppWindow(Adw.ApplicationWindow):
                     request.allow()
 
                     permissions[permission] = True
-                    with open(
-                        ".var/app/net.codelogistics.webapps/webapps/"
-                        + state["app_id"]
-                        + ".permissions.json",
-                        "w",
-                    ) as f:
-                        json.dump(permissions, f)
+                    save_permissions(app_id, permissions)
                 else:
-                    with open(
-                        ".var/app/net.codelogistics.webapps/webapps/"
-                        + state["app_id"]
-                        + ".permissions.json",
-                        "w",
-                    ) as f:
-                        json.dump(permissions, f)
+                    assert not permissions[permission]
+                    save_permissions(app_id, permissions)
                     request.deny()
 
             dialog = Gtk.AlertDialog.new()

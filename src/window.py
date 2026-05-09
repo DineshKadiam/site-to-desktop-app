@@ -17,19 +17,21 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
-import os
 
 import gi
 
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gio, Gtk
+from gi.repository import Adw, Gtk
 
+from . import web_app_paths as paths
+from .create_desktop_file import name_desktop_file, uninstall_desktop_file
 from .create_web_app_dialog import CreateWebAppDialog
 from .edit_web_app_dialog import EditWebAppDialog
 from .report_broken_dialog import ReportBrokenDialog
 from .url_dialog import URLDialog
+from .web_app_state import load_state, states
+
 
 @Gtk.Template(resource_path="/net/codelogistics/webapps/window.ui")
 class WebAppsWindow(Adw.ApplicationWindow):
@@ -75,45 +77,34 @@ class WebAppsWindow(Adw.ApplicationWindow):
 
     def add_rows(self, apps_list, application=None):
         rows = {}
-        for i in os.listdir(".var/app/net.codelogistics.webapps/webapps/"):
-            if i.endswith(".json") and not i.endswith(".permissions.json"):
-                with open(".var/app/net.codelogistics.webapps/webapps/" + i, "r") as f:
-                    try:
-                        tmpstate = json.load(f)
-                    except:
-                        # Translators: Keep the {} as it is
-                        print(
-                            _("File {} broken! Maybe it was modified locally?").format(
-                                i
-                            )
-                        )
-                        continue
+        for tmpstate in states():
+            app_id = tmpstate["app_id"]
 
-                row = Adw.ActionRow.new()
-                row.set_title(tmpstate["name"])
-                row.set_title_lines(1)
+            row = Adw.ActionRow.new()
+            row.set_title(tmpstate["name"])
+            row.set_title_lines(1)
 
-                edit_btn = Gtk.Button.new()
-                edit_btn.add_css_class("flat")
-                edit_btn.set_icon_name("document-edit-symbolic")
-                edit_btn.set_tooltip_text(_("Edit"))
-                edit_btn.connect("clicked", self.edit_row, i[:-5])
-                edit_btn.set_vexpand(False)
-                edit_btn.set_valign(Gtk.Align.CENTER)
-                row.add_suffix(edit_btn)
+            edit_btn = Gtk.Button.new()
+            edit_btn.add_css_class("flat")
+            edit_btn.set_icon_name("document-edit-symbolic")
+            edit_btn.set_tooltip_text(_("Edit"))
+            edit_btn.connect("clicked", self.edit_row, app_id)
+            edit_btn.set_vexpand(False)
+            edit_btn.set_valign(Gtk.Align.CENTER)
+            row.add_suffix(edit_btn)
 
-                delete_btn = Gtk.Button.new()
-                delete_btn.add_css_class("flat")
-                delete_btn.set_icon_name("user-trash-symbolic")
-                delete_btn.set_tooltip_text(_("Delete"))
-                delete_btn.connect("clicked", self.delete_row, i[:-5])
-                delete_btn.set_vexpand(False)
-                delete_btn.set_valign(Gtk.Align.CENTER)
-                row.add_suffix(delete_btn)
+            delete_btn = Gtk.Button.new()
+            delete_btn.add_css_class("flat")
+            delete_btn.set_icon_name("user-trash-symbolic")
+            delete_btn.set_tooltip_text(_("Delete"))
+            delete_btn.connect("clicked", self.delete_row, app_id)
+            delete_btn.set_vexpand(False)
+            delete_btn.set_valign(Gtk.Align.CENTER)
+            row.add_suffix(delete_btn)
 
-                rows[i] = row
+            rows[app_id] = row
 
-                apps_list.append(rows[i])
+            apps_list.append(rows[app_id])
 
         return rows
 
@@ -128,59 +119,22 @@ class WebAppsWindow(Adw.ApplicationWindow):
             self.stack.set_visible_child_name("list")
 
     def delete_row(self, button, app_id):
-        os.remove(".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json")
-        if os.path.exists(
-            ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".window"
-        ):
-            os.remove(
-                ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".window"
-            )
-        if os.path.exists(
-            ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".cookies.txt"
-        ):
-            os.remove(
-                ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".cookies.txt"
-            )
-        if os.path.exists(
-            ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-            + app_id
-            + ".png"
-        ):
-            os.remove(
-                ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-                + app_id
-                + ".png"
-            )
-        if os.path.exists(
-            ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".permissions.json"
-        ):
-            os.remove(
-                ".var/app/net.codelogistics.webapps/webapps/"
-                + app_id
-                + ".permissions.json"
-            )
-        if os.path.exists(
-            os.path.expanduser(
-                "~/.local/share/applications/net.codelogistics.webapps."
-                + app_id
-                + ".desktop"
-            )
-        ):
-            os.remove(
-                os.path.expanduser(
-                    "~/.local/share/applications/net.codelogistics.webapps."
-                    + app_id
-                    + ".desktop"
-                )
-            )
+        aux_app_files = [
+            paths.app_window_state(app_id),
+            paths.app_webkitgtk_cookies(app_id),
+            paths.app_icon_file(app_id),
+        ]
+        for aux in aux_app_files:
+            aux.unlink(missing_ok=True)
+
+        uninstall_desktop_file(name_desktop_file(app_id))
+        paths.app_state(app_id).unlink()
         self.refresh_rows()
 
     def edit_row(self, button, app_id):
-        with open(
-            ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json", "r"
-        ) as f:
-            tmpstate = json.load(f)
-        EditWebAppDialog(self, state=tmpstate, app=self.app).present(parent=self)
+        EditWebAppDialog(self, state=load_state(app_id), app=self.app).present(
+            parent=self
+        )
 
     def on_report_broken(self, app):
         ReportBrokenDialog().present(self)
