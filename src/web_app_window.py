@@ -302,7 +302,6 @@ class WebAppWindow(Adw.ApplicationWindow):
                     number = -1
                 if number == 0:
                     request.allow()
-
                     permissions[permission] = True
                     save_permissions(app_id, permissions)
                 else:
@@ -346,7 +345,7 @@ class WebAppWindow(Adw.ApplicationWindow):
             case WebKit.NotificationPermissionRequest:
                 request_allow("notification")
             case WebKit.GeolocationPermissionRequest:
-                request.allow("geolocation")
+                request_allow("geolocation")
             case WebKit.MediaKeySystemPermissionRequest:
                 request_allow("drm")
             case WebKit.ClipboardPermissionRequest:
