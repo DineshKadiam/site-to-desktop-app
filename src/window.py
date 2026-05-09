@@ -18,6 +18,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
+import shutil
+
 import gi
 
 gi.require_version("Adw", "1")
@@ -127,8 +129,22 @@ class WebAppsWindow(Adw.ApplicationWindow):
         for aux in aux_app_files:
             aux.unlink(missing_ok=True)
 
+        webkitgtk_dirs = [
+            paths.app_webkitgtk_cache(app_id),
+            paths.app_webkitgtk_data(app_id),
+        ]
+        for dir in webkitgtk_dirs:
+            if dir.exists():
+                shutil.rmtree(dir)
+
         uninstall_desktop_file(name_desktop_file(app_id))
+
+        cache_dir = paths.app_cache_dir(app_id)
+        if cache_dir.exists():
+            cache_dir.rmdir()
+
         paths.app_state(app_id).unlink()
+        paths.app_data_dir(app_id).rmdir()
         self.refresh_rows()
 
     def edit_row(self, button, app_id):
