@@ -17,18 +17,18 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import os
+from gi.repository import Gio, GLib, Xdp
 
-from gi.repository import GdkPixbuf, Gio, GLib, Xdp
+from . import web_app_paths as paths
+from .web_app_paths import APP_ID
+
+
+def name_desktop_file(app_id):
+    return f"{APP_ID}.{app_id}.desktop"
 
 
 def desktop_filer(parent, app_id, name):
-    icon_path = os.path.expanduser(
-        "~/.var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-        + app_id
-        + ".png"
-    )
-    write_desktop_file(parent, app_id, name, icon_path)
+    write_desktop_file(parent, app_id, name, paths.app_icon_file(app_id))
 
 
 def write_desktop_file(parent, app_id, name, icon_path):
@@ -36,56 +36,16 @@ def write_desktop_file(parent, app_id, name, icon_path):
         try:
             variant = portal.dynamic_launcher_prepare_install_finish(result)
             token = variant["token"]
-            # we will replace true with webapps later : https://github.com/flatpak/xdg-desktop-portal/issues/1674
-            desktop_file = "[Desktop Entry]\nExec = true {}\nTerminal=false\nType=Application\nCategories=Network;".format(
-                app_id
-            )
-
-            portal.dynamic_launcher_install(
-                token, "net.codelogistics.webapps." + app_id + ".desktop", desktop_file
-            )
-            with open(
-                os.path.expanduser(
-                    "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
-                        app_id
-                    )
-                ),
-                "r",
-            ) as f:
-                desktop_file = f.read().replace("--command=true", "")
-            with open(
-                os.path.expanduser(
-                    "~/.local/share/applications/net.codelogistics.webapps.{}.desktop".format(
-                        app_id
-                    )
-                ),
-                "w",
-            ) as f:
-                f.write(desktop_file)
+            desktop_file_content = f"[Desktop Entry]\nExec =webapps {app_id}\nTerminal=false\nType=Application\nCategories=Network;"
+            portal.dynamic_launcher_install(token, name_desktop_file(app_id), desktop_file_content)
 
         except Exception as e:
-            if os.path.exists(
-                ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".window"
-            ):
-                # Window has been opened atleast once
+            if paths.app_window_state(app_id).exists():
+                # Window has been opened at least once
                 pass
             else:
-                if os.path.exists(
-                    ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json"
-                ):
-                    os.remove(
-                        ".var/app/net.codelogistics.webapps/webapps/" + app_id + ".json"
-                    )
-                if os.path.exists(
-                    ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-                    + app_id
-                    + ".png"
-                ):
-                    os.remove(
-                        ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-                        + app_id
-                        + ".png"
-                    )
+                paths.app_state(app_id).unlink(missing_ok=True)
+                paths.app_icon_file(app_id).unlink(missing_ok=True)
                 parent.refresh_rows()
 
             # Translators: Do not translate portal
@@ -106,3 +66,12 @@ def write_desktop_file(parent, app_id, name, icon_path):
             None,
             get_result,
         )
+
+
+def uninstall_desktop_file(name):
+    try:
+        Xdp.Portal.new().dynamic_launcher_uninstall(name)
+    except Exception as e:
+        # Translators: Do not translate portal
+        print(_("Portal error:"), e)
+        return

@@ -44,11 +44,14 @@ configure_file(
 
 webapps_sources = [
   '__init__.py',
+  'legacy_web_app_paths.py',
   'main.py',
   'window.py',
   'web_app_properties.py',
   'create_web_app_dialog.py',
   'edit_web_app_dialog.py',
+  'web_app_paths.py',
+  'web_app_state.py',
   'web_app_window.py',
   'create_desktop_file.py',
   'exceptions.txt',

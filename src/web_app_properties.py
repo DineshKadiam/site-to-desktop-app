@@ -22,7 +22,7 @@ import shutil
 import gi
 
 gi.require_version("WebKit", "6.0")
-from gi.repository import Adw, Gdk, GdkPixbuf, Gio, Gtk, WebKit
+from gi.repository import Adw, Gdk, Gio, Gtk, WebKit
 
 
 @Gtk.Template(resource_path="/net/codelogistics/webapps/web_app_properties.ui")
@@ -73,11 +73,13 @@ class WebAppProperties(Adw.Bin):
         if state["icon"] == "/tmp/tmp_webapps_icon.png":
             return
         try:
-            texture = Gdk.Texture.new_from_file(Gio.File.new_for_path(state["icon"]))
+            texture = Gdk.Texture.new_from_file(
+                Gio.File.new_for_path(str(state["icon"]))
+            )
             self.avatar.set_custom_image(texture)
         except Exception as e:
             print(e)
-            
+
     def on_name_changed(self, row):
         self.avatar.set_text(row.get_text())
 

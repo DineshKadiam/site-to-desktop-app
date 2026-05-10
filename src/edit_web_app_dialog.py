@@ -17,12 +17,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
-
 from gi.repository import Adw, Gtk
 
+from . import web_app_paths as paths
 from .create_desktop_file import desktop_filer
 from .web_app_properties import WebAppProperties
+from .web_app_state import save_state
 
 
 @Gtk.Template(resource_path="/net/codelogistics/webapps/edit_web_app_dialog.ui")
@@ -38,7 +38,7 @@ class EditWebAppDialog(Adw.Dialog):
         self.parent_window = parent_window
 
         self.app_id = state["app_id"]
-        
+
         self.properties = WebAppProperties(
             edit=True, state=state, parent_window=parent_window
         )
@@ -52,14 +52,10 @@ class EditWebAppDialog(Adw.Dialog):
         self.edit_button.set_sensitive(entry.get_text().strip() != "")
 
     def install_webapp(self, button):
-        icon_path = (
-            ".var/app/net.codelogistics.webapps/icons/192x192/net.codelogistics.webapps."
-            + self.app_id
-            + ".png"
-        )
-        
+        icon_path = paths.app_icon_file(self.app_id)
+
         paintable = self.properties.avatar.draw_to_texture(1)
-        paintable.save_to_png(icon_path)
+        paintable.save_to_png(bytes(icon_path))
 
         text = self.properties.url_row.get_text()
         url = text if text != "" else "about:blank"
@@ -78,11 +74,7 @@ class EditWebAppDialog(Adw.Dialog):
             "incognito": self.properties.incognito_row.get_active(),
             "user_agent": self.properties.user_agent_row.get_text(),
         }
-
-        with open(
-            ".var/app/net.codelogistics.webapps/webapps/" + self.app_id + ".json", "w"
-        ) as f:
-            json.dump(state, f)
+        save_state(state)
 
         desktop_filer(self.parent_window, self.app_id, state["name"])
 

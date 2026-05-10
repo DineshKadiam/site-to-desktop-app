@@ -17,10 +17,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import json
 import os
 import sys
-from pathlib import Path
 
 import gi
 
@@ -30,6 +28,9 @@ gi.require_version("Xdp", "1.0")
 
 from gi.repository import Adw, Gio, Gtk
 
+from . import web_app_paths as paths
+from .web_app_paths import APP_ID
+from .web_app_state import load_state
 from .web_app_window import WebAppWindow
 from .window import WebAppsWindow
 
@@ -37,30 +38,32 @@ from .window import WebAppsWindow
 class WebappsApplication(Adw.Application):
     """The main application singleton class."""
 
-    def __init__(self, args):
-        if len(args) > 1 and args[1] + ".json" in os.listdir(
-            ".var/app/net.codelogistics.webapps/webapps/"
-        ):
-            super().__init__(
-                application_id="net.codelogistics.webapps." + args[1],
-                flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
-            )
-        else:
-            super().__init__(
-                application_id="net.codelogistics.webapps.Webapps",
-                flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
-            )
+    def __init__(self, app_id=None):
+        full_app_id = APP_ID
+
+        # check if app_id webapp is known
+        if app_id is not None:
+            if load_state(app_id):
+                full_app_id = f"{APP_ID}.{app_id}"
+            else:
+                # Translators: {} is the app-id and is necessary
+                print(_("Error app id unknown: {}").format(app_id))
+
+        super().__init__(
+            application_id=full_app_id,
+            flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
+        )
+
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("close", self.close_stuff_by_escape, ["Escape"])
         self.create_action("about", self.on_about_action)
-        self.args = args
+        self.app_id = app_id
 
     def close_stuff_by_escape(self, action, data):
         window = self.get_active_window()
-        if type(window) == WebAppsWindow:
-            if window.get_visible_dialog():
-                window.get_visible_dialog().close()
-        if type(window) == WebAppWindow:
+        if isinstance(window, WebAppsWindow) and window.get_visible_dialog():
+            window.get_visible_dialog().close()
+        if isinstance(window, WebAppWindow):
             window.close_fullscreen()
 
     def do_activate(self):
@@ -74,14 +77,7 @@ class WebappsApplication(Adw.Application):
             windows[0].set_visible(True)
             return
 
-        if len(self.args) > 1 and self.args[1] + ".json" in os.listdir(
-            ".var/app/net.codelogistics.webapps/webapps"
-        ):
-            with open(
-                ".var/app/net.codelogistics.webapps/webapps/" + self.args[1] + ".json",
-                "r",
-            ) as f:
-                state = json.load(f)
+        if self.app_id is not None and (state := load_state(self.app_id)):
             win = WebAppWindow(application=self, state=state)
             win.present()
 
@@ -95,7 +91,7 @@ class WebappsApplication(Adw.Application):
         about.set_application_name(_("Web Apps"))
         about.set_comments(_("Install websites as apps"))
         about.set_developer_name("Satvik Patwardhan")
-        about.set_application_icon("net.codelogistics.webapps")
+        about.set_application_icon(APP_ID)
         about.set_version("0.6.0")
         about.set_license_type(Gtk.License.GPL_3_0)
         about.set_developers(["Satvik Patwardhan"])
@@ -127,12 +123,8 @@ class WebappsApplication(Adw.Application):
 def main(version):
     """The application's entry point."""
 
-    Path(".var/app/net.codelogistics.webapps/webapps/").mkdir(
-        parents=True, exist_ok=True
-    )
-    Path(".var/app/net.codelogistics.webapps/icons/192x192/").mkdir(
-        parents=True, exist_ok=True
-    )
+    args = sys.argv
+    app_id = args[1] if len(args) > 1 else None
 
-    app = WebappsApplication(args=sys.argv)
+    app = WebappsApplication(app_id)
     return app.run()
