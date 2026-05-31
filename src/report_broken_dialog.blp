@@ -14,9 +14,13 @@ template $ReportBrokenDialog : Adw.Dialog {
       Gtk.Box {
         orientation: vertical;
         valign: center;
+        margin-start: 8;
+        margin-end: 8;
 
         Gtk.Label {
           label: _("Website broken?");
+          wrap: true;
+          halign: center;
           margin-bottom: 8;
           styles ["title-1"]
         }
