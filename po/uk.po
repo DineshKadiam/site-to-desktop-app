@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: 0.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-23 16:48+0530\n"
-"PO-Revision-Date: 2026-02-21 09:29+0000\n"
-"Last-Translator: semicov <semicov@noreply.codeberg.org>\n"
+"PO-Revision-Date: 2026-07-15 19:07+0000\n"
+"Last-Translator: Dymko <dymko@noreply.codeberg.org>\n"
 "Language-Team: Ukrainian <https://translate.codeberg.org/projects/web-apps/"
 "web-apps/uk/>\n"
 "Language: uk\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #. Translators: Do not translate portal
 #: src/create_desktop_file.py:62
@@ -22,7 +22,7 @@ msgstr "Помилка порталу:"
 
 #: src/create_web_app_dialog.py:36 src/url_dialog.py:41 src/window.py:63
 msgid "Add Web App"
-msgstr "Додати веб-додаток"
+msgstr "Додати вебпрограму"
 
 #: src/create_web_app_dialog.py:47
 msgid "Install"
@@ -30,15 +30,15 @@ msgstr "Встановити"
 
 #: src/create_web_app_dialog.py:48
 msgid "Create a new web app"
-msgstr "Створити новий веб-додаток"
+msgstr "Створити нову вебпрограму"
 
 #: src/create_web_app_dialog.py:56
 msgid "Warning: URL does not refer to a valid website"
-msgstr "Попередження: URL-адреса не веде на дійсний веб-сайт"
+msgstr "Попередження: URL-адреса не веде на дійсний сайт"
 
 #: src/edit_web_app_dialog.py:38
 msgid "Edit Web App"
-msgstr "Редагувати веб-додаток"
+msgstr "Редагувати вебпрограму"
 
 #: src/edit_web_app_dialog.py:49
 msgid "Save"
@@ -46,22 +46,24 @@ msgstr "Зберегти"
 
 #: src/edit_web_app_dialog.py:50
 msgid "Save changes to the web app"
-msgstr "Зберегти зміни у веб-додатку"
+msgstr "Зберегти зміни у вебпрограмі"
 
 #: src/main.py:84 src/window.py:46 src/window.py:57
 #: data/net.codelogistics.webapps.appdata.xml.in:5
 #: data/net.codelogistics.webapps.desktop.in:2
 msgid "Web Apps"
-msgstr "Веб-додатки"
+msgstr "Вебпрограми"
 
 #: src/main.py:85 data/net.codelogistics.webapps.appdata.xml.in:6
 msgid "Install websites as apps"
-msgstr "Встановити вебсайти як додатки"
+msgstr "Встановити сайти як програми"
 
 #. Translators: add your name here
 #: src/main.py:95
 msgid "Satvik Patwardhan"
-msgstr "Semicov"
+msgstr ""
+"Semicov\n"
+"Dymko"
 
 #: src/parse_webpage.py:88 src/parse_webpage.py:115 src/parse_webpage.py:123
 msgid "Error accessing URL:"
@@ -73,7 +75,7 @@ msgid ""
 "Google API for favicons being used... if correct favicon is not visible "
 "please file a bug report!"
 msgstr ""
-"Використовується API Google для іконок... якщо правильна іконка не "
+"Іконки отримуються через API Google... якщо правильна іконка не "
 "відображається, будь ласка, повідомте про помилку!"
 
 #: src/url_dialog.py:44
@@ -90,12 +92,12 @@ msgstr "Введіть URL"
 
 #: src/url_dialog.py:71
 msgid "Enter the URL of the Web App you want to add"
-msgstr "Введіть URL-адресу веб-програми, яку ви хочете додати"
+msgstr "Введіть URL вебпрограми, яку ви хочете додати"
 
 #. title not found by html parser
 #: src/url_dialog.py:137
 msgid "New Web App"
-msgstr "Новий веб-додаток"
+msgstr "Нова вебпрограма"
 
 #: src/web_app_properties.py:48
 msgid "Browse Icon"
@@ -115,7 +117,7 @@ msgstr "Показати параметри навігації"
 
 #: src/web_app_properties.py:77
 msgid "Show the buttons for back, forward and reload."
-msgstr "Показати кнопки назад, вперед та перезавантаження."
+msgstr "Показати кнопки назад, вперед і перезавантаження."
 
 #: src/web_app_properties.py:83
 msgid "Domain Matching"
@@ -123,7 +125,7 @@ msgstr "Відповідність доменів"
 
 #: src/web_app_properties.py:84
 msgid "Set which websites will be allowed to load in the web app."
-msgstr "Визначити домени, дозволені для завантаження у веб-додатку."
+msgstr "Визначити, які сайти буде дозволено завантажувати у вебпрограмі."
 
 #: src/web_app_properties.py:86
 msgid "Domain and subdomains"
@@ -131,7 +133,7 @@ msgstr "Домен та піддомени"
 
 #: src/web_app_properties.py:87
 msgid "Domain only"
-msgstr "Тільки домен"
+msgstr "Лише домен"
 
 #: src/web_app_properties.py:88
 msgid "Allow all"
@@ -146,8 +148,8 @@ msgid ""
 "A loading bar will be visible at the top of the web page when it is being "
 "loaded."
 msgstr ""
-"Індикатор завантаження буде видимий у верхній частині веб-сторінки під час "
-"її завантаження."
+"Індикатор завантаження буде видимий у верхній частині вебсторінки під час її "
+"завантаження."
 
 #: src/web_app_properties.py:103
 msgid "Enable JavaScript"
@@ -155,7 +157,7 @@ msgstr "Увімкнути JavaScript"
 
 #: src/web_app_properties.py:104
 msgid "Enable web scripting."
-msgstr "Увімкнути веб-скрипти."
+msgstr "Увімкнути вебскрипти."
 
 #: src/web_app_properties.py:111
 msgid "Incognito Browsing"
@@ -199,7 +201,7 @@ msgstr "Посилання відкрито в системному браузе
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:284
 msgid "Allow {} access to your location?"
-msgstr "Дозволити {} доступ до вашого місцезнаходження?"
+msgstr "Надати {} доступ до вашого розташування?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:287
@@ -209,17 +211,17 @@ msgstr "Дозволити {} відправляти сповіщення?"
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:290
 msgid "Allow {} to install and use DRM?"
-msgstr "Дозволити {} встановлювати та використовувати DRM?"
+msgstr "Дозволити {} встановлювати й використовувати DRM?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:293
 msgid "Allow {} to access your clipboard?"
-msgstr "Дозволити {} доступ до вашого буфера обміну?"
+msgstr "Дозволити {} доступ до буфера обміну?"
 
 #. Translators: {} is the url of the website and it is necessary!
 #: src/web_app_window.py:296
 msgid "Allow {} to access your microphone and/or camera?"
-msgstr "Дозволити {} доступ до вашого мікрофона та/або камери?"
+msgstr "Дозволити {} доступ до мікрофона та/або камери?"
 
 #: src/web_app_window.py:297
 msgid "Yes"
@@ -243,19 +245,19 @@ msgstr "Про програму"
 
 #: src/window.py:80 src/window.py:238
 msgid "Report Broken Website"
-msgstr "Повідомити про непрацюючий вебсайт"
+msgstr "Повідомити про непрацюючий сайт"
 
 #: src/window.py:104
 msgid "Your Web Apps"
-msgstr "Ваші веб-додатки"
+msgstr "Ваші вебпрограми"
 
 #: src/window.py:120
 msgid "No Web Apps installed"
-msgstr "Веб-додатки не встановлені"
+msgstr "Вебпрограми не встановлено"
 
 #: src/window.py:121
 msgid "Press the Add Web App button to create one"
-msgstr "Натисніть кнопку «Додати веб-додаток», щоб створити новий"
+msgstr "Натисніть кнопку «Додати вебпрограму», щоб створити нову"
 
 #. Translators: Keep the {} as it is
 #: src/window.py:156
@@ -272,15 +274,15 @@ msgstr "Видалити"
 
 #: src/window.py:250
 msgid "Website broken?"
-msgstr "Вебсайт не працює?"
+msgstr "Сайт не працює?"
 
 #: src/window.py:263
 msgid "I can't install the website"
-msgstr "Я не можу встановити вебсайт"
+msgstr "Не вдається встановити сайт"
 
 #: src/window.py:268
 msgid "The website is not opening/ working"
-msgstr "Вебсайт не відкривається/не працює"
+msgstr "Сайт не відкривається або не працює"
 
 #: src/window.py:274 src/window.py:276
 msgid "Submit"
@@ -292,10 +294,9 @@ msgid ""
 "separate from any browsers installed. This is similar to the \"Install as "
 "App\" feature found in popular web browsers."
 msgstr ""
-"Встановлюйте веб-сайти як настільні додатки, щоб вони відображалися у своїх "
-"власних вікнах, окремо від будь-яких встановлених браузерів. Це схоже на "
-"функцію \"Встановити як додаток\", яку можна знайти в популярних веб-"
-"браузерах."
+"Встановлюйте сайти як настільні програми, щоб вони відкривалися у власних "
+"вікнах окремо від установлених браузерів. Це схоже на функцію «Встановити як "
+"програму», яку можна знайти в популярних браузерах."
 
 #: data/net.codelogistics.webapps.appdata.xml.in:25
 msgid ""
@@ -303,9 +304,9 @@ msgid ""
 "optionally be used in incognito mode. Links to websites other than the one "
 "installed open in a new browser window."
 msgstr ""
-"Використовується внутрішній браузер, ізольований від системного браузера, "
-"який може бути використаний у режимі інкогніто. Посилання на веб-сайти, крім "
-"встановленого, відкриваються у новому вікні браузера."
+"Для роботи програма має внутрішній браузер, ізольований від системного, який "
+"за потреби можна запускати в режимі інкогніто. Посилання на інші сайти "
+"відкриваються в новому вікні браузера."
 
 #~ msgid "Install launcher"
 #~ msgstr "Встановити ярлик"
