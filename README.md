@@ -1,3 +1,5 @@
+> Originally developed at [codeberg.org/eyekay/webapps](https://codeberg.org/eyekay/webapps) · GPL-3.0
+
 # Web Apps
 
 ![Web Apps logo](data/icons/hicolor/96x96/apps/net.codelogistics.webapps.png)
